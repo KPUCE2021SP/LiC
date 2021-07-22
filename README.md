@@ -78,6 +78,7 @@
     <li><a href="#license">License</a></li>
     <!-- <li><a href="#contact">Contact</a></li> -->
     <li><a href="#team-members">Team</a></li>
+    <li><a href="#wiki">Wiki</a></li>
   </ol>
 </details>
 
@@ -202,7 +203,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 * [한상우](https://github.com/sktkddn777)
 
 
-
+## Wiki
+진행하면서 다양한 정리거리는 [위키참고](https://github.com/KPUCE2021SP/LiC/wiki)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
