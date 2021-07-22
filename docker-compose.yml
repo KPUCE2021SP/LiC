@@ -1,0 +1,109 @@
+version: "3.9"
+volumes:
+  mongodb-data:
+    name: mongodb-data
+networks:
+  mongodb_network:
+    name: mongodb_network
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - mongodb_network
+    ports:
+      - 27017:27017
+    # healthcheck:
+    #   test: echo 'db.runCommand("ping").ok' | mongo 10.10.10.60:27017/test --quiet
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 3
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongodb-express
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin123
+    volumes:
+      - mongodb-data:/data/db
+    depends_on:
+      - mongodb
+    networks:
+      - mongodb_network 
+    ports:
+      - 8081:8081
+  # healthcheck:
+  #   test:  wget --quiet --tries=3 --spider http://admin:admin123@10.10.10.60:8081 || exit 1
+  #   interval: 30s
+  #   timeout: 10s
+  #   retries: 3
+  #   restart: unless-stopped
+ 
+  spider:
+    image: app
+    build: .
+    command: scrapy crawl programmersbot
+    volumes:
+      - .:/backend
+    ports:
+      - "6800:6800"
+    networks:
+      - mongodb_network
+    depends_on: 
+      - mongodb
+
+  web:
+    image: app
+    build: .
+    command: python manage.py runserver
+    volumes:
+      - .:/backend
+    ports:
+      - "8000:8000"
+    environment:
+      MONGODB_HOSTNAME: 'mongodb'
+    networks:
+      - mongodb_network 
+    depends_on:
+      - mongodb
+
+  migration:
+    build: .
+    image: app
+    command: python manage.py migrate
+    volumes:
+      - .:/StackLounge
+    links:
+      - mongodb
+    depends_on:
+      - make_migrations
+    networks:
+      - mongodb_network 
+
+  make_migrations:
+    build: .
+    image: app
+    command: python manage.py makemigrations
+    volumes:
+      - .:/StackLounge
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    networks:
+      - mongodb_network 
