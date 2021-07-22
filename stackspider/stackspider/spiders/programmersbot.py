@@ -6,28 +6,22 @@ import json
 
 class ProgrammersbotSpider(Spider):
     '''
-        프로그래머스(https://programmers.co.kr) 의 개발자 채용(https://programmers.co.kr/job)을 크롤하는 스파이더
-
-        포지션의 링크를 파싱하여 해당 기업의 기술 스택을 수집한다. 
-        parse(self, response) 
-            - https://programmers.co.kr/job?page={페이지 id} 의 최종 '페이지 id' 를 찾아 '페이지 id'의 새로운 콜백을 생성한다.
-        parseContent(self, response)
-            - https://programmers.co.kr/job?page={페이지 id} 내의 내용을 수집한다. 
-            - 기업명과 해당되는 포지션의 정보 링크를 수집한다.
-        parseJobContent(self, response)
-            - https://programmers.co.kr/job_positions/{포지션 id} 내의 내용을 수집한다.
-            - 해당 포지션의 '기술 스택' 태그를 수집한다.
-
-        
+        프로그래머스(https://programmers.co.kr)
+        개발자 채용(https://programmers.co.kr/job)을 크롤하는 스파이더
     '''
     name = 'programmersbot'
     allowed_domains = ['programmers.co.kr']
     start_urls = ['https://www.programmers.co.kr/job']
 
     def parse(self, response):
-        ''' 
-            해당 웹에서 가져와야 할 전체 pagination의 개수를 반환한다. 
-            /job?page={} 의 총 개수를 가져와 해당 각 페이지의 callback을 새로 만든다.
+        '''
+        해당 웹에서 가져와야 할 전체 pagination의 개수를 찾고 각 pagination url 호출
+                yield:
+                    각 pagination의 페이지를 호출하고 callback 함수에서 반환된 값
+                    반환 코드는 
+                        정상 호출 시 : <200>
+                        redirect 시 : <3**>
+                        도중 문제 발생 시 : <4**> 또는 <5**>
         '''
         pagination = response.css('div[id=paginate] a::attr(href)').getall()[-2]
         total_number_of_pages = int(re.findall(r'\d+', pagination)[0])
@@ -39,16 +33,16 @@ class ProgrammersbotSpider(Spider):
 
     def parseContent(self, response):
         '''
-            해당 pagination 의 새로운 url 에서 job position 의 href 링크를 가져온다.
+            페이지 내에 있는 직무 페이지의 링크를 찾고 해당 url 페이지 호출
+            웹 페이지에서 호출하는 api url 을 사용한다.
+                yield:
+                    각 직무 id 페이지 url에 대한 반환 값
+                    반환 코드는 
+                        정상 호출 시 : <200>
+                        redirect 시 : <3**>
+                        도중 문제 발생 시 : <4**> 또는 <5**>
         '''
         urls = response.css('ul[class=list-positions] a::attr(href)').getall()
-
-        # Debug 용도로 사용
-        # job_company_name = response.css('ul[class=list-positions] h6.company-name::text').getall()
-        # job_company_name = [name.strip() for name in job_company_name if name.strip()]
-        # self.logger.info("Current page's job urls: %s %s" % (job_urls, len(job_urls)))
-        # self.logger.info("company name : %s %s" % (job_company_name, len(job_company_name)))
-        # yield JobItem(href=job_urls, company_name=job_company_name)
         
         for link in urls:
             url = urljoin(response.url, "api/"+link)
@@ -57,15 +51,32 @@ class ProgrammersbotSpider(Spider):
 
     def parseJobContent(self, response):
         '''
-            해당 job-position page 를 파싱한다.
-            Page의 `기술 스택` 정보를 수집한다.
-            수집한 스택 정보를 scrapy의 Items 형태로 저장한다
+            job-position 페이지를 파싱한다.
+            job-position 은 api url 이 따로 있어서 해당 url을 호출 후 json reponse 에서 값 정리
+            yield:
+            TODO:
+                현재 job_position 내용과 company_id 내용이 곂쳐서 같은 collection document에 
+                저장이 되고 있다. pipeline 호출을 별도의 pipeline 을 설정해서 해야함
+                card_content : 
+                    Job Position api url 에서의 필요한 json 값을 따로 정리 후 
+                    MongoDB pipeline 을 활용하여 연결된 MongoDB에 document로 저장
+                        - 해당 Item객체의 자세한 정보는 items.py 참고
+                        - class JobCardItem(Item)
+            yield:
+                company id 만 따로 정리해준 url을 호출한다.
+                Request:
+                    url : company id별 정보 페이지 url
+                    callback : 호출 및 값을 반환할 callback 함수
+                반환 코드는 
+                        정상 호출 시 : <200>
+                        redirect 시 : <3**>
+                        도중 문제 발생 시 : <4**> 또는 <5**>
         '''
         
         job_position_content_json = json.loads(response.text)
 
         card_content = JobCardItem()
-        card_content['cardId'] = job_position_content_json['id']
+        card_content['cardId'] = job_position_content_json['id']               
         card_content['companyId'] = job_position_content_json['companyId']
         card_content['jobTitle'] = job_position_content_json['title']
         card_content['jobCategory'] = job_position_content_json['categoryNames']
@@ -80,7 +91,12 @@ class ProgrammersbotSpider(Spider):
 
     def parseCompanyContent(self, response):
         '''
-            해당 기업의 소개 페이지에서 기술 스택을 수집합니다. 
+            기업 소개 페이지에 있는 기술 스택 리스트를 매개변수로 다음 callback 에 넣어준다. 
+            yield:
+                Request:
+                    url : company id 마다 있는 api 페이지 url
+                    callback : 호출 및 값을 반환할 callback 함수
+                    cb_kwargs : callback 함수에 넘길 매개변수
         '''
         code = response.css('code::text').getall()
         companyId = int(urlparse(response.url).path[11:])
@@ -95,7 +111,12 @@ class ProgrammersbotSpider(Spider):
 
     def parseCompanyApiContent(self, response, stack_information):
         '''
-            수집한 스택 정보를 scrapy의 Items 형태로 저장한다
+            Company ID 에 따른 api url 에서 가져온 json 값을 정리한다.
+            yield:
+                comapny_content : 
+                    MongoDB pipeline 을 활용하여 연결된 MongoDB에 document로 저장
+                        - 해당 Item객체의 자세한 정보는 items.py 참고 
+                        - class CompanyItem(Item)
         '''
         json_response = json.loads(response.text)
 
