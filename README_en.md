@@ -36,11 +36,14 @@
   <!-- <a href="https://github.com/github_username/repo_name">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
-
+  <details>
+  <summary></summary>
+<p> To be honest, there is probably a very little chance of anyone taking notice of the english version of this readme. But for that 0.00000001f% of you, here it is :) </p>
+</details>
   <h1 align="center">Stack Lounge</h1>
 
   <p align="center">
-    국내 개발자들을 위한 기술 스택 정보 공유 서비스
+    Mobile Application for Korean Devs to Share their Tech Stacks
     <br />
     <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
     <!-- <br />
@@ -51,6 +54,7 @@
     ·
     <a href="https://github.com/github_username/repo_name/issues">Request Feature</a> -->
   </p>
+  <p align="center">This is a Study Project made by students</p>
 </p>
 
 
@@ -88,21 +92,16 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-개발자가 되기 위해서는 언어만 다뤄서 되는 것이 아니죠. 다양한 기술 스택과 프레임워크를 알아야 현재 트렌드도 알 수 있고 뒤쳐지지 않을 수 있습니다. 해외에는 이미 비슷한 서비스가 있지만, 국내에는 기술 스택에 대해서 일반적으로 다가가기 쉽지 않은 상황입니다. 
-</br>
-**`Stack Lounge`는 이제 막 입문하기 시작하는 학생들과 새로운 배움을 추구하는 이들이 기술 스택에 조금 더 가까워질 수 있기 위한 서비스입니다.**
-</br>
-국내 IT 서비스 기업에서 사용하고 있는 기술 스택 정보를 기업별로 나열합니다.
-필요한 기술 스택 정보는 `scrapy` 를 활용하며, 해당 기술 스택에 대한 선행사례는 기업들의 기술 블로그의 내용을 keyword extraction 을 통해 보여줍니다.
+We realized, in order for us to be good devs, it's not all about learning the latest languages like `go` or `javascript`. We wanted a way to learn and get closer to tech stacks and software tools used in the industry, but we couldn't find sufficient amount of informations that were provided in Korean. So this is when we thought of the idea to make on ourselves, in a typical engineering student's fashion.
 
 ### Built With
 <details>
-<summary> <b>🧑🏻‍💻 이러한 기술들로 만들고 있습니다.</b></summary>
+<summary> <b>🧑🏻‍💻 Tools under our belt.</b></summary>
 </br>
 
 * ![Docker](https://img.shields.io/badge/-Docker-000000?style=flat&logo=docker)
 * ![Django](https://img.shields.io/badge/-Django-000000?style=flat&logo=django)
-* ![AndroidStudio](https://img.shields.io/badge/-AndroidStudio-000000?style=flat&logo=android)
+* ![Kotlin](https://img.shields.io/badge/-Kotlin-000000?style=flat&logo=kotlin)
 * ![AWS EC2](https://img.shields.io/badge/-EC2-000000?style=flat&logo=amazon-aws)
 * ![GraphQL](https://img.shields.io/badge/-GraphQL-000000?style=flat&logo=graphql)
 * ![MongoDB](https://img.shields.io/badge/-MongoDB-000000?style=flat&logo=mongodb)
@@ -113,8 +112,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-팀원들을 위한 프로젝트 기여 방법
-
+These are the guidelines for my team members to get started on the proejct
 <!-- ### Prerequisites
 
 * pip
@@ -123,24 +121,23 @@
   ``` -->
 
 ### Prerequisites
-기본적으로 전체 개발에 필요한 파이썬 패키지를 받아야 합니다.
-1. 저장소를 클론 해주세요.
+1. Clone the repo.
    ```sh
    git clone https://github.com/KPUCE2021SP/LiC.git
    ```
-2. venv 를 생성합니다.
+2. Create a fresh new python virtual environment.
     ```sh
     # ubuntu 환경에서
     sudo apt-get update
     sudo apt-get install python3-venv
     python3 -m venv virtual-environment-name
     ```
-3. 생성한 virtual environment 를 사용합니다.
+3. Use the freshly created python virtual environment.
     ```sh
     # ubuntu 환경에서
     source virtual-environment-name/bin/activate
     ```
-4. 필요한 Python Library 를 pip 로 받습니다.
+4. Install python libraries needed for the project.
    ```sh
    # ubuntu 환경에서
    sudo apt-get install python3-pip
@@ -157,13 +154,6 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
  -->
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-[open issues](https://github.com/KPUCE2021SP/LiC/issues)에 추가할 기능 사항을 올리고 개발할 때 참고해주세요.
-
 
 
 <!-- CONTRIBUTING -->
@@ -198,14 +188,15 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGEMENTS -->
 ## Team Members
 
-* [홍성민](https://github.com/KKodiac)
-* [배준일](https://github.com/bjo6300)
-* [한상우](https://github.com/sktkddn777)
+* [Sean Hong](https://github.com/KKodiac)
+* [Bae Joonil](https://github.com/bjo6300)
+* [Han Sangwoo](https://github.com/sktkddn777)
 
 
 ## Wiki
-진행하면서 다양한 정리거리는 [위키참고](https://github.com/KPUCE2021SP/LiC/wiki)
-[영어버젼]()
+[Wiki](https://github.com/KPUCE2021SP/LiC/wiki) has been created for us to orgranize things we learned during our creation of the project. 
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
