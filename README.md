@@ -205,7 +205,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 ## Wiki
 진행하면서 다양한 정리거리는 [위키참고](https://github.com/KPUCE2021SP/LiC/wiki)
-[영어버젼]()
+[영어버젼](https://github.com/KPUCE2021SP/LiC/blob/develop/README_en.md)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
