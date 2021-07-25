@@ -6,36 +6,6 @@
 from scrapy import Field, Item
 
 
-class JobCardItem(Item):
-    '''
-        cardId : 
-            job_position 페이지의 id 번호, 
-            INT
-        companyId :
-            job_position 페이지 공고를 낸 기업 Id 번호, 
-            INT
-        jobTitle : 
-            직무 이름, 
-            STR
-        jobCategory : 
-            직무 카테고리, 
-            LIST
-        technicalTags : 
-            직무 페이지 내에 있는 소프트웨어 도구 리스트, 
-            LIST
-        teamTechnicalTags : 
-            직무 페이지 내에 있는 팀내 소프트웨어 도구, 
-            LIST
-    '''
-    cardId = Field()
-    companyId = Field()
-    jobTitle = Field()
-    jobCategory = Field()
-    technicalTags = Field()
-    teamTechnicalTags = Field()
-    
-
-
 class CompanyItem(Item):
     '''
     companyId : 
