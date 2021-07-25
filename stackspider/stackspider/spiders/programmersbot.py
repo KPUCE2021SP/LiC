@@ -1,5 +1,5 @@
 from scrapy import Request, Spider
-from stackspider.items import JobCardItem, CompanyItem
+from stackspider.items import CompanyItem
 from urllib.parse import urljoin, urlparse
 import re
 import json
@@ -75,17 +75,16 @@ class ProgrammersbotSpider(Spider):
         
         job_position_content_json = json.loads(response.text)
 
-        card_content = JobCardItem()
-        card_content['cardId'] = job_position_content_json['id']               
-        card_content['companyId'] = job_position_content_json['companyId']
-        card_content['jobTitle'] = job_position_content_json['title']
-        card_content['jobCategory'] = job_position_content_json['categoryNames']
-        card_content['technicalTags'] = job_position_content_json['technicalTags'],
-        card_content['teamTechnicalTags'] = job_position_content_json['teamTechnicalTags'],
+        job_card_stack = list(set(job_position_content_json['technicalTags'] + job_position_content_json['teamTechnicalTags']))
         
-        yield card_content
         url = urljoin(self.start_urls[0], f"companies/{job_position_content_json['companyId']}")
-        yield Request(url, callback=self.parseCompanyContent)
+        request = Request(
+            url, 
+            callback=self.parseCompanyContent,
+            meta={"job_card_stack": job_card_stack}
+        )
+
+        yield request
         
     
 
@@ -99,12 +98,13 @@ class ProgrammersbotSpider(Spider):
                     cb_kwargs : callback 함수에 넘길 매개변수
         '''
         code = response.css('code::text').getall()
+        stack_information = list(set(code + response.meta.get('job_card_stack')))
         companyId = int(urlparse(response.url).path[11:])
         url = urljoin(response.url[:28], f"api/companies/{companyId}")
         request = Request(
             url, 
             callback=self.parseCompanyApiContent,
-            cb_kwargs=dict(stack_information=code)
+            cb_kwargs=dict(stack_information=stack_information)
         )
 
         yield request
@@ -123,6 +123,7 @@ class ProgrammersbotSpider(Spider):
         company_content = CompanyItem()
         company_content['companyId'] = json_response['id']
         company_content['companyName'] = json_response['name']
+    
         company_content['companyTechnicalTags'] = stack_information
         company_content['companyLogo'] = json_response['logoUrl']
         company_content['address'] = json_response['address']

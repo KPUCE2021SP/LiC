@@ -75,6 +75,8 @@ MONGODB_PORT = 27017
 MONGODB_DB = "stackdb"
 USERNAME = "root"
 PASSWORD = "example"
+# USERNAME = "sangwoo"
+# PASSWORD = "password"
 MONGODB_COLLECTION = ["programmers", "indeed", "wanted"] 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
