@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from scrapy import Request, Spider
+from stackspider.items import CompanyItem
 from urllib.parse import urljoin, urlparse
 import requests
 import json
@@ -23,28 +24,17 @@ class JumpitbotSpider(Spider):
         
         page_num = 0
         while True:
-            url = urljoin(response.url, f'/api/position/list?page={page_num}')
-            data = requests.get(url).text
+            api_data = urljoin(response.url, f'/api/position/list?page={page_num}')
+            data = requests.get(api_data).text
             if len(data) < 400:
                 break
             page_num += 1
-            yield Request(url, callback=self.parseJobContent)
+            yield Request(api_data, callback=self.parseCompanyApiContent)
 
-    
-    def parseJobContent(self, response):
+    def parseCompanyApiContent(self, response):
         '''
-            job-position 페이지를 파싱한다.
-            job-position 은 api url 이 따로 있어서 해당 url을 호출 후 json reponse 에서 값 정리
-            yield:
-            TODO:
-                현재 job_position 내용과 company_id 내용이 곂쳐서 같은 collection document에 
-                저장이 되고 있다. pipeline 호출을 별도의 pipeline 을 설정해서 해야함
-                card_content : 
-                    Job Position api url 에서의 필요한 json 값을 따로 정리 후 
-                    MongoDB pipeline 을 활용하여 연결된 MongoDB에 document로 저장
-                        - 해당 Item객체의 자세한 정보는 items.py 참고
-                        - class JobCardItem(Item)
-            yield:
+        기업 공고문의 각 페이지에 대한url을 얻는다.
+        yield:
                 company id 만 따로 정리해준 url을 호출한다.
                 Request:
                     url : company id별 정보 페이지 url
@@ -54,14 +44,39 @@ class JumpitbotSpider(Spider):
                         redirect 시 : <3**>
                         도중 문제 발생 시 : <4**> 또는 <5**>
         '''
-        job_position_content_json = json.loads(response.text)
-        
-        card_content = JobCardItem()
-        card_content['cardId'] = job_position_content_json['id']               
-        card_content['companyId'] = job_position_content_json['companyId']
-        card_content['jobTitle'] = job_position_content_json['title']
-        card_content['jobCategory'] = job_position_content_json['categoryNames']
-        card_content['technicalTags'] = job_position_content_json['technicalTags'],
-        card_content['teamTechnicalTags'] = job_position_content_json['teamTechnicalTags'],
+        response_body = json.loads(response.text)
 
+        for i in range(len(response_body['result']['content'])):
+            company_id = response_body['result']['content'][i]['id']
+            url = urljoin(response.url[:29], 'position/'+str(company_id))
+            yield Request(url, callback=self.parseJobContent)
+
+    
+    def parseJobContent(self, response):
+        '''
+            Company ID에 따른 api url에서 가져온 json값을 정리한다.
+        '''
+        json_ = json.loads(response.text)
+        print(json_)
+        json_response = json_['result']
+
+        company_content = CompanyItem()
+        company_content['companyId'] = json_response['id']
+        company_content['companyName'] = json_response['companyName']
+        
+        
+        for i in range(len(json_response['techStacks'])):
+            company_content['companyTechnicalTags'] = json_response['techStacks'][i]['stack']
+        
+        company_content['companyLogo'] = json_response['logo']
+        company_content['address'] = json_response['location']
+        # company_content['lat'] = json_response['latitude']
+        # company_content['lng'] = json_response['longitude']
+        # company_content['homeUrl'] = json_response['homeUrl']
+
+        yield company_content
+        
+
+
+       
         
