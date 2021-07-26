@@ -70,11 +70,11 @@ ITEM_PIPELINES = {
    # 'stackspider.pipelines.JsonPipeline': 300,
    'stackspider.pipelines.MongoDBPipeline': 800,
 }
-MONGODB_SERVER = "mongodb://127.0.0.1"
+MONGODB_SERVER = "mongodb://mongodb"
 MONGODB_PORT = 27017
 MONGODB_DB = "stackdb"
-USERNAME = "seanhong2000"
-PASSWORD = "Suskyssc2"
+USERNAME = "root"
+PASSWORD = "example"
 # USERNAME = "sangwoo"
 # PASSWORD = "password"
 MONGODB_COLLECTION = ["programmers", "indeed", "wanted"] 
