@@ -16,7 +16,7 @@ from collections import defaultdict
 
 settings = get_project_settings()
 
-class StackspiderPipeline:
+class JsonPipeline:
     def open_spider(self, spider):
         self.json_response = defaultdict()
         self.file = open('data.json', 'w')
@@ -25,7 +25,7 @@ class StackspiderPipeline:
     def close_spider(self, spider):
         for key in self.json_response:
             self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
-        json.dump(self.json_response, self.file,ensure_ascii=False).encode('utf-8')
+        json.dump(self.json_response, self.file)
         self.file.close()
 
 
@@ -44,7 +44,8 @@ class StackspiderPipeline:
 
 
 class MongoDBPipeline:
-    def __init__(self):
+    def open_spider(self, spider):
+        self.json_response = defaultdict()
         connection = MongoClient(
             host=settings['MONGODB_SERVER'],
             port=settings['MONGODB_PORT'],
@@ -52,13 +53,25 @@ class MongoDBPipeline:
             password=settings['PASSWORD']
         )
         db = connection[settings['MONGODB_DB']]
+        db[settings['MONGODB_COLLECTION'][0]].drop()
         self.collection = db[settings['MONGODB_COLLECTION'][0]] # set to programmers
 
-    def open_spider(self, spider):
-        pass
 
     def close_spider(self, spider):
-        pass        
+        for key in self.json_response:
+            self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
+            self.collection.insert(self.json_response[key])
+
 
     def process_item(self, item, spider):
+        if(item["flag"]):
+            self.json_response[str(item["id"])] = {"companyName": "", "tech_stack":[]}
+            logging.info(f"NAME : {item['name']}")
+            self.json_response[str(item["id"])]["companyName"] = item["name"] 
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+        else:
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+    
         return item
