@@ -5,18 +5,42 @@
 
 
 # useful for handling different item types with a single interface
+from typing import List
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
 import logging
 from scrapy.exceptions import DropItem
 from scrapy.utils.project import get_project_settings
+import json
+from collections import defaultdict
+
 settings = get_project_settings()
 
+class StackspiderPipeline:
+    def open_spider(self, spider):
+        self.json_response = defaultdict()
+        self.file = open('data.json', 'w')
 
-# class StackspiderPipeline:
-#     def process_item(self, item, spider):
-#         adapter = ItemAdapter(item)
-#         return item
+
+    def close_spider(self, spider):
+        for key in self.json_response:
+            self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
+        json.dump(self.json_response, self.file,ensure_ascii=False).encode('utf-8')
+        self.file.close()
+
+
+    def process_item(self, item, spider):
+        if(item["flag"]):
+            self.json_response[str(item["id"])] = {"companyName": "", "tech_stack":[]}
+            logging.info(f"NAME : {item['name']}")
+            self.json_response[str(item["id"])]["companyName"] = item["name"] 
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+        else:
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+    
+        return item
 
 
 class MongoDBPipeline:
@@ -27,19 +51,14 @@ class MongoDBPipeline:
             username=settings['USERNAME'],
             password=settings['PASSWORD']
         )
-
         db = connection[settings['MONGODB_DB']]
         self.collection = db[settings['MONGODB_COLLECTION'][0]] # set to programmers
 
+    def open_spider(self, spider):
+        pass
+
+    def close_spider(self, spider):
+        pass        
 
     def process_item(self, item, spider):
-        # how to handle each post
-        valid = True
-        for data in item:
-            if not data:
-                valid = False
-                raise DropItem("Missing {0}!".format(data))
-        if valid:
-            self.collection.insert(dict(item))
-            logging.debug("Posted to MongoDB database!")
         return item
