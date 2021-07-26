@@ -67,10 +67,10 @@ LOG_LEVEL = 'INFO'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'stackspider.pipelines.StackspiderPipeline': 300,
-   # 'stackspider.pipelines.MongoDBPipeline': 800,
+   # 'stackspider.pipelines.JsonPipeline': 300,
+   'stackspider.pipelines.MongoDBPipeline': 800,
 }
-MONGODB_SERVER = "mongodb://127.0.0.1"
+MONGODB_SERVER = "mongodb://mongodb"
 MONGODB_PORT = 27017
 MONGODB_DB = "stackdb"
 USERNAME = "root"

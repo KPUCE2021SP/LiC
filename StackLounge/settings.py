@@ -25,7 +25,7 @@ SECRET_KEY = '(d@&6e)p2vs+73idhc%e3v^z31iikr9l5n%z5n^x%q8^r-7a!d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -81,12 +81,23 @@ DATABASES = {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': True,
         'NAME': 'django_mongodb_docker',
-        'HOST': 'mongodb',
-        'PORT': 27017,
-        'USER': 'root',
-        'PASSWORD': 'mongoadmin',
-        'AUTH_SOURCE': 'admin',
-        'AUTH_MECHANISM': 'SCRAM-SHA-1',
+        'CLIENT': {
+            'host': 'mongodb',
+            'port': 27017,
+            'username': 'root',
+            'password': 'example',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        },
+        'LOGGING': {
+            'version': 1,
+            'loggers': {
+                'djongo': {
+                    'level': 'DEBUG',
+                    'propagate': False,                        
+                }
+            },
+        },
     }
 }
 
