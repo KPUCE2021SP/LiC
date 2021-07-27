@@ -68,7 +68,8 @@ LOG_LEVEL = 'INFO'
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'stackspider.pipelines.JsonPipeline': 300,
-   'stackspider.pipelines.MongoDBPipeline': 800,
+   'stackspider.pipelines.JumpitPipeline':400,
+   #'stackspider.pipelines.MongoDBPipeline': 800,
 }
 MONGODB_SERVER = "mongodb://mongodb"
 MONGODB_PORT = 27017
