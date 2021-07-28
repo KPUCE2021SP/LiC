@@ -16,6 +16,29 @@ from collections import defaultdict
 
 settings = get_project_settings()
 
+class JumpitPipeline:
+    def open_spider(self, spider):
+        self.json_response = defaultdict()
+        self.file = open('data.json', 'w')
+
+
+    def close_spider(self, spider):
+        for key in self.json_response:
+            self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
+        json.dump(self.json_response, self.file,ensure_ascii = False)
+        self.file.close()
+
+
+    def process_item(self, item, spider):
+        if(str(item["id"]) in self.json_response):
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+        else:
+            self.json_response[str(item["id"])] =  {"companyName": "", "tech_stack":[]}
+            self.json_response[str(item["id"])]["companyName"] = item["name"]
+            for tech in item["tech_stack"]:
+                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+    
 class DebugPipeline:
     def open_spider(self, spider):
         self.key = json.load(fp=open("kiwizzle_api.json", "r"))

@@ -69,7 +69,8 @@ LOG_LEVEL = 'INFO'
 ITEM_PIPELINES = {
    'stackspider.pipelines.DebugPipeline': 100,
    # 'stackspider.pipelines.JsonPipeline': 300,
-   # 'stackspider.pipelines.MongoDBPipeline': 800,
+   'stackspider.pipelines.JumpitPipeline':400,
+   #'stackspider.pipelines.MongoDBPipeline': 800,
 }
 MONGODB_SERVER = "mongodb://mongodb"
 MONGODB_PORT = 27017

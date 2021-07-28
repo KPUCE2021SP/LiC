@@ -57,24 +57,19 @@ class JumpitbotSpider(Spider):
             Company ID에 따른 api url에서 가져온 json값을 정리한다.
         '''
         json_ = json.loads(response.text)
-        print(json_)
         json_response = json_['result']
 
-        company_content = CompanyItem()
-        company_content['companyId'] = json_response['id']
-        company_content['companyName'] = json_response['companyName']
-        
-        
+        tech = []
         for i in range(len(json_response['techStacks'])):
-            company_content['companyTechnicalTags'] = json_response['techStacks'][i]['stack']
-        
-        company_content['companyLogo'] = json_response['logo']
-        company_content['address'] = json_response['location']
-        # company_content['lat'] = json_response['latitude']
-        # company_content['lng'] = json_response['longitude']
-        # company_content['homeUrl'] = json_response['homeUrl']
+            tech.append(json_response['techStacks'][i]['stack'])
 
-        yield company_content
+        tech_stacks = {
+            "id" : int(json_response['companyProfileId']),
+            "name" : json_response['companyName'],
+            "tech_stack" : tech
+        }
+
+        yield tech_stacks
         
 
 
