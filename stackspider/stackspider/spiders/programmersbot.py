@@ -1,10 +1,8 @@
 from scrapy import Request, Spider
-from stackspider.items import CompanyItem
 from urllib.parse import urljoin, urlparse
 from scrapy.spidermiddlewares.httperror import HttpError
 from twisted.internet.error import DNSLookupError
 from twisted.internet.error import TimeoutError, TCPTimedOutError
-from tqdm import tqdm
 import re
 import json
 

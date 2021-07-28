@@ -67,6 +67,7 @@ LOG_LEVEL = 'INFO'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+   'stackspider.pipelines.DebugPipeline': 100,
    # 'stackspider.pipelines.JsonPipeline': 300,
    'stackspider.pipelines.JumpitPipeline':400,
    #'stackspider.pipelines.MongoDBPipeline': 800,

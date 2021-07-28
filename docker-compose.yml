@@ -48,7 +48,7 @@ services:
   spider:
     image: app
     build: .
-    command: bash -c "pip install -r requirements.txt && cd stackspider && scrapy crawl programmersbot"
+    command: bash -c "cd stackspider && scrapy crawl programmersbot"
     volumes:
       - .:/backend
     ports:
@@ -59,13 +59,13 @@ services:
   web:
     image: app
     build: .
-    command: python manage.py runserver
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/backend
     ports:
       - "8000:8000"
-    environment:
-      MONGODB_HOSTNAME: 'mongodb'
+    expose: 
+      - "8000"
     depends_on:
       - mongodb
 

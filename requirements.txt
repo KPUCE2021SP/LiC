@@ -48,14 +48,12 @@ requests==2.25.1
 Rx==1.6.1
 Scrapy==2.5.0
 scrapy-inline-requests==0.3.1
-selenium==3.141.0
 service-identity==21.1.0
 singledispatch==3.6.2
 six==1.16.0
 soupsieve==2.2.1
 sqlparse==0.2.4
 text-unidecode==1.3
-tqdm==4.61.2
 Twisted==21.2.0
 urllib3==1.26.6
 w3lib==1.22.0
