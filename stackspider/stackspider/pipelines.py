@@ -26,14 +26,21 @@ class JumpitPipeline:
             password=settings['PASSWORD']
         )
         db = connection[settings['MONGODB_DB']]
-        db[settings['MONGODB_COLLECTION'][2]].drop()
         self.collection = db[settings['MONGODB_COLLECTION'][2]] # set to jumpit
 
 
     def close_spider(self, spider):
         for key in self.json_response:
             self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
-            self.collection.insert(self.json_response[key])
+            document = self.collection.find_one({"companyName": self.json_response[key]["companyName"]}) 
+            if(not len(document["tech_stack"]) == len(self.json_response[key]["tech_stack"])):
+                tech_stack = document["tech_stack"]
+                tech_stack.extend(self.json_response[key]["tech_stack"])
+                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+
+            self.collection.update_one({'companyName': self.json_response[key]["companyName"]}, 
+                {"$set": self.json_response[key]}, 
+                upsert=True)
 
         
 
@@ -57,7 +64,6 @@ class KiwizzlePipeline:
             password=settings['PASSWORD']
         )
         db = connection[settings['MONGODB_DB']]
-        db[settings['MONGODB_COLLECTION'][1]].drop()
         self.collection = db[settings['MONGODB_COLLECTION'][1]] # set to kiwizzle
 
         self.json_content = defaultdict()
@@ -65,7 +71,15 @@ class KiwizzlePipeline:
     def close_spider(self, spider):
         for key in self.json_content:
             self.json_content[key]["tech_stack"] = list(set(self.json_content[key]["tech_stack"]))
-            self.collection.insert(self.json_content[key])
+            document = self.collection.find_one({"companyName": self.json_response[key]["companyName"]}) 
+            if(not len(document["tech_stack"]) == len(self.json_response[key]["tech_stack"])):
+                tech_stack = document["tech_stack"]
+                tech_stack.extend(self.json_response[key]["tech_stack"])
+                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+
+            self.collection.update_one({'companyName': self.json_response[key]["companyName"]}, 
+                {"$set": self.json_response[key]}, 
+                upsert=True)
 
     def process_item(self, item, spider):
         try:
@@ -117,14 +131,22 @@ class ProgrammersPipeline:
             password=settings['PASSWORD']
         )
         db = connection[settings['MONGODB_DB']]
-        db[settings['MONGODB_COLLECTION'][0]].drop()
         self.collection = db[settings['MONGODB_COLLECTION'][0]] # set to programmers
 
 
     def close_spider(self, spider):
         for key in self.json_response:
             self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
-            self.collection.insert(self.json_response[key])
+            document = self.collection.find_one({"companyName": self.json_response[key]["companyName"]}) 
+            if(not len(document["tech_stack"]) == len(self.json_response[key]["tech_stack"])):
+                tech_stack = document["tech_stack"]
+                tech_stack.extend(self.json_response[key]["tech_stack"])
+                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+
+            self.collection.update_one({'companyName': self.json_response[key]["companyName"]}, 
+                {"$set": self.json_response[key]}, 
+                upsert=True)
+
 
 
     def process_item(self, item, spider):
