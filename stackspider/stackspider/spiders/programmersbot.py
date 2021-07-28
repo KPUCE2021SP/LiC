@@ -14,7 +14,11 @@ class ProgrammersbotSpider(Spider):
     name = 'programmersbot'
     allowed_domains = ['programmers.co.kr']
     start_urls = ['https://www.programmers.co.kr/companies']
-
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'stackspider.pipelines.ProgrammersPipeline' : 300,
+        }
+    }
     async def parse(self, response):
         '''
             기업 나열된 웹 페이지에서 해당 페이지의 전체 pagination 수를 가져오고,
