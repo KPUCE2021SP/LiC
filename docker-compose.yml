@@ -45,16 +45,34 @@ services:
   #   retries: 3
   #   restart: unless-stopped
  
-  spider:
+  spider_1:
     image: app
     build: .
     command: bash -c "cd stackspider && scrapy crawl programmersbot"
     volumes:
       - .:/backend
-    ports:
-      - "6800:6800"
     depends_on: 
       - mongodb
+
+  spider_2:
+    image: app
+    build: .
+    command: bash -c "cd stackspider && scrapy crawl jumpitbot"
+    volumes:
+      - .:/backend
+    depends_on: 
+      - mongodb
+
+
+  spider_3:
+    image: app
+    build: .
+    command: bash -c "cd stackspider && scrapy crawl kiwizzlebot"
+    volumes:
+      - .:/backend
+    depends_on: 
+      - mongodb
+
 
   web:
     image: app

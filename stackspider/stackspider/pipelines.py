@@ -19,15 +19,23 @@ settings = get_project_settings()
 class JumpitPipeline:
     def open_spider(self, spider):
         self.json_response = defaultdict()
-        self.file = open('data.json', 'w')
+        connection = MongoClient(
+            host=settings['MONGODB_SERVER'],
+            port=settings['MONGODB_PORT'],
+            username=settings['USERNAME'],
+            password=settings['PASSWORD']
+        )
+        db = connection[settings['MONGODB_DB']]
+        db[settings['MONGODB_COLLECTION'][2]].drop()
+        self.collection = db[settings['MONGODB_COLLECTION'][2]] # set to jumpit
 
 
     def close_spider(self, spider):
         for key in self.json_response:
             self.json_response[key]["tech_stack"] = list(set(self.json_response[key]["tech_stack"]))
-        json.dump(self.json_response, self.file,ensure_ascii = False)
-        self.file.close()
+            self.collection.insert(self.json_response[key])
 
+        
 
     def process_item(self, item, spider):
         if(str(item["id"]) in self.json_response):
@@ -39,17 +47,25 @@ class JumpitPipeline:
             for tech in item["tech_stack"]:
                 self.json_response[str(item["id"])]["tech_stack"].append(tech)
     
-class DebugPipeline:
+class KiwizzlePipeline:
     def open_spider(self, spider):
         self.key = json.load(fp=open("kiwizzle_api.json", "r"))
+        connection = MongoClient(
+            host=settings['MONGODB_SERVER'],
+            port=settings['MONGODB_PORT'],
+            username=settings['USERNAME'],
+            password=settings['PASSWORD']
+        )
+        db = connection[settings['MONGODB_DB']]
+        db[settings['MONGODB_COLLECTION'][1]].drop()
+        self.collection = db[settings['MONGODB_COLLECTION'][1]] # set to kiwizzle
+
         self.json_content = defaultdict()
-        self.file = open('data2.json', 'w')
 
     def close_spider(self, spider):
         for key in self.json_content:
             self.json_content[key]["tech_stack"] = list(set(self.json_content[key]["tech_stack"]))
-        json.dump(self.json_content, self.file, ensure_ascii=False)
-        
+            self.collection.insert(self.json_content[key])
 
     def process_item(self, item, spider):
         try:
@@ -91,7 +107,7 @@ class JsonPipeline:
         return item
 
 
-class MongoDBPipeline:
+class ProgrammersPipeline:
     def open_spider(self, spider):
         self.json_response = defaultdict()
         connection = MongoClient(

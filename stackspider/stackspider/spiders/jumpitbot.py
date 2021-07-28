@@ -9,7 +9,11 @@ class JumpitbotSpider(Spider):
     name = 'jumpitbot'
     allowed_domains = ['jumpit.co.kr']
     start_urls = ['https://www.jumpit.co.kr']
-
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'stackspider.pipelines.JumpitPipeline' : 300,
+        }
+    }
     def parse(self, response):
         '''
         웹에서 list?page api를 토대로 전체 page의 개수를 찾고 
