@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         val user = Firebase.auth.currentUser
-        Toast.makeText(applicationContext,"${user?.email}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext,"${user?.email}", Toast.LENGTH_SHORT).show()
 
         btnLogout.setOnClickListener{
             // 로그아웃하고 다시 LoginActivity로 이동

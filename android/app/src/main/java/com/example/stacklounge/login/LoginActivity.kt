@@ -1,9 +1,15 @@
 package com.example.stacklounge.login
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.text.SpannableString
+import android.text.TextPaint
+import android.text.style.URLSpan
+import android.text.util.Linkify
+import android.widget.TextView
 import android.widget.Toast
 import com.example.stacklounge.MainActivity
 import com.example.stacklounge.R
@@ -16,27 +22,34 @@ import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //github 로그인
         btnLogin.setOnClickListener {
             doLogin()
+        }
+
+        //github 회원가입
+        signup.setOnClickListener {
+            doSignup()
         }
 
     }
 
     //github 로그인 함수
     private fun doLogin(){
-        //var Email = edtEmail.getText().toString()  // 사용자가 입력하는 github 이메일
         
         var mAuth = FirebaseAuth.getInstance()
 
         val provider = OAuthProvider.newBuilder("github.com")
         // edtEmail에 입력한 이메일로 github 연동
-        provider.addCustomParameter("login", "Email")
+        provider.addCustomParameter("login", "")
 
         val scopes: ArrayList<String?> = object : ArrayList<String?>() {
             init {
@@ -97,10 +110,16 @@ class LoginActivity : AppCompatActivity() {
 
     //로그인 정보 확인되면 MainActivity로 이동
     private fun githubLoginClear() {
-
         startActivity(
             Intent(this, MainActivity::class.java)
         )
         finish()
     }
+
+    //github 회원가입
+    private fun doSignup(){
+        var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"))
+        startActivity(intent)
+    }
+
 }
