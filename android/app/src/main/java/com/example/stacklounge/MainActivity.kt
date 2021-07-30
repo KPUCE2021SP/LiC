@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        title = "MainActivity"
-
         if (Firebase.auth.currentUser == null) {
             startActivity(
                 Intent(this, LoginActivity::class.java)

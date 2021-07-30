@@ -21,7 +21,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        title = "GithubAuth"
 
         btnLogin.setOnClickListener {
             doLogin()
@@ -29,15 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    //로그인 정보 확인되면 MainActivity로 이동
-    private fun githubLoginClear() {
-
-        startActivity(
-            Intent(this, MainActivity::class.java)
-        )
-        finish()
-    }
-
+    //github 로그인 함수
     private fun doLogin(){
         //var Email = edtEmail.getText().toString()  // 사용자가 입력하는 github 이메일
         
@@ -68,10 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
                         val user = Firebase.auth.currentUser
 
-
-                        var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
-
-
+                        //var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
@@ -93,6 +81,7 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
+
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
                     })
@@ -104,5 +93,14 @@ class LoginActivity : AppCompatActivity() {
                     })
         }
 
+    }
+
+    //로그인 정보 확인되면 MainActivity로 이동
+    private fun githubLoginClear() {
+
+        startActivity(
+            Intent(this, MainActivity::class.java)
+        )
+        finish()
     }
 }

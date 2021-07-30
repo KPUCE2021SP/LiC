@@ -4,45 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".login.LoginActivity">
 
-    <ImageView
-        android:id="@+id/Githubimg"
-        android:layout_width="128dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="32dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stack Lounge"
+        android:textSize="35sp"
+        android:fontFamily="@font/dahang"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/githubicon_white" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="144dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="188dp"
-        android:backgroundTint="@color/white"
-        android:text="로그인"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="160dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="241dp"
+        android:layout_height="249dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stackloungeicon" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="214dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/black"
+        android:drawableLeft="@drawable/githubwhite32px"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/dahang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
