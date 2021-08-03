@@ -73,6 +73,17 @@ services:
     depends_on: 
       - mongodb
 
+  # 번역 자동화 할거면 이런식으로 할 생각이다. 검토 바람.
+  # translate:
+  #   image: app
+  #   build: .
+  #   command: python translate.py
+  #   volumes:
+  #     - .:/backend
+  #   depends_on: 
+  #     - mongodb
+  
+
 
   web:
     image: app
