@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         var mAuth = FirebaseAuth.getInstance()
 
         val provider = OAuthProvider.newBuilder("github.com")
-        // edtEmail에 입력한 이메일로 github 연동
+
         provider.addCustomParameter("login", "")
 
         val scopes: ArrayList<String?> = object : ArrayList<String?>() {
