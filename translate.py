@@ -1,75 +1,101 @@
 import os
 import sys
 import urllib.request
+
+from numpy.lib.function_base import median
 import json
 
-from googletrans import Translator
-import time
-import parmap
-import numpy as np
-import multiprocessing
 
-
-
-def translate_json(splited_data, tools):
+class Papago:
     '''
-    googletrans 라이브러리를 사용합니다.
+    Papago 번역은 Papago의 인공 신경망 기반기계 번역 기술(NMT, Neural Machine Translation)로 
+    텍스트를 번역한 결과를 반환하는 RESTful API입니다.
+    stack_information.json파일 부분에서 title과 description부분을 번역해준다.
     '''
-    
-    for data in splited_data:
-        try:
-            tools[data]["title"] = translator.translate(tools[data]["title"], dest="ko").text
-            tools[data]["description"] = translator.translate(tools[data]["description"], dest="ko").text
-        # except (TypeError, KeyError):
-        #     pass
-        except TypeError:
-            pass
-        except AttributeError:
-            time.sleep(1)
-        except:
-            pass
-        print(tools[data]["title"])
-        print(tools[data]["description"])
-            
-        
-
-class GoogleTrans:
-    '''
-        기술스택이 저장되어 있는 title과 description내용을 한글로 번역하여 
-        제공해주기 위한 파일입니다.
-    '''
-
-    def __init__(self, file_name):
+    def __init__(self, client_id, client_secret, file_name):
         '''
-        번역하고자 하는 파일 이름을 받아옵니다.
-        여기서는 stack_information.json입니다.
+        client_id, client_secret, api url 설정.
+        file_name을 받음.
         '''
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.url = "https://openapi.naver.com/v1/papago/n2mt"
         self.file_name = file_name
-
-    def open_file(self):
+        
+    
+    def translate_txt(self, source, target):
         '''
-        파일을 json형태로 열고 
-        title부분과 description부분만 번역을 해줍니다.
+        title부분과 description부분을 모두 수정해준 뒤 
+        기존 파일에 덮어 씌운다.
         '''
-        num_cores = multiprocessing.cpu_count()
-        with open(f"./{self.file_name}", "r") as f:
-            self.json_data = json.load(f)
-
-        self.tools = self.json_data["data"]["tools"]["edges"][0]
-        self.tool_keys = list(self.tools.keys())
-
-        # parmap 사용
-        self.splited_data = np.array_split(self.tool_keys, num_cores)
-        self.splited_data = [x.tolist() for x in self.splited_data]
-        parmap.map(translate_json, self.splited_data, self.tools, pm_pbar=True, pm_processes=num_cores)
-
-        with open("./stack_info_translate.json", "w", encoding='utf-8') as make_file:
+        self.source = source
+        self.target = target
+        
+        with open(f'./{self.file_name}', 'r') as f:
+            json_data = json.load(f)
+        
+        info_dict = json_data['data']['tools']['edges'][0]
+        stack_data = list(info_dict)
+        print(info_dict['.net'])
+        stack_data = ['.net', '3ds_amx', '3ds_max']
+        for data in stack_data:
+            try:
+                info_dict[data]['title'] = self.translate(info_dict[data]['title'])
+                info_dict[data]['description'] = self.translate(info_dict[data]['description'])
+            except:
+                pass
+        
+        with open(f'./{self.file_name}', 'w', encoding='utf-8') as make_file:
             json.dump(json_data, make_file, indent="\t", ensure_ascii=False)
 
-        
+
+    def translate(self, text):
+        '''
+        받은 text를 바탕으로 번역을 하는 함수이다.
+        영어를 한글로 번역을 한 후 그 값을 리턴해준다.
+        rescode error가 뜨면 rescode값을 출력해준다.
+            N2MT01	400	source parameter is needed (source 파라미터가 필요합니다.)
+            N2MT02	400	Unsupported source language (지원하지 않는 source 언어입니다.)
+            N2MT03	400	target parameter is needed (target 파라미터가 필요합니다.)
+            N2MT04	400	Unsupported target language (지원하지 않는 target 언어입니다.)
+            N2MT05	400	source and target must be different (source와 target이 동일합니다.)
+            N2MT06	400	There is no source-to-target translator (source->target 번역기가 없습니다.)
+            N2MT07	400	text parameter is needed (text 파라미터가 필요합니다.)
+            N2MT08	400	text parameter exceeds max length (text 파라미터가 최대 용량을 초과했습니다.)
+            N2MT99	500	Internal server errors
+        '''
+        encText = urllib.parse.quote(text)
+
+        data = f"source={self.source}&target={self.target}&text=" + encText
+
+        request = urllib.request.Request(self.url)
+        request.add_header("X-Naver-Client-Id",self.client_id)
+        request.add_header("X-Naver-Client-Secret",self.client_secret)
+        response = urllib.request.urlopen(request, data=data.encode("utf-8"))
+
+        rescode = response.getcode()
+        if(rescode==200):
+            response_body = json.loads(response.read().decode('utf-8'))
+            result = response_body['message']['result']['translatedText']
+        else:
+            print("Error Code:" + rescode)
+
+        return result
 
 
-if __name__ == "__main__":
-    translator = Translator()
-    google = GoogleTrans("stack_information.json")
-    google.open_file()
+if __name__ == '__main__':
+    client_id = 'client_id' # 발급받은 아이디 입력
+    client_secret = 'client_secret' # 발급받은 secret입력
+    file_name = "stack_information.json"
+
+    papago = Papago(client_id=client_id, 
+                    client_secret=client_secret, 
+                    file_name=file_name
+                    )
+    papago.translate_txt(source='en',target='ko')
+
+    '''
+    ko : 한국어     fr : 프랑스어
+    en : 영어       es : 스페인어
+    ja : 일본어     it : 이탈리아어
+    '''
