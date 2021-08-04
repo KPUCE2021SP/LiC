@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.substring
 import android.util.Log
+import android.view.View
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.databinding.ActivityMainBinding
 import com.example.stacklounge.login.LoginActivity
@@ -22,23 +24,26 @@ class MainActivity : AppCompatActivity() {
 
         isFirebaseConnected() // firebase 연결되있는지 확인
 
-        btnLogout.setOnClickListener{
-            // 로그아웃하고 다시 LoginActivity로 이동
-            Firebase.auth.signOut()
-
-            startActivity(
-                Intent(this, LoginActivity::class.java)
-            )
-            finish()
-        }
+//        btnLogout.setOnClickListener{
+//            // 로그아웃하고 다시 LoginActivity로 이동
+//            Firebase.auth.signOut()
+//
+//            startActivity(
+//                Intent(this, LoginActivity::class.java)
+//            )
+//            finish()
+//        }
 
         val user = Firebase.auth.currentUser
         //Toast.makeText(applicationContext,"${user?.email}", Toast.LENGTH_SHORT).show()
         val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
         Log.d("username = $userName","userName")
 
-        val githubTopic = githubTopics()
-        githubTopic.start()
+        //val githubTopic = githubTopics()
+        //githubTopic.start()
+        
+        //Fragment
+        configureBottomNavigation()
 
 
     }
@@ -100,5 +105,22 @@ class MainActivity : AppCompatActivity() {
             )
             finish()
         }
+    }
+
+    //Fragment 구성
+    private fun configureBottomNavigation() {
+        xml_main_viewpaper.adapter = AdapterMainFragment(supportFragmentManager, 4)
+        xml_main_tablayout.setupWithViewPager(xml_main_viewpaper)
+
+        val viewBtmNaviMain : View = this.layoutInflater.inflate(R.layout.activity_btm_navigation_main, null, false)
+
+        xml_main_tablayout.getTabAt(0)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_profile)  as RelativeLayout
+        xml_main_tablayout.getTabAt(1)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_friends)  as RelativeLayout
+        xml_main_tablayout.getTabAt(2)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_search)   as RelativeLayout
+        xml_main_tablayout.getTabAt(3)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_chat)     as RelativeLayout
+
+
+
+
     }
 }
