@@ -1,11 +1,37 @@
 import os
 import sys
 import urllib.request
-import requests
 import json
-import googletrans
-import time
 
+from googletrans import Translator
+import time
+import parmap
+import numpy as np
+import multiprocessing
+
+
+
+def translate_json(splited_data, tools):
+    '''
+    googletrans 라이브러리를 사용합니다.
+    '''
+    
+    for data in splited_data:
+        try:
+            tools[data]["title"] = translator.translate(tools[data]["title"], dest="ko").text
+            tools[data]["description"] = translator.translate(tools[data]["description"], dest="ko").text
+        # except (TypeError, KeyError):
+        #     pass
+        except TypeError:
+            pass
+        except AttributeError:
+            time.sleep(1)
+        except:
+            pass
+        print(tools[data]["title"])
+        print(tools[data]["description"])
+            
+        
 
 class GoogleTrans:
     '''
@@ -19,48 +45,31 @@ class GoogleTrans:
         여기서는 stack_information.json입니다.
         '''
         self.file_name = file_name
-        self.translator = googletrans.Translator()
 
     def open_file(self):
         '''
         파일을 json형태로 열고 
         title부분과 description부분만 번역을 해줍니다.
         '''
+        num_cores = multiprocessing.cpu_count()
         with open(f"./{self.file_name}", "r") as f:
-            json_data = json.load(f)
+            self.json_data = json.load(f)
 
-        tools = json_data["data"]["tools"]["edges"][0]
-        tool_keys = list(tools.keys())
+        self.tools = self.json_data["data"]["tools"]["edges"][0]
+        self.tool_keys = list(self.tools.keys())
 
-        for i in range(len(tools)):
-            try:
-                tools[tool_keys[i]]["title"] = self.translate(tools[tool_keys[i]]["title"])
-                tools[tool_keys[i]]["description"] = self.translate(
-                    tools[tool_keys[i]]["description"]
-                )
-            # except (TypeError, KeyError):
-            #     pass
-            except TypeError:
-                i = i - 1
-            except KeyError:
-                pass
-            except AttributeError:
-                time.sleep(1)
-        
-        with open(f"./{self.file_name}", "w", encoding='utf-8') as make_file:
+        # parmap 사용
+        self.splited_data = np.array_split(self.tool_keys, num_cores)
+        self.splited_data = [x.tolist() for x in self.splited_data]
+        parmap.map(translate_json, self.splited_data, self.tools, pm_pbar=True, pm_processes=num_cores)
+
+        with open("./stack_info_translate.json", "w", encoding='utf-8') as make_file:
             json.dump(json_data, make_file, indent="\t", ensure_ascii=False)
 
-
-    def translate(self, text):
-        '''
-        googletrans 라이브러리를 사용합니다.
-        '''
-        self.text = text
-        self.result = self.translator.translate(self.text, dest="ko").text
-
-        return self.result
+        
 
 
 if __name__ == "__main__":
+    translator = Translator()
     google = GoogleTrans("stack_information.json")
     google.open_file()
