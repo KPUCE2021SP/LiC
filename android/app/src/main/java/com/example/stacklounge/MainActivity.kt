@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         //val githubTopic = githubTopics()
         //githubTopic.start()
         
-        //Fragment
+        //Fragment & bottom navigation view
         configureBottomNavigation()
 
 
@@ -114,13 +114,9 @@ class MainActivity : AppCompatActivity() {
 
         val viewBtmNaviMain : View = this.layoutInflater.inflate(R.layout.activity_btm_navigation_main, null, false)
 
-        xml_main_tablayout.getTabAt(0)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_profile)  as RelativeLayout
-        xml_main_tablayout.getTabAt(1)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_friends)  as RelativeLayout
-        xml_main_tablayout.getTabAt(2)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_search)   as RelativeLayout
-        xml_main_tablayout.getTabAt(3)!!.customView = viewBtmNaviMain.findViewById(R.id.xml_btmnv_btn_chat)     as RelativeLayout
-
-
-
-
+        xml_main_tablayout.getTabAt(0)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_favorite)  as RelativeLayout
+        xml_main_tablayout.getTabAt(1)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_search)  as RelativeLayout
+        xml_main_tablayout.getTabAt(2)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_community)   as RelativeLayout
+        xml_main_tablayout.getTabAt(3)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_user)     as RelativeLayout
     }
 }
