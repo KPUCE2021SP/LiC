@@ -32,7 +32,7 @@ class Papago:
         with open(f"./{self.file_name}", "r") as f:
             json_data = json.load(f)
 
-        info_dict = json_data["data"]["tools"]["edges"][0]
+        info_dict = json_data[0]
         stack_data = list(info_dict)
         print(info_dict[".net"])
         stack_data = [".net", "3ds_amx", "3ds_max"]
