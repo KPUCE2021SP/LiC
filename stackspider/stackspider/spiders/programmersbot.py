@@ -63,7 +63,7 @@ class ProgrammersbotSpider(Spider):
             "flag": 1,
             "id": int(response.url[36:]),
             "name": companyName,
-            "tech_stack": list_of_tech_stacks,
+            "techStack": list_of_tech_stacks,
         }
 
         yield company_card
@@ -80,7 +80,7 @@ class ProgrammersbotSpider(Spider):
         tech_stacks = {
             "flag": 0,
             "id": int(json_of_job_card_content["companyId"]),
-            "tech_stack": list(
+            "techStack": list(
                 set(
                     json_of_job_card_content["technicalTags"]
                     + json_of_job_card_content["teamTechnicalTags"]

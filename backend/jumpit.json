@@ -1,0 +1,7935 @@
+[
+    {
+        "companyName": "부동산다이렉트",
+        "tech_stack": [
+            "react",
+            "android os",
+            "objective-c",
+            "react native",
+            "node.js",
+            "azure",
+            "aws",
+            "spring boot",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "docker",
+            "grpc",
+            "webassembly",
+            "ios",
+            "redis",
+            "html5",
+            "swift",
+            "asp.net",
+            "kubernetes",
+            "kotlin",
+            "sw"
+        ]
+    },
+    {
+        "companyName": "비앤에프테크놀로지",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "mssql",
+            "linux",
+            "mysql",
+            "windows",
+            "oracle",
+            ".net",
+            "c++"
+        ]
+    },
+    {
+        "companyName": "오비이랩",
+        "tech_stack": [
+            "c#",
+            "react",
+            "android os",
+            "node.js",
+            "bigdata",
+            "c++",
+            "nginx",
+            "qa",
+            "aws",
+            "python",
+            "javascript",
+            "css 3",
+            "java",
+            "git flow",
+            "docker",
+            "typescript",
+            "microsoft office 365",
+            "django",
+            "git",
+            "okhttp",
+            "c",
+            "postman",
+            "html5",
+            "machinelearning",
+            "kotlin",
+            "rest api",
+            "firebase",
+            "matlab",
+            "redmine"
+        ]
+    },
+    {
+        "companyName": "인디에프",
+        "tech_stack": ["mssql", "java"]
+    }, {
+        "companyName": "클래스101",
+        "tech_stack": [
+            "javascript",
+            "graphql",
+            "css 3",
+            "java",
+            "pandas",
+            "react",
+            "etl",
+            "babel",
+            "hive",
+            "react native",
+            "angular 2",
+            "node.js",
+            "vue.js",
+            "spark",
+            "qa",
+            "next.js",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "버추얼랩",
+        "tech_stack": [
+            "javascript",
+            "d3.js",
+            "gitlab",
+            "es6",
+            "three.js",
+            "vue.js",
+            "amazon linux",
+            "centos",
+            "laravel"
+        ]
+    }, {
+        "companyName": "캐럿글로벌",
+        "tech_stack": [
+            "scss",
+            "spring",
+            "java",
+            "mybatis",
+            "css 3",
+            "codeigniter",
+            "angularjs",
+            "vue.js",
+            "rest api",
+            "mariadb",
+            "html5",
+            "laravel",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)더블유쇼핑",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "oracle",
+            "html5"
+        ]
+    }, {
+        "companyName": "주식회사문토",
+        "tech_stack": [
+            "scss",
+            "aws lambda",
+            "flutter",
+            "prisma",
+            "node.js",
+            "amazon ec2",
+            "github",
+            "amazon s3",
+            "nestjs",
+            "amazon cloudfront",
+            "amazon rds",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "메디버디",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "react",
+            "docker",
+            "mongodb",
+            "flutter",
+            "amazon ec2",
+            "mariadb",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)카마일",
+        "tech_stack": [
+            "zeplin",
+            "java",
+            "jira",
+            "kotlin",
+            "github"
+        ]
+    }, {
+        "companyName": "발렌타인드림",
+        "tech_stack": [
+            "c#",
+            "unity",
+            "c",
+            "windows",
+            "firebase",
+            "c++",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)미래컴퍼니",
+        "tech_stack": ["c++", "qt", "fw"]
+    }, {
+        "companyName": "(주)에이치에너지",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "mysql",
+            "docker",
+            "kubernetes",
+            "rest api",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)3J",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "react native",
+            "es6",
+            "node.js",
+            "expressjs",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)에스아이에이",
+        "tech_stack": [
+            "javascript",
+            "electron",
+            "css 3",
+            "react",
+            "es6",
+            "typescript",
+            "html5"
+        ]
+    }, {
+        "companyName": "코인플러그",
+        "tech_stack": [
+            "isms",
+            "zeplin",
+            "jira",
+            "webpack",
+            "objective-c",
+            "es6",
+            "node.js",
+            "nginx",
+            "azure",
+            "aws",
+            "python",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "azure container instances",
+            "vue.js",
+            "react.js boilerplate",
+            "azure container service",
+            "redux",
+            "django",
+            "git",
+            "goland",
+            "gcp",
+            "ios",
+            "html5",
+            "cocoa touch (ios)",
+            "linux",
+            "swift",
+            "babel",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "디엠씨미디어",
+        "tech_stack": [
+            "google bigquery",
+            "react",
+            "es6",
+            "aws",
+            "spring boot",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "vue.js",
+            "mybatis",
+            "spring",
+            "angular 2",
+            "gcp",
+            "redis",
+            "html5",
+            "mysql",
+            "linux",
+            "mongodb",
+            "rest api"
+        ]
+    }, {
+        "companyName": "(주)서울의료정보연구소",
+        "tech_stack": [
+            "c#",
+            "sql",
+            "mongodb",
+            "node.js",
+            "python"
+        ]
+    }, {
+        "companyName": "스포츠투아이",
+        "tech_stack": ["unity", "c#"]
+    }, {
+        "companyName": "오픈플랜",
+        "tech_stack": [
+            "go",
+            "java",
+            "swift",
+            "react",
+            "git",
+            "react native",
+            "gcp",
+            "node.js",
+            "kotlin",
+            "rest api",
+            "github",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "카리",
+        "tech_stack": [
+            "java",
+            "git",
+            "android os",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "신성이엔지",
+        "tech_stack": [
+            "r",
+            "bootstrap",
+            "hadoop",
+            "machinelearning",
+            "tensorflow",
+            "postgresql",
+            "google analytics",
+            "github",
+            "fw",
+            "c++",
+            "deeplearning",
+            "python"
+        ]
+    }, {
+        "companyName": "머니브레인",
+        "tech_stack": [
+            "unity",
+            "react",
+            "android os",
+            "react native",
+            "node.js",
+            "c++",
+            "azure",
+            "aws",
+            "python",
+            "javascript",
+            "java",
+            "opencv",
+            "pytorch",
+            "git",
+            "c",
+            "ios",
+            "next.js",
+            "mongodb",
+            "tensorflow",
+            "rest api",
+            "firebase"
+        ]
+    }, {
+        "companyName": "(주)앤씨앤",
+        "tech_stack": [
+            "react",
+            "objective-c",
+            "node.js",
+            "qa",
+            "c++",
+            "python",
+            "css 3",
+            "docker",
+            "rxswift",
+            "vue.js",
+            "socket.io",
+            "opencv",
+            "deeplearning",
+            "network",
+            "embedded",
+            "webrtc",
+            "pytorch",
+            "git",
+            "c",
+            "msa",
+            "hw",
+            "ios",
+            "html5",
+            "machinelearning",
+            "mysql",
+            "swift",
+            "linux",
+            "tensorflow",
+            "rest api",
+            "sw"
+        ]
+    }, {
+        "companyName": "파인헬스케어",
+        "tech_stack": [
+            "zeplin",
+            "scss",
+            "css 3",
+            "java",
+            "git",
+            "react",
+            "react native",
+            "flutter",
+            "slack",
+            "kotlin",
+            "vue.js",
+            "rest api",
+            "android studio",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "발란",
+        "tech_stack": [
+            "isms",
+            "elasticsearch",
+            "jira",
+            "es6",
+            "node.js",
+            "expressjs",
+            "openvpn",
+            "qa",
+            "amazon cloudfront",
+            "nginx",
+            "centos",
+            "javascript",
+            "css 3",
+            "aws waf",
+            "fw",
+            "php",
+            "amazon rds",
+            "jquery",
+            "vmware",
+            "git",
+            "windows",
+            "ubuntu",
+            "amazon ec2",
+            "xcode",
+            "ios",
+            "redis",
+            "html5",
+            "confluence",
+            "linux",
+            "mysql",
+            "swift",
+            "mongodb",
+            "slack",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "케이아이티밸리",
+        "tech_stack": [
+            "jsp",
+            "c#",
+            "spring",
+            "java",
+            "linux",
+            "unity",
+            "sw"
+        ]
+    }, {
+        "companyName": "(주)유시스트",
+        "tech_stack": [
+            "c#",
+            "php",
+            "webgl",
+            "mysql",
+            "unity",
+            "java",
+            "laravel",
+            "cocos2d-x",
+            "postgresql",
+            "node.js",
+            "vue.js",
+            "qa",
+            "c++",
+            "redis",
+            "jquery",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "트래블월렛",
+        "tech_stack": [
+            "java",
+            "git",
+            "android os",
+            "kotlin",
+            "firebase",
+            "gradle"
+        ]
+    }, {
+        "companyName": "(주)개미집소프트",
+        "tech_stack": ["linux", "c"]
+    }, {
+        "companyName": "니더",
+        "tech_stack": [
+            "javascript",
+            "react",
+            "mongodb",
+            "node.js",
+            "angularjs",
+            "vue.js",
+            "elk",
+            "github",
+            "typescript"
+        ]
+    }, {
+        "companyName": "하이퍼하이어",
+        "tech_stack": ["vue.js", "mongodb", "react native", "nuxt.js"]
+    }, {
+        "companyName": "(주)해동엔지니어링",
+        "tech_stack": ["c++", "c#", "opencv"]
+    }, {
+        "companyName": "닥터송",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "java",
+            "mysql",
+            "python"
+        ]
+    }, {
+        "companyName": "위메이드",
+        "tech_stack": [
+            "isms",
+            "c#",
+            "vpn",
+            "rdb",
+            "node.js",
+            "spark",
+            "qa",
+            "c++",
+            "azure",
+            "aws",
+            "hadoop",
+            "docker",
+            "aws waf",
+            "fw",
+            ".net",
+            "network",
+            "git",
+            "c",
+            "gcp",
+            "redis",
+            "microsoft sql server",
+            "asp.net",
+            "mysql",
+            "sql",
+            "linux"
+        ]
+    }, {
+        "companyName": "레이모웍스",
+        "tech_stack": [
+            "javascript",
+            "redux",
+            "css 3",
+            "react",
+            "figma",
+            "vuex",
+            "sketch",
+            "typescript"
+        ]
+    }, {
+        "companyName": "토모도모",
+        "tech_stack": ["json", "java"]
+    }, {
+        "companyName": "온택트헬스",
+        "tech_stack": [
+            "r",
+            "confluence",
+            "ai/인공지능",
+            "spring",
+            "java",
+            "mysql",
+            "jira",
+            "aws",
+            "android os",
+            "postgresql",
+            "node.js",
+            "slack",
+            "rest api",
+            "bigdata",
+            "ios",
+            "redis",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)모바인어스",
+        "tech_stack": [
+            "embedded",
+            "c#",
+            "hw",
+            "unity",
+            "android os",
+            "sw",
+            "c++",
+            "aws"
+        ]
+    }, {
+        "companyName": "갤럭시아머니트리",
+        "tech_stack": [
+            "isms",
+            "vpn",
+            "cisco",
+            "objective-c",
+            "tcp/ip",
+            "l4",
+            "java",
+            "apache tomcat",
+            "mssql",
+            "fw",
+            "network",
+            "ios",
+            "swift",
+            "mysql",
+            "linux",
+            "oracle",
+            "rest api",
+            "l3",
+            "sw",
+            "mariadb",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "유니온콘텐츠",
+        "tech_stack": [
+            "java",
+            "mysql",
+            "node.js",
+            "spring mvc",
+            "ajax",
+            "python"
+        ]
+    }, {
+        "companyName": "아이디얼랩스",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "swift",
+            "android os",
+            "ios",
+            "nativescript"
+        ]
+    }, {
+        "companyName": "무스마",
+        "tech_stack": [
+            "bootstrap",
+            "react",
+            "android os",
+            "react native",
+            "node.js",
+            "azure database for postgresql",
+            "aws",
+            "javascript",
+            "docker",
+            "vue.js",
+            "github",
+            "material-ui",
+            "typescript",
+            "grpc",
+            "apollo",
+            "angular 2",
+            "azure database for mysql",
+            "ios",
+            "graphql",
+            "grafana",
+            "swift",
+            "kubernetes",
+            "flutter",
+            "rest api"
+        ]
+    }, {
+        "companyName": "차봇모빌리티",
+        "tech_stack": [
+            "elasticsearch",
+            "android os",
+            "react native",
+            "es6",
+            "node.js",
+            "expressjs",
+            "python",
+            "javascript",
+            "hadoop",
+            "css 3",
+            "apache spark",
+            "amazon machine learning",
+            "typescript",
+            "elk",
+            "nestjs",
+            "ios",
+            "redis",
+            "html5",
+            "graphql",
+            "mysql",
+            "mongodb",
+            "amazon redshift",
+            "flutter",
+            "tensorflow",
+            "kafka"
+        ]
+    }, {
+        "companyName": "쿼터백그룹",
+        "tech_stack": [
+            "c#",
+            "jira",
+            "react",
+            "android os",
+            "windows server",
+            "node.js",
+            "azure",
+            "aws",
+            "javascript",
+            "mssql",
+            "css 3",
+            "java",
+            "rxswift",
+            "vue.js",
+            ".net",
+            "jquery",
+            "git",
+            "ios",
+            "html5",
+            "cocoa touch (ios)",
+            "asp.net",
+            "swift",
+            "wpf",
+            "google analytics",
+            "kotlin",
+            "rest api",
+            "firebase"
+        ]
+    }, {
+        "companyName": "캐플릭스",
+        "tech_stack": [
+            "jsp",
+            "css 3",
+            "java",
+            "docker",
+            "kubernetes",
+            "oracle",
+            "rest api",
+            "kafka",
+            "mariadb",
+            "html5",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)디씨메디컬",
+        "tech_stack": ["c++", "c#", "c", "sw"]
+    }, {
+        "companyName": "(주)애니랙티브",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "c#",
+            "hw",
+            "embedded",
+            "java",
+            "jenkins",
+            "unity",
+            "git",
+            "c",
+            "c++",
+            "php",
+            "unreal engine",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)트렌드리테일그룹",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "android os",
+            "node.js",
+            "rest api",
+            "php",
+            "ios",
+            "html5",
+            "jquery ui"
+        ]
+    }, {
+        "companyName": "(주)네오리진",
+        "tech_stack": [
+            "javascript",
+            "embedded",
+            "java",
+            "linux",
+            "backbone.js",
+            "mysql",
+            "android os",
+            "c",
+            "oracle",
+            "postgresql",
+            "angularjs",
+            "vue.js",
+            "c++",
+            "arduino",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "미래엔",
+        "tech_stack": [
+            "javascript",
+            "mssql",
+            "java",
+            "mysql",
+            "linux",
+            "kubernetes",
+            "oracle",
+            "rest api",
+            "centos",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "케이티넥스알",
+        "tech_stack": [
+            "rdb",
+            "react",
+            "spark",
+            "bigdata",
+            "mqtt",
+            "c++",
+            "python",
+            "javascript",
+            "hadoop",
+            "nosql",
+            "d3.js",
+            "css 3",
+            "java",
+            "chef",
+            "hive",
+            "dw",
+            "vue.js",
+            "google cloud storage",
+            "spring",
+            "hbase",
+            "c",
+            "html5",
+            "druid",
+            "linux",
+            "mysql",
+            "sql",
+            "ansible",
+            "oracle",
+            "puppeteer",
+            "aws shell",
+            "zookeeper",
+            "kafka",
+            "mariadb",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "코나투스",
+        "tech_stack": [
+            "cocoa touch (ios)",
+            "swift",
+            "jira",
+            "git",
+            "slack",
+            "swiftlint",
+            "ios"
+        ]
+    }, {
+        "companyName": "㈜머지리티",
+        "tech_stack": [
+            "ai/인공지능",
+            "c#",
+            "elasticsearch",
+            "unity",
+            "android os",
+            "objective-c",
+            "amazon cloudfront",
+            "python",
+            "aws",
+            "amazon aurora",
+            "nosql",
+            "java",
+            "amazon eks",
+            "docker",
+            "amazon s3",
+            "github",
+            "socket.io",
+            "terraform",
+            "deeplearning",
+            "amazon rds",
+            "azure devops",
+            "git",
+            "gcp",
+            "ios",
+            "amazon api gateway",
+            "machinelearning",
+            "swift",
+            "kubernetes",
+            "ansible",
+            "mongodb",
+            "amazon vpc",
+            "kotlin",
+            "rest api",
+            "aws lambda"
+        ]
+    }, {
+        "companyName": "프리윌린",
+        "tech_stack": [
+            "amazon elasticache",
+            "jira",
+            "react",
+            "android os",
+            "aws",
+            "spring boot",
+            "notion.so",
+            "amazon ses",
+            "swiftui",
+            "amazon s3",
+            "aws elastic beanstalk",
+            "amazon cloudwatch",
+            "typescript",
+            "git",
+            "ios",
+            "redis",
+            "swift",
+            "mysql",
+            "flutter",
+            "slack",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "아이메디신",
+        "tech_stack": [
+            "redux-saga",
+            "redux",
+            "react",
+            "react redux",
+            "typescript"
+        ]
+    }, {
+        "companyName": "엔지온시스템",
+        "tech_stack": ["c#", ".net"]
+    }, {
+        "companyName": "키네마스터",
+        "tech_stack": [
+            "java",
+            "swift",
+            "jenkins",
+            "git",
+            "android os",
+            "c",
+            "objective-c",
+            "c++",
+            "github",
+            "fastlane",
+            "ios"
+        ]
+    }, {
+        "companyName": "(주)열린기술",
+        "tech_stack": [
+            "c#",
+            "spring",
+            "java",
+            "asp.net",
+            "spring mvc",
+            "vue.js",
+            "jquery"
+        ]
+    }, {
+        "companyName": "오진상사",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "codeigniter",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "(주)아이엠아이",
+        "tech_stack": [
+            "jira",
+            "mysql",
+            "git",
+            "linux",
+            "sql",
+            "python",
+            "oracle",
+            "node.js",
+            "rest api",
+            "ruby",
+            "php",
+            "redis",
+            "laravel",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "페이레터(주)",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "c#",
+            "mssql",
+            "java",
+            "asp.net",
+            "mybatis",
+            "netty",
+            "ajax",
+            "php",
+            "jquery",
+            "spring boot",
+            "classic asp"
+        ]
+    }, {
+        "companyName": "포디리플레이코리아",
+        "tech_stack": [
+            "ai/인공지능",
+            "c#",
+            "elasticsearch",
+            "jira",
+            "android os",
+            "node.js",
+            "aws codecommit",
+            "c++",
+            "aws cloudformation",
+            "python",
+            "aws",
+            "javascript",
+            "spring boot",
+            "java",
+            "docker",
+            "opencv",
+            "network",
+            "deeplearning",
+            "spring",
+            "django",
+            "c",
+            "ios",
+            "mysql",
+            "swift",
+            "linux",
+            "android sdk",
+            "kafka",
+            "centos"
+        ]
+    }, {
+        "companyName": "디알엠인사이드",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "git",
+            "openssl",
+            "c++",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "피플벤처스",
+        "tech_stack": ["php", "ios", "git", "android os"]
+    }, {
+        "companyName": "(주)아이페이지온",
+        "tech_stack": [
+            "jsp",
+            "hibernate",
+            "android os",
+            "objective-c",
+            "angularjs",
+            "qa",
+            "c++",
+            "spring boot",
+            "javascript",
+            "thymeleaf",
+            "css 3",
+            "java",
+            "apache tomcat",
+            "network",
+            "jquery",
+            "vmware",
+            "webrtc",
+            "git",
+            "c",
+            "xcode",
+            "ios",
+            "android studio",
+            "html5",
+            "cocoa touch (ios)",
+            "linux",
+            "oracle",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "vmware vsphere",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)유디아이디",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "swift",
+            "mysql",
+            "git",
+            "android os",
+            "mongodb",
+            "gitlab",
+            "react native",
+            "rest api",
+            "php",
+            "ios",
+            "jquery",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "대우전자부품㈜",
+        "tech_stack": [
+            "embedded",
+            "visual studio",
+            "c",
+            "tortoisesvn",
+            "sw",
+            "c++"
+        ]
+    }, {
+        "companyName": "코코네",
+        "tech_stack": [
+            "nosql",
+            "redux",
+            "css 3",
+            "html5",
+            "java",
+            "elasticsearch",
+            "react",
+            "mongodb",
+            "react native",
+            "gcp",
+            "es6",
+            "kotlin",
+            "rest api",
+            "redis",
+            "typescript",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)아이디노",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "css 3",
+            "java",
+            "django",
+            "react",
+            "vue.js",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "미식의시대",
+        "tech_stack": [
+            "javascript",
+            "machinelearning",
+            "elasticsearch",
+            "css 3",
+            "java",
+            "mysql",
+            "swift",
+            "react",
+            "python",
+            "sql",
+            "react native",
+            "objective-c",
+            "rest api",
+            "bigdata",
+            "solr",
+            "html5",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)뉴링크",
+        "tech_stack": [
+            "bootstrap",
+            "c#",
+            "asp.net core",
+            "objective-c",
+            "node.js",
+            "ajax",
+            "qa",
+            "javascript",
+            "mssql",
+            "css 3",
+            "vue.js",
+            "jquery",
+            "git",
+            "ios",
+            "redis",
+            "html5",
+            "swift",
+            "mysql",
+            "visual studio",
+            "asp.net",
+            "linux",
+            "kafka",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "큐픽스",
+        "tech_stack": [
+            "rdb",
+            "elasticsearch",
+            "jenkins",
+            "terraform",
+            "linux",
+            "docker",
+            "kubernetes",
+            "datadog",
+            "ruby",
+            "aws"
+        ]
+    }, {
+        "companyName": "퍼즐원스튜디오",
+        "tech_stack": [
+            "nosql",
+            "c#",
+            "rdb",
+            "jenkins",
+            "unity",
+            "trello",
+            "android os",
+            "git",
+            "react",
+            "slack",
+            "node.js",
+            "vue.js",
+            "angularjs",
+            "c++",
+            "ios",
+            "google drive"
+        ]
+    }, {
+        "companyName": "엠비아이솔루션",
+        "tech_stack": [
+            "spring",
+            "mybatis",
+            "mysql",
+            "netty",
+            "docker",
+            "rest api",
+            "php",
+            "redis",
+            "laravel"
+        ]
+    }, {
+        "companyName": "주식회사알리아스",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "mysql",
+            "unity",
+            "sql",
+            "rest api",
+            "c++",
+            "unreal engine"
+        ]
+    }, {
+        "companyName": "원스토어",
+        "tech_stack": [
+            "hadoop",
+            "java",
+            "mysql",
+            "sql",
+            "android os",
+            "mongodb",
+            "rabbitmq",
+            "oracle",
+            "scala",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "spark",
+            "kafka",
+            "redis",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)모니터랩",
+        "tech_stack": [
+            "vim",
+            "c++",
+            "nginx",
+            "azure",
+            "python",
+            "aws",
+            "javascript",
+            "go",
+            "css 3",
+            "openssl",
+            "docker",
+            "php",
+            "network",
+            "azure container service",
+            "c",
+            "gcp",
+            "ubuntu",
+            "postgresql",
+            "html5",
+            "linux",
+            "rest api"
+        ]
+    }, {
+        "companyName": "오피지지",
+        "tech_stack": [
+            "electron",
+            "rdb",
+            "react",
+            "node.js",
+            "expressjs",
+            "c++",
+            "aws",
+            "spring boot",
+            "spring data jpa",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "docker",
+            "rabbitmq",
+            "vue.js",
+            "php",
+            "typescript",
+            "grpc",
+            "git",
+            "svelte",
+            "redis",
+            "html5",
+            "mysql",
+            "kubernetes",
+            "mongodb",
+            "rest api",
+            "google cloud platform",
+            "websocket",
+            "laravel",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "나이스지니데이타",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "bootstrap",
+            "java",
+            "apache tomcat",
+            "sql",
+            "postgresql",
+            "orcad",
+            "ajax",
+            "nginx",
+            "jquery"
+        ]
+    }, {
+        "companyName": "글로우데이즈",
+        "tech_stack": [
+            "jira",
+            "android os",
+            "react native",
+            "node.js",
+            "aws",
+            "python",
+            "java",
+            "amazon dynamodb",
+            "php",
+            "git",
+            "c",
+            "amazon ec2",
+            "ios",
+            "redis",
+            "confluence",
+            "swift",
+            "mysql",
+            "slack",
+            "firebase"
+        ]
+    }, {
+        "companyName": "인터파크",
+        "tech_stack": [
+            "ai/인공지능",
+            "c#",
+            "elasticsearch",
+            "rdb",
+            "jenkins",
+            "jira",
+            "react",
+            "android os",
+            "windows server",
+            "es6",
+            "node.js",
+            "angularjs",
+            "spark",
+            "c++",
+            "python",
+            "spring boot",
+            "aws",
+            "javascript",
+            "go",
+            "hadoop",
+            "nosql",
+            "mssql",
+            "java",
+            "css 3",
+            "chef",
+            "docker",
+            "rabbitmq",
+            "vue.js",
+            "github",
+            "opencv",
+            "php",
+            "solr",
+            "jquery",
+            "powershell",
+            "gitlab",
+            "keras",
+            "git",
+            "pytorch",
+            "c",
+            "msa",
+            "redis",
+            "html5",
+            "asp.net",
+            "linux",
+            "sql",
+            "mysql",
+            "kubernetes",
+            "ansible",
+            "lucene",
+            "oracle",
+            "tensorflow",
+            "kotlin",
+            "rest api",
+            "puppeteer",
+            "aws shell",
+            "kafka",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)엔이에스",
+        "tech_stack": ["oracle", "postgresql", "mysql", "mssql"]
+    }, {
+        "companyName": "(주)펜타웍스",
+        "tech_stack": ["linux", "oracle", "spring boot", "java"]
+    }, {
+        "companyName": "엔젤로보틱스",
+        "tech_stack": ["c++", "orcad", "c", "matlab"]
+    }, {
+        "companyName": "유니드컴즈",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "windows",
+            "macos",
+            "html5",
+            "selenium"
+        ]
+    }, {
+        "companyName": "트럼피아",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "react",
+            "angular 2",
+            "node.js",
+            "vue.js",
+            "expressjs",
+            "rest api",
+            "spring data jpa",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "세나클소프트",
+        "tech_stack": [
+            "c#",
+            "elasticsearch",
+            "jenkins",
+            "react",
+            "aws",
+            "azure data factory",
+            "javascript",
+            "hadoop",
+            "css 3",
+            "java",
+            "docker",
+            "vue.js",
+            ".net",
+            "solr",
+            "azure devops",
+            "git",
+            "angular 2",
+            "elk",
+            "redis",
+            "html5",
+            "linux",
+            "mysql",
+            "kubernetes",
+            "kafka",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)유니트론아이에스",
+        "tech_stack": [
+            "hadoop",
+            "spring framework",
+            "spring",
+            "java",
+            "apache impala",
+            "mysql",
+            "oracle",
+            "kafka",
+            "mariadb",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "포스텍코리아",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "java",
+            "asp.net",
+            "php"
+        ]
+    }, {
+        "companyName": "블록워터테크놀로지스",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "css 3",
+            "java",
+            "es6",
+            "node.js",
+            "vue.js",
+            "react.js boilerplate",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)파스텍",
+        "tech_stack": ["c++", "c#", "c"]
+    }, {
+        "companyName": "코인원",
+        "tech_stack": [
+            "jira",
+            "jenkins",
+            "android os",
+            "bamboo",
+            "python",
+            "aws",
+            "mssql",
+            "java",
+            "rxswift",
+            "olap",
+            "django",
+            "git",
+            "ios",
+            "android studio",
+            "travis ci",
+            "reactivex",
+            "confluence",
+            "swift",
+            "mysql",
+            "kubernetes",
+            "slack",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "aws shell"
+        ]
+    }, {
+        "companyName": "휴먼컨설팅그룹",
+        "tech_stack": [
+            "javascript",
+            "bootstrap",
+            "css 3",
+            "java",
+            "html5"
+        ]
+    }, {
+        "companyName": "쓰리에이로직스",
+        "tech_stack": [
+            "javascript",
+            "jsonapi",
+            "mysql",
+            "android os",
+            "okhttp",
+            "mongodb",
+            "android sdk",
+            "kotlin"
+        ]
+    }, {
+        "companyName": "스마트퓨쳐",
+        "tech_stack": [
+            "nosql",
+            "jenkins",
+            "linux",
+            "mysql",
+            "docker",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)휴넷",
+        "tech_stack": [
+            "elasticsearch",
+            "jenkins",
+            "dapper",
+            "python",
+            "spring boot",
+            "aws",
+            "mssql",
+            "java",
+            "spring",
+            "keras",
+            "microsoft azure",
+            "ios",
+            "android studio",
+            "microsoft sql server",
+            "swift",
+            "asp.net",
+            "mysql",
+            "mariadb",
+            "flutter",
+            "tensorflow",
+            "android sdk",
+            "kotlin",
+            "google cloud platform",
+            "kafka",
+            "entity framework"
+        ]
+    }, {
+        "companyName": "코난테크놀로지",
+        "tech_stack": [
+            "jsp",
+            "c#",
+            "rdb",
+            "ajax",
+            "c++",
+            "tcp/ip",
+            "python",
+            "spring boot",
+            "javascript",
+            "hadoop",
+            "css 3",
+            "java",
+            "mssql",
+            "vue.js",
+            ".net",
+            "jquery",
+            "spring",
+            "git",
+            "c",
+            "postgresql",
+            "html5",
+            "mysql",
+            "linux",
+            "sql",
+            "oracle",
+            "rest api",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "엔젤스윙",
+        "tech_stack": [
+            "react",
+            "es6",
+            "c++",
+            "python",
+            "rxjs",
+            "javascript",
+            "flask",
+            "css 3",
+            "docker",
+            "terraform",
+            "typescript",
+            "rails",
+            "grpc",
+            "redux",
+            "pytorch",
+            "postgresql",
+            "elk",
+            "redis",
+            "html5",
+            "kubernetes",
+            "ansible",
+            "tensorflow",
+            "aws shell",
+            "aws lambda"
+        ]
+    }, {
+        "companyName": "버즈니",
+        "tech_stack": [
+            "ai/인공지능",
+            "elasticsearch",
+            "jira",
+            "react",
+            "python",
+            "javascript",
+            "flask",
+            "css 3",
+            "docker",
+            "typescript",
+            "azure devops",
+            "redux",
+            "git",
+            "fabric",
+            "msa",
+            "html5",
+            "jupyter",
+            "confluence",
+            "kibana",
+            "linux",
+            "kubernetes",
+            "rest api",
+            "firebase",
+            "google cloud platform",
+            "kafka"
+        ]
+    }, {
+        "companyName": "백패커",
+        "tech_stack": [
+            "elasticsearch",
+            "react",
+            "android os",
+            "objective-c",
+            "es6",
+            "angularjs",
+            "node.js",
+            "spark",
+            "aws",
+            "python",
+            "javascript",
+            "java",
+            "git flow",
+            "docker",
+            "hive",
+            "apache spark",
+            "vue.js",
+            "github",
+            "typescript",
+            "spring",
+            "scala",
+            "apache flink",
+            "ios",
+            "html5",
+            "druid",
+            "swift",
+            "kubernetes",
+            "kotlin",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "써머스플랫폼",
+        "tech_stack": [
+            "javascript",
+            "kibana",
+            "elasticsearch",
+            "spring",
+            "java",
+            "linux",
+            "react",
+            "sql",
+            "es6",
+            "vue.js",
+            "rest api",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "한아이덴티티코리아",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "linux",
+            "mysql",
+            "git",
+            "oracle",
+            "node.js",
+            "redis",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "올룰로",
+        "tech_stack": [
+            "rdb",
+            "android os",
+            "react native",
+            "python",
+            "aws",
+            "javascript",
+            "nosql",
+            "php",
+            "redux",
+            "elk",
+            "ios",
+            "machinelearning",
+            "mysql",
+            "sql",
+            "tensorflow",
+            "android sdk",
+            "rest api",
+            "create react native app",
+            "laravel"
+        ]
+    }, {
+        "companyName": "앨리스헬스케어",
+        "tech_stack": [
+            "javascript",
+            "amazon cognito",
+            "css 3",
+            "html5",
+            "gitlab",
+            "mysql",
+            "postman",
+            "node.js",
+            "amazon s3",
+            "react.js boilerplate",
+            "amazon ec2",
+            "amazon route 53",
+            "amazon rds",
+            "typescript"
+        ]
+    }, {
+        "companyName": "주식회사아몬드컴퍼니",
+        "tech_stack": ["spring framework", "spring boot", "java"]
+    }, {
+        "companyName": "아티언스",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "mysql",
+            "google bigquery",
+            "sql",
+            "git",
+            "amazon redshift",
+            "react",
+            "es6",
+            "rest api",
+            "amazon rds",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사빅워크",
+        "tech_stack": [
+            "zeplin",
+            "sourcetree",
+            "jenkins",
+            "spring boot",
+            "java",
+            "testflight",
+            "amazon rds",
+            "git",
+            "amazon ec2",
+            "xcode",
+            "ios",
+            "android studio",
+            "reactivex",
+            "swift",
+            "mysql",
+            "google analytics",
+            "kotlin",
+            "android sdk",
+            "firebase"
+        ]
+    }, {
+        "companyName": "빗썸코리아",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "spring framework",
+            "java",
+            "linux",
+            "swift",
+            "react",
+            "docker",
+            "c",
+            "oracle",
+            "c++",
+            "android sdk",
+            "kotlin",
+            "php",
+            "ios",
+            "android studio",
+            "typescript",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "유진로봇",
+        "tech_stack": [
+            "javascript",
+            "confluence",
+            "hw",
+            "css 3",
+            "linux",
+            "jira",
+            "react",
+            "git",
+            "c",
+            "angular 2",
+            "vue.js",
+            "rest api",
+            "github",
+            "qa",
+            "c++",
+            "html5"
+        ]
+    }, {
+        "companyName": "비플러스랩",
+        "tech_stack": [
+            "javascript",
+            "bootstrap",
+            "mybatis",
+            "java",
+            "css 3",
+            "bitbucket",
+            "git",
+            "react",
+            "android os",
+            "es6",
+            "spring boot",
+            "ios",
+            "jquery",
+            "html5",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "AINJOB",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "spring",
+            "mysql",
+            "react",
+            "python",
+            "node.js",
+            "vue.js",
+            "angularjs",
+            "github",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "아이디정보시스템",
+        "tech_stack": ["oracle", "android studio", "c#", "mssql"]
+    }, {
+        "companyName": "케이투레이저시스템",
+        "tech_stack": ["c++", "c#"]
+    }, {
+        "companyName": "스마티소프트(주)",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "c#",
+            "css 3",
+            "java",
+            "linux",
+            ".net",
+            "c++",
+            "html5"
+        ]
+    }, {
+        "companyName": "이글루시큐리티",
+        "tech_stack": [
+            "jsp",
+            "elasticsearch",
+            "windows server",
+            "bigdata",
+            "python",
+            "spring boot",
+            "javascript",
+            "hadoop",
+            "r",
+            "azure machine learning",
+            "css 3",
+            "java",
+            "network",
+            "jquery ui",
+            "spring",
+            "django",
+            "azure database for mysql",
+            "html5",
+            "microsoft sql server",
+            "machinelearning",
+            "mysql",
+            "apache http server",
+            "linux",
+            "lucene",
+            "sql",
+            "oracle",
+            "rest api",
+            "kafka",
+            "mariadb",
+            "datatables",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "그린아이티코리아",
+        "tech_stack": ["javascript", "postgresql", "node.js", "mssql"]
+    }, {
+        "companyName": "이지스엔터프라이즈",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "java",
+            "asp.net",
+            "mysql",
+            "sql",
+            "oracle",
+            "postgresql",
+            ".net",
+            "xcode",
+            "ios",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "주식회사에프엘이에스",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "react",
+            "node.js",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "푸시뉴스",
+        "tech_stack": [
+            "bootstrap",
+            "jira",
+            "react",
+            "sequelize",
+            "android os",
+            "objective-c",
+            "node.js",
+            "expressjs",
+            "python",
+            "amazon aurora",
+            "javascript",
+            "css 3",
+            "java",
+            "rxswift",
+            "amazon s3",
+            "git",
+            "ios",
+            "android studio",
+            "html5",
+            "graphql",
+            "swift",
+            "nuxt.js",
+            "tensorflow",
+            "android sdk"
+        ]
+    }, {
+        "companyName": "기웅정보통신",
+        "tech_stack": ["javascript", "kotlin", "android os", "java"]
+    }, {
+        "companyName": "한국모바일인증",
+        "tech_stack": [
+            "microsoft sql server",
+            "mssql",
+            "java",
+            "linux",
+            "android os",
+            "objective-c",
+            "android sdk",
+            "ios",
+            "jquery",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "링크샵스",
+        "tech_stack": [
+            "javascript",
+            "react",
+            "objective-c",
+            "postgresql",
+            "node.js",
+            "vue.js"
+        ]
+    }, {
+        "companyName": "아틀라스랩스",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "html5",
+            "react",
+            "git",
+            "angularjs",
+            "vue.js",
+            "typescript"
+        ]
+    }, {
+        "companyName": "메쉬코리아",
+        "tech_stack": [
+            "aws",
+            "java",
+            "mysql",
+            "laravel",
+            "msa",
+            "kotlin",
+            "rest api",
+            "amazon s3",
+            "aws elastic beanstalk",
+            "php",
+            "amazon rds",
+            "create react native app",
+            "reactivex"
+        ]
+    }, {
+        "companyName": "테오라",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "git",
+            "react",
+            "node.js",
+            "rest api",
+            "typescript",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "시대고시기획시대교육",
+        "tech_stack": [
+            "javascript",
+            "aws",
+            "css 3",
+            "mysql",
+            "git",
+            "figma",
+            "postman",
+            "vue.js",
+            "github",
+            "php",
+            "bitbucket",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)에이치엠인터내셔날",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "spring",
+            "java",
+            "mysql",
+            "django",
+            "react",
+            "es6",
+            "angularjs",
+            "vue.js",
+            "python"
+        ]
+    }, {
+        "companyName": "가온브로드밴드",
+        "tech_stack": [
+            "javascript",
+            "embedded",
+            "linux",
+            "c",
+            "perl",
+            "sw",
+            "c++",
+            "network",
+            "tcp/ip",
+            "router"
+        ]
+    }, {
+        "companyName": "델타인덱스주식회사",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "java",
+            "spring boot",
+            "c++",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "패스트레인",
+        "tech_stack": ["swift", "ios", "reactivex", "objective-c"]
+    }, {
+        "companyName": "머스트잇",
+        "tech_stack": [
+            "react",
+            "node.js",
+            "aws",
+            "spring boot",
+            "spring data jpa",
+            "javascript",
+            "python",
+            "docker",
+            "vue.js",
+            "terraform",
+            "php",
+            "typescript",
+            "msa",
+            "codeigniter",
+            "mysql",
+            "kubernetes",
+            "ansible",
+            "kotlin",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "씨에이치그룹",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "mysql",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "라인웍스",
+        "tech_stack": [
+            "sqlalchemy",
+            "jenkins",
+            "pandas",
+            "react",
+            "numpy",
+            "jest",
+            "nginx",
+            "python",
+            "javascript",
+            "flask",
+            "axios",
+            "css 3",
+            "github",
+            "opencv",
+            "scikit-learn",
+            "git",
+            "postgresql",
+            "redis",
+            "next.js",
+            "html5",
+            "jupyter",
+            "mysql",
+            "sql",
+            "mongodb",
+            "tensorflow",
+            "pytest",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "필로우스튜디오",
+        "tech_stack": [
+            "react",
+            "android os",
+            "node.js",
+            "aws",
+            "javascript",
+            "css 3",
+            "java",
+            "docker",
+            "typescript",
+            "git",
+            "ios",
+            "android studio",
+            "next.js",
+            "html5",
+            "mysql",
+            "swift",
+            "kubernetes",
+            "android sdk",
+            "kotlin"
+        ]
+    }, {
+        "companyName": "주식회사 파스토",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "spring framework",
+            "css 3",
+            "java",
+            "mysql",
+            "jira",
+            "html5",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)오렌지씨큐리티",
+        "tech_stack": ["azure security center", "hack", "windows"]
+    }, {
+        "companyName": "(주)엠투커뮤니티",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "mssql",
+            "linux",
+            "mysql",
+            "asp.net",
+            "chart.js",
+            "react",
+            "codeigniter",
+            "node.js",
+            "vue.js",
+            "php",
+            "jquery",
+            "html5",
+            "laravel",
+            "jquery ui"
+        ]
+    }, {
+        "companyName": "(주)엑샌드",
+        "tech_stack": [
+            "javascript",
+            "bootstrap",
+            "css 3",
+            "java",
+            "mysql",
+            "spring",
+            "git",
+            "gitlab",
+            "node.js",
+            "vue.js",
+            "rest api",
+            "firebase",
+            "html5",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)테스콤",
+        "tech_stack": [
+            "visual studio",
+            "linux",
+            "c",
+            ".net",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "피플펀드컴퍼니",
+        "tech_stack": [
+            "vpn",
+            "rdb",
+            "webpack",
+            "react",
+            "android os",
+            "es6",
+            "angularjs",
+            "node.js",
+            "browserify",
+            "python",
+            "aws",
+            "spring boot",
+            "nosql",
+            "css 3",
+            "java",
+            "docker",
+            "rxswift",
+            "vue.js",
+            "django",
+            "gulp",
+            "okhttp",
+            "ios",
+            "html5",
+            "reactivex",
+            "machinelearning",
+            "swift",
+            "apache http server",
+            "mysql",
+            "mongodb",
+            "android sdk",
+            "kotlin",
+            "aws codepipeline",
+            "aws shell"
+        ]
+    }, {
+        "companyName": "(주)비욘드아이앤씨",
+        "tech_stack": [
+            "jsp",
+            "c#",
+            "java",
+            "swift",
+            "android os",
+            "objective-c",
+            "rest api",
+            ".net",
+            "ios",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "파킹클라우드(주)",
+        "tech_stack": [
+            "bootstrap",
+            "ai/인공지능",
+            "c#",
+            "vpn",
+            "rdb",
+            "mfc",
+            "jira",
+            "react",
+            "android os",
+            "es6",
+            "vuex",
+            "c++",
+            "nginx",
+            "tcp/ip",
+            "aws",
+            "spring boot",
+            "python",
+            "nosql",
+            "css 3",
+            "mssql",
+            "apache tomcat",
+            "java",
+            "vue.js",
+            "github",
+            ".net",
+            "jquery",
+            "spring",
+            "git",
+            "chart.js",
+            "angular 2",
+            "windows",
+            "redis",
+            "android studio",
+            "html5",
+            "confluence",
+            "graphql",
+            "mysql",
+            "linux",
+            "sql",
+            "mongodb",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "mariadb",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "란체스터에프앤비",
+        "tech_stack": [
+            "mybatis",
+            "java",
+            "swift",
+            "mysql",
+            "android os",
+            "objective-c",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "ios",
+            "android studio",
+            "aws"
+        ]
+    }, {
+        "companyName": "주식회사 빅밸류",
+        "tech_stack": [
+            "c#",
+            "spring",
+            "java",
+            "python",
+            "windows",
+            "bigdata",
+            "c++",
+            "aws"
+        ]
+    }, {
+        "companyName": "차트모굴",
+        "tech_stack": ["javascript", "postgresql", "vue.js", "ruby"]
+    }, {
+        "companyName": "WATA Inc.",
+        "tech_stack": [
+            "jsp",
+            "jira",
+            "webpack",
+            "react",
+            "android os",
+            "objective-c",
+            "node.js",
+            "qa",
+            "jest",
+            "c++",
+            "aws",
+            "python",
+            "java",
+            "webpacker",
+            "github",
+            "pytorch",
+            "git",
+            "ios",
+            "swift",
+            "linux",
+            "tensorflow",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "드림어스컴퍼니",
+        "tech_stack": [
+            "electron",
+            "isms",
+            "jira",
+            "react",
+            "android os",
+            "aws",
+            "python",
+            "javascript",
+            "go",
+            "hadoop",
+            "java",
+            "docker",
+            "dw",
+            "apache spark",
+            "vue.js",
+            "github",
+            "typescript",
+            "ldap",
+            "git",
+            "msa",
+            "gcp",
+            "redis",
+            "android studio",
+            "confluence",
+            "linux",
+            "sql",
+            "mongodb",
+            "android sdk",
+            "kotlin",
+            "rust",
+            "zookeeper",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "미디어윌네트웍스",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "asp.net",
+            "git",
+            "github",
+            ".net",
+            "classic asp"
+        ]
+    }, {
+        "companyName": "(주)유저해빗",
+        "tech_stack": [
+            "nosql",
+            "hadoop",
+            "java",
+            "linux",
+            "scala",
+            "kotlin",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)프라임에듀넷",
+        "tech_stack": [
+            "spring",
+            "java",
+            "mysql",
+            "vue.js",
+            "rest api",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)에이전트소프트",
+        "tech_stack": [
+            "javascript",
+            "elasticsearch",
+            "yii",
+            "codeigniter",
+            "php",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "주식회사 아이엠비디엑스",
+        "tech_stack": [
+            "java",
+            "linux",
+            "apache http server",
+            "django",
+            "mariadb",
+            "docker",
+            "mysql",
+            "windows",
+            "pycharm",
+            "jquery",
+            "centos",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)지원파트너스",
+        "tech_stack": [
+            "javascript",
+            "ai/인공지능",
+            "scss",
+            "ionic",
+            "html5",
+            "angularjs",
+            "node.js",
+            "bigdata",
+            "typescript",
+            "apache cordova"
+        ]
+    }, {
+        "companyName": "패스트뷰",
+        "tech_stack": [
+            "javascript",
+            "less",
+            "css 3",
+            "sass",
+            "es6",
+            "vue.js",
+            "rest api",
+            "github",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "주식회사 에이모",
+        "tech_stack": [
+            "electron",
+            "flask",
+            "elasticsearch",
+            "aws",
+            "mysql",
+            "docker",
+            "mongodb",
+            "angular 2",
+            "sass",
+            "kubernetes",
+            "three.js",
+            "github actions",
+            "tensorflow.js",
+            "redis",
+            "azure",
+            "typescript",
+            "python",
+            "rxjs"
+        ]
+    }, {
+        "companyName": "그레이브릿지",
+        "tech_stack": [
+            "rdb",
+            "java",
+            "mysql",
+            "sql",
+            "c",
+            "oracle",
+            "spring mvc",
+            "vue.js"
+        ]
+    }, {
+        "companyName": "(주)메디씽큐",
+        "tech_stack": [
+            "java",
+            "mysql",
+            "linux",
+            "microelectronics",
+            "android os",
+            "c",
+            "circuit design",
+            "android sdk",
+            "rest api",
+            "communication",
+            "c++",
+            "android studio",
+            "mariadb",
+            "aws"
+        ]
+    }, {
+        "companyName": "투디지트",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "linux",
+            "swift",
+            "android os",
+            "objective-c",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "node.js",
+            "xcode",
+            "ios",
+            "android studio",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사한그루",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "ajax",
+            "php",
+            "jquery",
+            "aws"
+        ]
+    }, {
+        "companyName": "셀바스에이아이",
+        "tech_stack": [
+            "java",
+            "linux",
+            "keras",
+            "git",
+            "c",
+            "tensorflow",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "인플루엔셜",
+        "tech_stack": [
+            "jira",
+            "webpack",
+            "azure search",
+            "react",
+            "objective-c",
+            "react native",
+            "nginx",
+            "aws",
+            "python",
+            "javascript",
+            "flask",
+            "docker",
+            "vue.js",
+            "github",
+            "aws elastic beanstalk",
+            "typescript",
+            "git",
+            "angular 2",
+            "xcode",
+            "ios",
+            "redis",
+            "next.js",
+            "html5",
+            "android studio",
+            "confluence",
+            "mysql",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "aws lambda",
+            "cypress"
+        ]
+    }, {
+        "companyName": "인라이플",
+        "tech_stack": [
+            "jsp",
+            "elasticsearch",
+            "spark",
+            "python",
+            "javascript",
+            "hadoop",
+            "nosql",
+            "r",
+            "mssql",
+            "java",
+            "css 3",
+            "jquery",
+            "pytorch",
+            "git",
+            "windows",
+            "html5",
+            "linux",
+            "swift",
+            "mongodb",
+            "tensorflow",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "아이디에스앤트러스트",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "apache maven",
+            "spring",
+            "java",
+            "linux",
+            "css 3",
+            "sql",
+            "git",
+            "jenkins",
+            "rpa",
+            "jquery",
+            "html5",
+            "python",
+            "spring framework",
+            "eclipse"
+        ]
+    }, {
+        "companyName": "호서텔넷",
+        "tech_stack": [
+            "r",
+            "javascript",
+            "c#",
+            "rf",
+            "java",
+            "c",
+            "rest api",
+            "c++",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "씨에이치스퀘어",
+        "tech_stack": [
+            "flask",
+            "graphql",
+            "google bigquery",
+            "react",
+            "react native",
+            "postgresql",
+            "node.js",
+            "expressjs",
+            "next.js"
+        ]
+    }, {
+        "companyName": "(주)앤스시스템",
+        "tech_stack": ["php", "node.js", "react"]
+    }, {
+        "companyName": "키즈노트",
+        "tech_stack": [
+            "java",
+            "swift",
+            "django",
+            "git",
+            "objective-c",
+            "xcode",
+            "ios",
+            "python"
+        ]
+    }, {
+        "companyName": "리치톡",
+        "tech_stack": [
+            "rdb",
+            "react",
+            "node.js",
+            "aws",
+            "python",
+            "spring boot",
+            "css 3",
+            "rxswift",
+            "vue.js",
+            "typescript",
+            "django",
+            "gulp",
+            "angular 2",
+            "xcode",
+            "ios",
+            "html5",
+            "mysql",
+            "swift",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "(주)산하정보기술",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "rdb",
+            "spring",
+            "java",
+            "react",
+            "svelte",
+            "wpf",
+            "oracle",
+            "postgresql",
+            "vue.js",
+            "rest api",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "비씨랩스",
+        "tech_stack": [
+            "jira",
+            "react",
+            "android os",
+            "react native",
+            "es6",
+            "node.js",
+            "python",
+            "spring boot",
+            "rxjs",
+            "css 3",
+            "java",
+            "swiftui",
+            "github",
+            "redux",
+            "ios",
+            "redis",
+            "next.js",
+            "html5",
+            "confluence",
+            "mysql",
+            "swift",
+            "mongodb",
+            "kubernetes",
+            "slack",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "퍼플랩스",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "spring",
+            "webpack",
+            "babel",
+            "react",
+            "django",
+            "angular 2",
+            "mongodb",
+            "aws",
+            "rabbitmq",
+            "vue.js",
+            "ruby",
+            "kafka",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "유니메오",
+        "tech_stack": [
+            "spring",
+            "java",
+            "mysql",
+            "jenkins",
+            "git",
+            "docker",
+            "linux",
+            "kotlin",
+            "socket.io",
+            "network"
+        ]
+    }, {
+        "companyName": "이엠솔루션",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "java",
+            "visual studio",
+            ".net",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)판도라티비",
+        "tech_stack": [
+            "mfc",
+            "webpack",
+            "react",
+            "android os",
+            "objective-c",
+            "node.js",
+            "c++",
+            "nginx",
+            "aws",
+            "python",
+            "css 3",
+            "java",
+            "rxswift",
+            "django",
+            "git",
+            "c",
+            "xcode",
+            "ios",
+            "swift",
+            "flutter",
+            "android sdk",
+            "rest api"
+        ]
+    }, {
+        "companyName": "청년들",
+        "tech_stack": ["php", "javascript", "jquery", "mysql"]
+    }, {
+        "companyName": "주식회사시닉스",
+        "tech_stack": [
+            "xml",
+            "elasticsearch",
+            "linux",
+            "mysql",
+            "react",
+            "json",
+            "php",
+            "aws"
+        ]
+    }, {
+        "companyName": "그레이스타인그룹",
+        "tech_stack": [
+            "javascript",
+            "mssql",
+            "mysql",
+            "react",
+            "git",
+            "php",
+            "jquery",
+            "aws"
+        ]
+    }, {
+        "companyName": "디어유",
+        "tech_stack": [
+            "android os",
+            "objective-c",
+            "aws",
+            "python",
+            "nosql",
+            "flask",
+            "java",
+            "docker",
+            "sqlite",
+            "terraform",
+            "php",
+            "django",
+            "git",
+            "msa",
+            "ios",
+            "mysql",
+            "linux",
+            "swift",
+            "kubernetes",
+            "ansible",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "에이치비엠피",
+        "tech_stack": [
+            "javascript",
+            "aws",
+            "mysql",
+            "react",
+            "angular 2",
+            "ubuntu",
+            "node.js",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)골든플래닛",
+        "tech_stack": [
+            "react",
+            "objective-c",
+            "node.js",
+            "azure",
+            "aws",
+            "javascript",
+            "css 3",
+            "java",
+            "mssql",
+            "jquery",
+            "spring",
+            "gcp",
+            "xcode",
+            "ios",
+            "android studio",
+            "html5",
+            "mysql",
+            "swift",
+            "google analytics",
+            "kotlin",
+            "google tag manager",
+            "firebase"
+        ]
+    }, {
+        "companyName": "웨이브릿지",
+        "tech_stack": [
+            "javascript",
+            "confluence",
+            "vert.x",
+            "flask",
+            "css 3",
+            "html5",
+            "jira",
+            "java",
+            "react",
+            "spring",
+            "python",
+            "git",
+            "sql",
+            "linux",
+            "docker",
+            "typescript",
+            "aws",
+            "rxjs"
+        ]
+    }, {
+        "companyName": "(주)텔레큐브",
+        "tech_stack": ["jsp", "javascript", "java"]
+    }, {
+        "companyName": "알서포트",
+        "tech_stack": [
+            "hibernate",
+            "elasticsearch",
+            "webpack",
+            "react",
+            "logstash",
+            "objective-c",
+            "es6",
+            "node.js",
+            "c++",
+            "spring data jpa",
+            "spring boot",
+            "javascript",
+            "css 3",
+            "java",
+            "vue.js",
+            "redux",
+            "webrtc",
+            "c",
+            "msa",
+            "macos",
+            "kibana",
+            "mac os x",
+            "swift"
+        ]
+    }, {
+        "companyName": "비즈톡주식회사",
+        "tech_stack": [
+            "nosql",
+            "java",
+            "netty",
+            "linux",
+            "rabbitmq",
+            "rest api",
+            "kafka",
+            "mariadb",
+            "aws"
+        ]
+    }, {
+        "companyName": "주식회사파수",
+        "tech_stack": [
+            "zeplin",
+            "c#",
+            "pandas",
+            "react",
+            "figma",
+            "windows server",
+            "bigdata",
+            "c++",
+            "jetty",
+            "aws",
+            "python",
+            "javascript",
+            "css 3",
+            "apache tomcat",
+            "java",
+            "docker",
+            "vue.js",
+            "php",
+            "jquery",
+            "redux",
+            "c",
+            "gcp",
+            "windows",
+            "html5",
+            "linux",
+            "adobe photoshop",
+            "sql",
+            "kubernetes",
+            "wpf",
+            "rest api",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)에이엠컴퍼니",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "django",
+            "git",
+            "react",
+            "angular 2",
+            "vue.js",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)스테이지파이브",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "mysql",
+            "git",
+            "react",
+            "angular 2",
+            "es6",
+            "node.js",
+            "vue.js",
+            "network",
+            "html5",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)시큐어",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "react",
+            "wordpress",
+            "woocommerce",
+            "html5"
+        ]
+    }, {
+        "companyName": "루미르(주)",
+        "tech_stack": [
+            "embedded",
+            "mfc",
+            "c#",
+            "java",
+            "c",
+            "c++",
+            "sw",
+            "hw",
+            "python"
+        ]
+    }, {
+        "companyName": "메이븐클라우드서비스",
+        "tech_stack": [
+            "javascript",
+            "microsoft sql server",
+            "css 3",
+            "java",
+            "mysql",
+            "sql",
+            "c",
+            "dw",
+            "azure database for mysql",
+            ".net",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "동우GCS",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "css 3",
+            "java",
+            "spring",
+            "sql",
+            "html5"
+        ]
+    }, {
+        "companyName": "디퍼런트밀리언즈",
+        "tech_stack": [
+            "java",
+            "sql",
+            "msa",
+            "node.js",
+            "kotlin",
+            "rest api",
+            "rust",
+            "php",
+            "python"
+        ]
+    }, {
+        "companyName": "성주디앤디",
+        "tech_stack": ["spring security", "google cloud platform"]
+    }, {
+        "companyName": "(주)테르텐",
+        "tech_stack": [
+            "jsp",
+            "javascript",
+            "mac os x",
+            "bootstrap",
+            "spring",
+            "java",
+            "mssql",
+            "mysql",
+            "hack",
+            "c",
+            "android os",
+            "mariadb",
+            "windows",
+            "oracle",
+            "c++",
+            "ios",
+            "jquery",
+            "azure security center"
+        ]
+    }, {
+        "companyName": "(주)테크핀인베스트먼트",
+        "tech_stack": ["php", "c++", "c#", "java"]
+    }, {
+        "companyName": "포비즈코리아",
+        "tech_stack": ["php", "codeigniter"]
+    }, {
+        "companyName": "더기프팅컴퍼니",
+        "tech_stack": [
+            "react",
+            "es6",
+            "node.js",
+            "react redux",
+            "python",
+            "aws",
+            "javascript",
+            "nosql",
+            "hadoop",
+            "css 3",
+            "github",
+            "typescript",
+            "redux",
+            "django",
+            "git",
+            "msa",
+            "scala",
+            "aws data pipeline",
+            "html5",
+            "sql",
+            "rest api"
+        ]
+    }, {
+        "companyName": "(주)제나",
+        "tech_stack": [
+            "java",
+            "swift",
+            "android sdk",
+            "kotlin",
+            "c++",
+            "ios",
+            "android studio"
+        ]
+    }, {
+        "companyName": "(주)에이젠글로벌",
+        "tech_stack": [
+            "javascript",
+            "graphql",
+            "redux",
+            "aws",
+            "css 3",
+            "jira",
+            "apollo",
+            "react",
+            "docker",
+            "kubernetes",
+            "git",
+            "gcp",
+            "ibm containers",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "바이옵트로",
+        "tech_stack": [
+            "visual studio",
+            "c",
+            "objective-c",
+            "socket.io",
+            "c++"
+        ]
+    }, {
+        "companyName": "(주)세이션",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "sass",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "오토피디아",
+        "tech_stack": [
+            "javascript",
+            "graphql",
+            "css 3",
+            "apollo",
+            "html5",
+            "git",
+            "react native",
+            "node.js",
+            "github",
+            "typescript"
+        ]
+    }, {
+        "companyName": "대호아이앤티",
+        "tech_stack": [
+            "zeplin",
+            "android os",
+            "flutter",
+            "github",
+            "xcode",
+            "ios",
+            "android studio"
+        ]
+    }, {
+        "companyName": "플루토스디에스",
+        "tech_stack": [
+            "flask",
+            "aws",
+            "django",
+            "amazon vpc",
+            "c++",
+            "amazon route 53",
+            "rest api",
+            "amazon ec2",
+            "amazon cloudfront",
+            "kafka",
+            "python"
+        ]
+    }, {
+        "companyName": "블루앤트",
+        "tech_stack": [
+            "aws",
+            "java",
+            "react",
+            "vue.js",
+            "nginx",
+            "redis",
+            "spring data jpa",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)디지털포토",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "sql",
+            "oracle",
+            "rest api",
+            "ajax",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "이우소프트",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "graphql",
+            "react",
+            "sql",
+            "kubernetes",
+            "flutter",
+            "node.js",
+            "rest api",
+            "c++"
+        ]
+    }, {
+        "companyName": "해피테크놀로지",
+        "tech_stack": [
+            "git",
+            "android os",
+            "kotlin",
+            "rest api",
+            "firebase",
+            "github"
+        ]
+    }, {
+        "companyName": "모먼츠컴퍼니",
+        "tech_stack": ["sass", "html5", "css 3", "java"]
+    }, {
+        "companyName": "구름네트웍스",
+        "tech_stack": ["c++", "linux", "c", "socket.io"]
+    }, {
+        "companyName": "에스엔패션그룹",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "git",
+            "h2 database",
+            "vue.js",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "라온시큐어",
+        "tech_stack": [
+            "jsp",
+            "zeplin",
+            "cisa",
+            "jira",
+            "android os",
+            "objective-c",
+            "spring mvc",
+            "qa",
+            "azure",
+            "spring data jpa",
+            "python",
+            "spring boot",
+            "aws",
+            "nosql",
+            "thymeleaf",
+            "java",
+            "eos",
+            "cissp",
+            "vue.js",
+            "github",
+            "spring",
+            "git",
+            "c",
+            "ios",
+            "confluence",
+            "mysql",
+            "linux",
+            "swift",
+            "oracle",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "sw",
+            "mariadb",
+            "spring framework",
+            "selenium"
+        ]
+    }, {
+        "companyName": "(주)엠브레인",
+        "tech_stack": [
+            "javascript",
+            "embedded",
+            "php",
+            "c",
+            "c++"
+        ]
+    }, {
+        "companyName": "한국정보보호컨설팅",
+        "tech_stack": ["twitter ads"]
+    }, {
+        "companyName": "매스프레소",
+        "tech_stack": [
+            "microsoft excel",
+            "pandas",
+            "react",
+            "android os",
+            "angularjs",
+            "qa",
+            "aws",
+            "python",
+            "javascript",
+            "go",
+            "r",
+            "css 3",
+            "java",
+            "rxswift",
+            "vue.js",
+            "github",
+            "ruby",
+            "django",
+            "msa",
+            "gcp",
+            "postgresql",
+            "xcode",
+            "fastlane",
+            "ios",
+            "redis",
+            "html5",
+            "reactivex",
+            "cocoa touch (ios)",
+            "swift",
+            "mysql",
+            "sql",
+            "kubernetes",
+            "google analytics",
+            "kotlin",
+            "rest api",
+            "firebase",
+            "aws shell",
+            "swiftlint"
+        ]
+    }, {
+        "companyName": "(주)네오정보시스템",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "asp.net",
+            "wpf",
+            "oracle",
+            "c++"
+        ]
+    }, {
+        "companyName": "두꺼비세상",
+        "tech_stack": [
+            "aws",
+            "css 3",
+            "webpack",
+            "react",
+            "docker",
+            "es6",
+            "typescript",
+            "vue.js",
+            "rest api",
+            "github",
+            "php",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "엠케이프리시젼",
+        "tech_stack": ["c++", "c"]
+    }, {
+        "companyName": "(주)코인챗",
+        "tech_stack": [
+            "mysql",
+            "react",
+            "node.js",
+            "nginx",
+            "jquery",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사 도파민팩토리",
+        "tech_stack": [
+            "aws",
+            "pytorch",
+            "django",
+            "sql",
+            "mongodb",
+            "tensorflow",
+            "postgresql",
+            "python",
+            "scikit-learn"
+        ]
+    }, {
+        "companyName": "혁산정보시스템",
+        "tech_stack": [
+            "javascript",
+            "mssql",
+            "java",
+            "linux",
+            "oracle",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "사람인에이치알",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "mysql",
+            "git",
+            "sql",
+            "mariadb",
+            "codeigniter",
+            "es6",
+            "vue.js",
+            "jquery",
+            "spring boot",
+            "php",
+            "spring data jpa",
+            "zend framework",
+            "laravel",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "노을(주)",
+        "tech_stack": ["javascript", "react", "aws"]
+    }, {
+        "companyName": "휴머스온",
+        "tech_stack": [
+            "jsp",
+            "hadoop",
+            "spring framework",
+            "elasticsearch",
+            "spring",
+            "java",
+            "spring batch",
+            "linux",
+            "sql",
+            "logstash",
+            "hive",
+            "tensorflow",
+            "node.js",
+            "rest api",
+            "spark",
+            "kafka",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)더블유클럽",
+        "tech_stack": [
+            "javascript",
+            "elasticsearch",
+            "react",
+            "mongodb",
+            "react native",
+            "node.js",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)엔스테이지",
+        "tech_stack": [
+            "javascript",
+            "amazon rds",
+            "webgl",
+            "mysql",
+            "html5",
+            "git",
+            "cocos2d-x",
+            "amazon ec2",
+            "amazon cloudfront",
+            "json",
+            "php",
+            "redis",
+            "typescript"
+        ]
+    }, {
+        "companyName": "엠포플러스",
+        "tech_stack": ["tcp/ip", "java"]
+    }, {
+        "companyName": "위메프",
+        "tech_stack": [
+            "zeplin",
+            "c#",
+            "elasticsearch",
+            "rdb",
+            "google bigquery",
+            "react",
+            "android os",
+            "es6",
+            "node.js",
+            "vuex",
+            "spark",
+            "azure",
+            "spring data jpa",
+            "aws",
+            "python",
+            "javascript",
+            "hadoop",
+            "nosql",
+            "spring boot",
+            "css 3",
+            "java",
+            "docker",
+            "dw",
+            "sass",
+            "rabbitmq",
+            "rxswift",
+            "vue.js",
+            ".net",
+            "solr",
+            "jquery",
+            "typescript",
+            "azure devops",
+            "spring",
+            "git",
+            "svelte",
+            "gcp",
+            "sketch",
+            "ios",
+            "redis",
+            "html5",
+            "reactivex",
+            "kibana",
+            "machinelearning",
+            "mysql",
+            "linux",
+            "swift",
+            "etl",
+            "mongodb",
+            "lucene",
+            "asp.net",
+            "sql",
+            "kotlin",
+            "rest api",
+            "kafka",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "코리아서버호스팅",
+        "tech_stack": [
+            "javascript",
+            "linux",
+            "codeigniter",
+            "node.js",
+            "php",
+            "mariadb",
+            "python"
+        ]
+    }, {
+        "companyName": "골프존카운티",
+        "tech_stack": ["isms", "rest api", "spring", "java"]
+    }, {
+        "companyName": "널스노트(주)",
+        "tech_stack": [
+            "amazon rds",
+            "react",
+            "git",
+            "react native",
+            "amazon s3",
+            "amazon ec2",
+            "github",
+            "redis",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "케이씨이아이",
+        "tech_stack": ["c++", "c#", "linux", "rdb"]
+    }, {
+        "companyName": "지에프앤엘",
+        "tech_stack": [
+            "javascript",
+            "ai/인공지능",
+            "c#",
+            "machinelearning",
+            "aws",
+            "java",
+            "unity",
+            "react",
+            "sql",
+            "tensorflow",
+            "three.js",
+            "node.js",
+            "rest api",
+            "php",
+            "deeplearning",
+            "python",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "틸론",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mssql",
+            "visual studio",
+            "windows server",
+            "vue.js",
+            "c++",
+            "mariadb",
+            "html5"
+        ]
+    }, {
+        "companyName": "에버엑스",
+        "tech_stack": ["ai/인공지능", "machinelearning", "python"]
+    }, {
+        "companyName": "페이져",
+        "tech_stack": [
+            "css 3",
+            "java",
+            "mysql",
+            "react",
+            "git",
+            "angular 2",
+            "flutter",
+            "vue.js",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "가치공간",
+        "tech_stack": [
+            "mysql",
+            "android os",
+            "adobe xd",
+            "node.js",
+            "sketch",
+            "php",
+            "ios",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)하우빌드",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "css 3",
+            "html5",
+            "react",
+            "git",
+            "kotlin",
+            "vue.js",
+            "typescript"
+        ]
+    }, {
+        "companyName": "GS ITM",
+        "tech_stack": [
+            "javascript",
+            "mssql",
+            "java",
+            "mysql",
+            "sql",
+            "android os",
+            "c",
+            "git",
+            "react native",
+            "oracle",
+            "node.js",
+            "vue.js",
+            "rest api",
+            "sw",
+            "typescript",
+            "python",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "에이비일팔공",
+        "tech_stack": [
+            "jira",
+            "android os",
+            "slack",
+            "android sdk",
+            "qa",
+            "ios",
+            "notion.so"
+        ]
+    }, {
+        "companyName": "애드오피",
+        "tech_stack": ["cocos2d-x", "unity", "android sdk", "unreal engine"]
+    }, {
+        "companyName": "포크홀딩스",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "react",
+            "android os",
+            "kubernetes",
+            "react native",
+            "node.js",
+            "create react app",
+            "firebase",
+            "sw",
+            "ios",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "바텍이우홀딩스",
+        "tech_stack": ["javascript", "react", "graphql"]
+    }, {
+        "companyName": "이스트게임즈",
+        "tech_stack": [
+            "c#",
+            "jenkins",
+            "unity",
+            "react",
+            "objective-c",
+            "node.js",
+            "c++",
+            "unreal engine",
+            "nginx",
+            "python",
+            "javascript",
+            "mssql",
+            "apache tomcat",
+            "java",
+            "docker",
+            "github",
+            "jquery",
+            "spring",
+            "django",
+            "c",
+            "windows",
+            "amazon ec2",
+            "amazon route 53",
+            "redis",
+            "html5",
+            "linux",
+            "mysql",
+            "swift",
+            "mongodb",
+            "kotlin"
+        ]
+    }, {
+        "companyName": "랭디",
+        "tech_stack": [
+            "aws",
+            "webrtc",
+            "react",
+            "react native",
+            "flutter",
+            "vue.js",
+            "ruby",
+            "websocket",
+            "rails"
+        ]
+    }, {
+        "companyName": "휴먼스케이프",
+        "tech_stack": [
+            "nosql",
+            "redux",
+            "django",
+            "react",
+            "react native",
+            "postgresql",
+            "node.js",
+            "koa",
+            "expressjs",
+            "python"
+        ]
+    }, {
+        "companyName": "팀윙크",
+        "tech_stack": [
+            "react",
+            "android os",
+            "es6",
+            "aws",
+            "spring boot",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "rabbitmq",
+            "vue.js",
+            "typescript",
+            "redux",
+            "git",
+            "msa",
+            "ios",
+            "html5",
+            "cocoa touch (ios)",
+            "swift",
+            "mongodb",
+            "kotlin",
+            "rest api",
+            "kafka",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "미디움",
+        "tech_stack": [
+            "ai/인공지능",
+            "jira",
+            "dapper",
+            "react",
+            "node.js",
+            "qa",
+            "azure",
+            "python",
+            "aws",
+            "notion.so",
+            "javascript",
+            "go",
+            "css 3",
+            "java",
+            "vue.js",
+            "github",
+            "typescript",
+            "hyperledger fabric",
+            "git",
+            "blockchain",
+            "redis",
+            "html5",
+            "confluence",
+            "machinelearning",
+            "mysql",
+            "rest api",
+            "sw"
+        ]
+    }, {
+        "companyName": "(주)에스엠디솔루션",
+        "tech_stack": [
+            "linux",
+            "rabbitmq",
+            "es6",
+            "node.js",
+            "vue.js",
+            "create react native app",
+            "deeplearning",
+            "redis",
+            "mariadb",
+            "typescript"
+        ]
+    }, {
+        "companyName": "더로카",
+        "tech_stack": [
+            "c#",
+            "java",
+            "android os",
+            "c",
+            "react native",
+            "node.js",
+            "c++",
+            "ios"
+        ]
+    }, {
+        "companyName": "(주)인덴트코퍼레이션",
+        "tech_stack": [
+            "react",
+            "node.js",
+            "spark",
+            "python",
+            "aws",
+            "rxjs",
+            "javascript",
+            "css 3",
+            "amazon s3",
+            "amazon machine learning",
+            "typescript",
+            "amazon athena",
+            "django",
+            "git",
+            "pytorch",
+            "postgresql",
+            "redis",
+            "aws codedeploy",
+            "graphql",
+            "tensorflow",
+            "pytest",
+            "rest api",
+            "aws codepipeline"
+        ]
+    }, {
+        "companyName": "올리브헬스케어",
+        "tech_stack": [
+            "java",
+            "jenkins",
+            "git",
+            "android os",
+            "kotlin",
+            "firebase",
+            "android studio"
+        ]
+    }, {
+        "companyName": "비트컴퓨터",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "java",
+            "oracle",
+            ".net"
+        ]
+    }, {
+        "companyName": "진모빌리티",
+        "tech_stack": [
+            "zeplin",
+            "ai/인공지능",
+            "rdb",
+            "jira",
+            "react",
+            "android os",
+            "objective-c",
+            "es6",
+            "node.js",
+            "ajax",
+            "bigdata",
+            "python",
+            "rxjs",
+            "javascript",
+            "hadoop",
+            "java",
+            "swagger ui",
+            "vue.js",
+            "php",
+            "jquery",
+            "git",
+            "codeigniter",
+            "ios",
+            "reactivex",
+            "confluence",
+            "mysql",
+            "swift",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)인텔리안시스템즈",
+        "tech_stack": ["azure devops", "html5", ".net"]
+    }, {
+        "companyName": "주식회사 와이파워원",
+        "tech_stack": [
+            "javascript",
+            "embedded",
+            "c#",
+            "java",
+            "c",
+            "tensorflow",
+            "node.js",
+            "sw",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "에이블소프트",
+        "tech_stack": ["android studio", "kotlin", "android os", "java"]
+    }, {
+        "companyName": "퍼플랩스헬스케어",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "jira",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "스포카",
+        "tech_stack": [
+            "javascript",
+            "scss",
+            "redux",
+            "swift",
+            "react",
+            "android os",
+            "objective-c",
+            "postgresql",
+            "typescript",
+            "kotlin",
+            "rest api",
+            "qa",
+            "ios",
+            "html5",
+            "python",
+            "rxjs"
+        ]
+    }, {
+        "companyName": "자비스앤빌런즈",
+        "tech_stack": [
+            "nosql",
+            "java",
+            "sql",
+            "react",
+            "es6",
+            "spring boot",
+            "typescript",
+            "spring data jpa",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "대림엔컴",
+        "tech_stack": [
+            "graphql.js",
+            "webpack",
+            "react",
+            "react native",
+            "es6",
+            "node.js",
+            "python",
+            "notion.so",
+            "spring boot",
+            "javascript",
+            "css 3",
+            "java",
+            "jquery",
+            "typescript",
+            "git",
+            "next.js",
+            "html5",
+            "graphql",
+            "mysql",
+            "linux",
+            "swift",
+            "babel",
+            "mongodb",
+            "android sdk",
+            "kotlin",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)토크나우",
+        "tech_stack": [
+            "c#",
+            "java",
+            "git",
+            "kotlin",
+            "c++"
+        ]
+    }, {
+        "companyName": "(주)네비웍스",
+        "tech_stack": ["c++", "unity"]
+    }, {
+        "companyName": "메디프레소",
+        "tech_stack": [
+            "java",
+            "jenkins",
+            "mysql",
+            "spring batch",
+            "docker",
+            "amazon ec2",
+            "amazon s3",
+            "redis",
+            "spring data jpa",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "주식회사에버온",
+        "tech_stack": ["hw", "communication"]
+    }, {
+        "companyName": "(주)나노텍",
+        "tech_stack": [
+            "embedded",
+            "virtualbox",
+            "rf",
+            "linux",
+            "c",
+            "orcad",
+            "fw",
+            "hw",
+            "network"
+        ]
+    }, {
+        "companyName": "모멘티",
+        "tech_stack": [
+            "mysql",
+            "node.js",
+            "php",
+            "mariadb",
+            "aws"
+        ]
+    }, {
+        "companyName": "예스피치",
+        "tech_stack": [
+            "c#",
+            "redux",
+            "java",
+            "c",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사 포지큐브",
+        "tech_stack": [
+            "zeplin",
+            "ai/인공지능",
+            "jira",
+            "webpack",
+            "react",
+            "cisco",
+            "unity",
+            "es6",
+            "node.js",
+            "nginx",
+            "azure",
+            "aws",
+            "javascript",
+            "l4",
+            "java",
+            "l7",
+            "webpacker",
+            "docker",
+            "rabbitmq",
+            "socket.io",
+            "network",
+            "router",
+            "embedded",
+            "spring",
+            "gitlab",
+            "git",
+            "switch",
+            "hw",
+            "redis",
+            "html5",
+            "confluence",
+            "linux",
+            "babel",
+            "netty",
+            "kubernetes",
+            "rest api",
+            "kafka",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)판도플랫폼",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "spring",
+            "java",
+            "aws",
+            "amazon dynamodb",
+            "react",
+            "python",
+            "es6",
+            "node.js",
+            "rest api",
+            "aws lambda",
+            "dialogflow",
+            "amazon api gateway"
+        ]
+    }, {
+        "companyName": "카이먼",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "mysql",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "주식회사 인피닉",
+        "tech_stack": ["sw", "ai/인공지능", "qa", "bigdata"]
+    }, {
+        "companyName": "(주)유진엔텍",
+        "tech_stack": ["hw", "orcad"]
+    }, {
+        "companyName": "와인하우스(주)",
+        "tech_stack": [
+            "go",
+            "linux",
+            "mysql",
+            "c",
+            "mongodb",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "아트맵",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react",
+            "node.js",
+            "html5"
+        ]
+    }, {
+        "companyName": "롯데e커머스",
+        "tech_stack": [
+            "rancher",
+            "elasticsearch",
+            "rdb",
+            "jira",
+            "webpack",
+            "react",
+            "android os",
+            "jenkins",
+            "angularjs",
+            "node.js",
+            "spark",
+            "amazon sqs",
+            "aws",
+            "notion.so",
+            "spring boot",
+            "javascript",
+            "hadoop",
+            "nosql",
+            "python",
+            "css 3",
+            "java",
+            "apache tomcat",
+            "amazon dynamodb",
+            "amazon eks",
+            "docker",
+            "rabbitmq",
+            "vue.js",
+            "deeplearning",
+            "jquery",
+            "typescript",
+            "spring",
+            "foundation",
+            "git",
+            "okhttp",
+            "msa",
+            "rollup",
+            "aws glue",
+            "ios",
+            "redis",
+            "html5",
+            "reactivex",
+            "confluence",
+            "kibana",
+            "linux",
+            "mysql",
+            "swift",
+            "mongodb",
+            "kubernetes",
+            "oracle",
+            "slack",
+            "kotlin",
+            "rest api",
+            "kafka",
+            "apache freemarker",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "한국전자인증",
+        "tech_stack": [
+            "azure devops",
+            "hibernate",
+            "mybatis",
+            "java",
+            "mssql",
+            "mysql",
+            "android os",
+            "oracle",
+            "spring mvc",
+            "rest api",
+            "ios",
+            "mariadb",
+            "datatables",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "맥스나인",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "spring",
+            "java",
+            "mysql",
+            "oracle",
+            ".net",
+            "mariadb",
+            "html5"
+        ]
+    }, {
+        "companyName": "모셔닉",
+        "tech_stack": [
+            "c#",
+            "hw",
+            "java",
+            "c",
+            "tensorflow",
+            "sw",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)진이어스",
+        "tech_stack": ["javascript", "jquery", "html5", "css 3"]
+    }, {
+        "companyName": "가비아씨엔에스",
+        "tech_stack": [
+            "c#",
+            "react",
+            "android os",
+            "react native",
+            "node.js",
+            "expressjs",
+            "aws",
+            "python",
+            "javascript",
+            "nosql",
+            "css 3",
+            "mssql",
+            "sass",
+            ".net",
+            "php",
+            "jquery",
+            "git",
+            "codeigniter",
+            "postman",
+            "ios",
+            "html5",
+            "mysql",
+            "linux",
+            "visual studio",
+            "mongodb",
+            "rest api",
+            "mariadb",
+            "laravel"
+        ]
+    }, {
+        "companyName": "모비두",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react",
+            "git",
+            "mongodb",
+            "typescript",
+            "node.js",
+            "rest api",
+            "vue.js",
+            "github",
+            "html5",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "주식회사모픽",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "visual studio",
+            "c++",
+            "html5"
+        ]
+    }, {
+        "companyName": "(주)빌리버",
+        "tech_stack": ["node.js"]
+    }, {
+        "companyName": "클로버추얼패션",
+        "tech_stack": [
+            "confluence",
+            "c#",
+            "jira",
+            "asp.net",
+            "git",
+            "c",
+            "gcp",
+            "slack",
+            "google docs",
+            ".net",
+            "github",
+            "c++",
+            "azure",
+            "aws"
+        ]
+    }, {
+        "companyName": "주식회사루닛",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "mysql",
+            "webpack",
+            "react",
+            "python",
+            "postgresql",
+            "kotlin",
+            "amazon ec2",
+            "amazon rds",
+            "mariadb",
+            "html5",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)비주얼",
+        "tech_stack": [
+            "java",
+            "swift",
+            "jira",
+            "rxswift",
+            "swiftui",
+            "kotlin",
+            "firebase",
+            "ios"
+        ]
+    }, {
+        "companyName": "미루시스템즈",
+        "tech_stack": ["git", "kotlin", "android os", "java"]
+    }, {
+        "companyName": "(주)와이드넷엔지니어링",
+        "tech_stack": ["sw", "slack", "qa"]
+    }, {
+        "companyName": "골프존",
+        "tech_stack": [
+            "nosql",
+            "swift",
+            "git",
+            "mongodb",
+            "rest api",
+            "socket.io",
+            "ios",
+            "redis",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "어반베이스",
+        "tech_stack": [
+            "ai/인공지능",
+            "jira",
+            "objective-c",
+            "node.js",
+            "azure",
+            "python",
+            "aws",
+            "javascript",
+            "docker",
+            "swiftui",
+            "git",
+            "msa",
+            "gcp",
+            "xcode",
+            "ios",
+            "html5",
+            "confluence",
+            "swift",
+            "amazon vpc",
+            "bitbucket"
+        ]
+    }, {
+        "companyName": "밀리만코리아",
+        "tech_stack": [
+            "c#",
+            "git",
+            "windows",
+            "sqlite",
+            "github",
+            ".net",
+            "c++",
+            "bitbucket"
+        ]
+    }, {
+        "companyName": "디앤아이파비스",
+        "tech_stack": [
+            "kibana",
+            "beautifulsoup",
+            "elasticsearch",
+            "aws",
+            "logstash",
+            "ansible",
+            "github",
+            "terraform",
+            "python"
+        ]
+    }, {
+        "companyName": "코나모빌리티",
+        "tech_stack": ["hadoop", "amazon elastic transcoder", "aws", "kafka"]
+    }, {
+        "companyName": "디오티스",
+        "tech_stack": [
+            "jsp",
+            "css 3",
+            "java",
+            "spring",
+            "ibatis",
+            "html5",
+            "websocket"
+        ]
+    }, {
+        "companyName": "팀오투",
+        "tech_stack": [
+            "bootstrap",
+            "webpack",
+            "react",
+            "phalcon",
+            "node.js",
+            "expressjs",
+            "aws",
+            "css 3",
+            "vue.js",
+            "amazon s3",
+            "php",
+            "scss",
+            "codeigniter",
+            "amazon ec2",
+            "redis",
+            "html5",
+            "mysql",
+            "mongodb",
+            "rest api",
+            "laravel"
+        ]
+    }, {
+        "companyName": "먼슬리키친",
+        "tech_stack": ["linux", "node.js", "rest api", "react native"]
+    }, {
+        "companyName": "지앤지커머스",
+        "tech_stack": [
+            "jira",
+            "git",
+            "android os",
+            "slack",
+            "kotlin",
+            "php",
+            "laravel",
+            "gradle"
+        ]
+    }, {
+        "companyName": "브레이브모바일",
+        "tech_stack": [
+            "bitbucket",
+            "react",
+            "react native",
+            "node.js",
+            "angularjs",
+            "nginx",
+            "python",
+            "aws",
+            "javascript",
+            "flask",
+            "css 3",
+            "java",
+            "docker",
+            "vue.js",
+            "github",
+            "typescript",
+            "django",
+            "git",
+            "msa",
+            "html5",
+            "kubernetes",
+            "rest api",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "(주)아람커뮤니케이션",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "android os",
+            "php",
+            "ios"
+        ]
+    }, {
+        "companyName": "EDWO",
+        "tech_stack": [
+            "aws",
+            "react",
+            "angularjs",
+            "vue.js",
+            "rest api",
+            "github",
+            "ruby",
+            "next.js",
+            "typescript",
+            "rails"
+        ]
+    }, {
+        "companyName": "소셜클럽",
+        "tech_stack": [
+            "gitlab",
+            "mysql",
+            "jenkins",
+            "react",
+            "nestjs",
+            "redis",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "클로봇",
+        "tech_stack": [
+            "linux",
+            "c",
+            "windows",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "인사이터",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "graphql",
+            "css 3",
+            "html5",
+            "react",
+            "docker",
+            "kubernetes",
+            "postgresql",
+            "node.js",
+            "next.js",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)아이클레이브",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "java",
+            "react",
+            "spring mvc",
+            "ajax",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "한국아이오티",
+        "tech_stack": ["c++", "sql", "sw"]
+    }, {
+        "companyName": "(주)언플러",
+        "tech_stack": [
+            "jsp",
+            "javascript",
+            "spring framework",
+            "java",
+            "react",
+            "node.js",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "로지스팟",
+        "tech_stack": [
+            "javascript",
+            "swift",
+            "laravel",
+            "vue.js",
+            "kotlin",
+            "amazon ec2",
+            "php",
+            "mariadb",
+            "typescript",
+            "python"
+        ]
+    }, {
+        "companyName": "SKtelecomcsT1",
+        "tech_stack": [
+            "javascript",
+            "xml",
+            "css 3",
+            "mssql",
+            "json",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "태거스",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "django",
+            "react",
+            "python",
+            "docker",
+            "linux",
+            "lumen",
+            "es6",
+            "vue.js",
+            "vuex",
+            "php",
+            "storybook",
+            "react redux",
+            "mariadb",
+            "typescript",
+            "laravel"
+        ]
+    }, {
+        "companyName": "오케스트로",
+        "tech_stack": ["javascript", "vue.js", "spring boot", "java"]
+    }, {
+        "companyName": "(주)뮤자인",
+        "tech_stack": [
+            "javascript",
+            "react",
+            "angular 2",
+            "node.js",
+            "vue.js",
+            "angularjs",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "(주)다온시스템",
+        "tech_stack": ["android os", "kotlin", "rest api", "java"]
+    }, {
+        "companyName": "뉴로핏",
+        "tech_stack": [
+            "ai/인공지능",
+            "jira",
+            "react",
+            "angularjs",
+            "c++",
+            "aws",
+            "python",
+            "segment",
+            "flask",
+            "java",
+            "github",
+            "network",
+            "deeplearning",
+            "pytorch",
+            "git",
+            "c",
+            "windows",
+            "confluence",
+            "graphql",
+            "machinelearning",
+            "linux",
+            "sql",
+            "tensorflow",
+            "rest api",
+            "qt"
+        ]
+    }, {
+        "companyName": "(주)소프트넷",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "spring",
+            "java",
+            "asp.net",
+            "mssql",
+            "react",
+            "sql",
+            "docker",
+            "azure synapse",
+            "windows server",
+            "windows",
+            "angular 2",
+            "vue.js",
+            "rest api",
+            "jquery",
+            "azure",
+            "html5"
+        ]
+    }, {
+        "companyName": "민앤지",
+        "tech_stack": [
+            "isms",
+            "rdb",
+            "linux",
+            "mysql",
+            "oracle",
+            "mariadb",
+            "aws"
+        ]
+    }, {
+        "companyName": "피치",
+        "tech_stack": [
+            "jsp",
+            "spring",
+            "java",
+            "react",
+            "android os",
+            "node.js",
+            "kotlin",
+            "rest api",
+            "github",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)넥스트케이",
+        "tech_stack": [
+            "c#",
+            "sourcetree",
+            "linux",
+            "git flow",
+            "sql",
+            "git",
+            "pytorch",
+            "wpf",
+            "windows",
+            "tensorflow",
+            "c++",
+            "python",
+            "notion.so"
+        ]
+    }, {
+        "companyName": "*T/Kopenhagen",
+        "tech_stack": ["javascript", "html5", "css 3"]
+    }, {
+        "companyName": "더리얼마케팅",
+        "tech_stack": [
+            "javascript",
+            "hadoop",
+            "spring",
+            "java",
+            "apache tomcat",
+            "linux",
+            "github",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "미스터카멜",
+        "tech_stack": [
+            "javascript",
+            "redux-saga",
+            "redux",
+            "elasticsearch",
+            "mysql",
+            "react",
+            "socket.io",
+            "redis",
+            "spring boot",
+            "selenium"
+        ]
+    }, {
+        "companyName": "마인드허브",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "redux",
+            "google bigquery",
+            "mysql",
+            "react",
+            "python",
+            "aws amplify",
+            "gcp",
+            "node.js",
+            "vue.js",
+            "rest api",
+            "amazon s3",
+            "aws lambda",
+            "typescript",
+            "aws",
+            "amazon api gateway"
+        ]
+    }, {
+        "companyName": "(주)알에프텍",
+        "tech_stack": [
+            "embedded",
+            "rf",
+            "orcad",
+            "fw",
+            "sw",
+            "hw"
+        ]
+    }, {
+        "companyName": "제이케이그룹",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "git",
+            "laravel",
+            "vue.js",
+            "github",
+            "php",
+            "aws"
+        ]
+    }, {
+        "companyName": "이스트몹",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "scss",
+            "aws",
+            "html5",
+            "react",
+            "git",
+            "mongodb",
+            "react native",
+            "flutter",
+            "node.js",
+            "rest api",
+            "redis",
+            "azure",
+            "typescript",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)이노메트리",
+        "tech_stack": ["hw"]
+    }, {
+        "companyName": "윈포시스(주)",
+        "tech_stack": [
+            "c#",
+            "java",
+            "sql",
+            ".net",
+            "c++",
+            "network"
+        ]
+    }, {
+        "companyName": "블루이엔지",
+        "tech_stack": ["hw", "embedded", "linux"]
+    }, {
+        "companyName": "금방주식회사",
+        "tech_stack": [
+            "javascript",
+            "jira",
+            "git",
+            "react",
+            "mongodb",
+            "react native",
+            "node.js"
+        ]
+    }, {
+        "companyName": "주식회사 시니스트",
+        "tech_stack": [
+            "nosql",
+            "spring",
+            "java",
+            "linux",
+            "git",
+            "docker",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "이쓰리",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "mybatis",
+            "java",
+            "postgis",
+            "postgresql",
+            "jquery",
+            "python"
+        ]
+    }, {
+        "companyName": "BAT(비에이티)",
+        "tech_stack": ["php", "python", "java"]
+    }, {
+        "companyName": "주식회사하우투약",
+        "tech_stack": [
+            "javascript",
+            "aws",
+            "java",
+            "css 3",
+            "git",
+            "react",
+            "slack",
+            "php",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "예티소프트",
+        "tech_stack": [
+            "java",
+            "android os",
+            "objective-c",
+            "ios",
+            "html5"
+        ]
+    }, {
+        "companyName": "콘센트릭스서비스코리아",
+        "tech_stack": [
+            "jsp",
+            "spring",
+            "java",
+            "mysql",
+            "oracle"
+        ]
+    }, {
+        "companyName": "주식회사로이어드컴퍼니",
+        "tech_stack": [
+            "mysql",
+            "php",
+            "mariadb",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "민병철교육그룹",
+        "tech_stack": [
+            "jsp",
+            "jenkins",
+            "webpack",
+            "react",
+            "jira",
+            "es6",
+            "qa",
+            "python",
+            "spring boot",
+            "javascript",
+            "css 3",
+            "java",
+            "scss",
+            "redux",
+            "git",
+            "html5",
+            "asp.net",
+            "mysql",
+            "rest api",
+            "redmine"
+        ]
+    }, {
+        "companyName": "클라우봇",
+        "tech_stack": ["php", "node.js", "react"]
+    }, {
+        "companyName": "서밋코퍼레이션",
+        "tech_stack": [
+            "redux",
+            "spring",
+            "java",
+            "swift",
+            "spring batch",
+            "git",
+            "react",
+            "android os",
+            "objective-c",
+            "rxswift",
+            "kotlin",
+            "rest api",
+            "ios",
+            "azure",
+            "spring cloud",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "콜론디",
+        "tech_stack": [
+            "nosql",
+            "spring",
+            "java",
+            "swift",
+            "git",
+            "objective-c",
+            "ios",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "지아이엔터프라이즈",
+        "tech_stack": ["php", "javascript", "html5", "css 3"]
+    }, {
+        "companyName": "주식회사 한울아이티",
+        "tech_stack": [
+            "jsp",
+            "spring",
+            "java",
+            "mysql",
+            "oracle",
+            "php",
+            "jquery"
+        ]
+    }, {
+        "companyName": "(주)케이넷이엔지",
+        "tech_stack": [
+            "mfc",
+            "ios",
+            "sql",
+            "windows",
+            "android sdk",
+            "rest api",
+            "c++",
+            "unreal engine",
+            "websocket"
+        ]
+    }, {
+        "companyName": "(주)나스테크",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "mysql",
+            "c",
+            "red hat enterprise linux"
+        ]
+    }, {
+        "companyName": "부산인터넷방송국",
+        "tech_stack": [
+            "jsp",
+            "java",
+            "mysql",
+            "git",
+            "spring mvc",
+            "rest api",
+            "php"
+        ]
+    }, {
+        "companyName": "팬라이트",
+        "tech_stack": [
+            "java",
+            "swift",
+            "objective-c",
+            "kotlin",
+            "aws"
+        ]
+    }, {
+        "companyName": "웨인힐스벤처스",
+        "tech_stack": [
+            "react",
+            "python",
+            "postgresql",
+            "angularjs",
+            "rest api",
+            "nestjs",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)쎌바이오텍인터내셔날",
+        "tech_stack": [
+            "spring",
+            "java",
+            "mysql",
+            "apache tomcat",
+            "mssql",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "비버소프트",
+        "tech_stack": ["tensorflow", "numpy", "python", "opencv"]
+    }, {
+        "companyName": "티엔에이치",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "html5",
+            "mysql",
+            "linux",
+            "java",
+            "docker",
+            "git",
+            "jenkins",
+            "kubernetes",
+            "ansible",
+            "python",
+            "node.js",
+            "terraform",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)엠넥스",
+        "tech_stack": [
+            "mysql",
+            "apache http server",
+            "node.js",
+            "rest api",
+            "nginx",
+            "redis"
+        ]
+    }, {
+        "companyName": "드라마앤컴퍼니",
+        "tech_stack": [
+            "swift",
+            "github",
+            "ruby",
+            "ios",
+            "redis",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)에이스엔터테인먼트",
+        "tech_stack": [
+            "jsp",
+            "google ads",
+            "jenkins",
+            "android os",
+            "spring mvc",
+            "spring cloud",
+            "spring boot",
+            "javascript",
+            "thymeleaf",
+            "java",
+            "docker",
+            "socket.io",
+            "git",
+            "ios",
+            "android studio",
+            "cocoa touch (ios)",
+            "swift",
+            "oracle",
+            "android sdk",
+            "kotlin",
+            "rest api",
+            "firebase",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "(주)네오비젼",
+        "tech_stack": ["javascript", "bootstrap", "react", "spring framework"]
+    }, {
+        "companyName": "엑스이허브",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "mysql",
+            "linux",
+            "oracle",
+            "php",
+            "mariadb",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)페이플",
+        "tech_stack": [
+            "go",
+            "linux",
+            "git",
+            "react",
+            "node.js",
+            "rest api",
+            "php",
+            "mariadb",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사 설텍",
+        "tech_stack": ["hw", "orcad"]
+    }, {
+        "companyName": "씨케이스택",
+        "tech_stack": [
+            "java",
+            "mysql",
+            "react",
+            "node.js",
+            "vue.js",
+            "mqtt",
+            "redis",
+            "jquery"
+        ]
+    }, {
+        "companyName": "(주)이디엠에듀케이션",
+        "tech_stack": [
+            "mysql",
+            "git",
+            "macos",
+            "rest api",
+            "wordpress",
+            "php",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)엑스퍼트컨설팅",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mssql",
+            "jquery",
+            "classic asp"
+        ]
+    }, {
+        "companyName": "(주)글로텍",
+        "tech_stack": [
+            "c#",
+            "mybatis",
+            "spring",
+            "java",
+            "postgis",
+            "postgresql",
+            "sw",
+            "c++",
+            "jquery"
+        ]
+    }, {
+        "companyName": "트리니들",
+        "tech_stack": [
+            "javascript",
+            "azure",
+            "mysql",
+            "git",
+            "kubernetes",
+            "node.js",
+            "rest api",
+            "socket.io",
+            "jquery",
+            "typescript"
+        ]
+    }, {
+        "companyName": "이포즌",
+        "tech_stack": [
+            "jsp",
+            "hibernate",
+            "apache maven",
+            "c#",
+            "java",
+            "linux",
+            "git",
+            "c",
+            "windows",
+            "oracle",
+            "elk",
+            "sw",
+            "c++",
+            "tcp/ip",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "KKday",
+        "tech_stack": [
+            "nosql",
+            "mysql",
+            "git",
+            "docker",
+            "rest api",
+            "php",
+            "mariadb",
+            "laravel"
+        ]
+    }, {
+        "companyName": "엘비세미콘",
+        "tech_stack": [
+            "jsp",
+            "c#",
+            "java",
+            "asp.net",
+            "linux",
+            "c",
+            "oracle"
+        ]
+    }, {
+        "companyName": "테이콘커뮤니케이션즈",
+        "tech_stack": [
+            "java",
+            "android os",
+            "node.js",
+            "kotlin",
+            "aws"
+        ]
+    }, {
+        "companyName": "에스브이",
+        "tech_stack": [
+            "bootstrap",
+            "react",
+            "android os",
+            "objective-c",
+            "react native",
+            "node.js",
+            "material design",
+            "react redux",
+            "python",
+            "aws",
+            "javascript",
+            "nosql",
+            "css 3",
+            "java",
+            "docker",
+            "jquery",
+            "webrtc",
+            "git",
+            "postgresql",
+            "ios",
+            "swift",
+            "kubernetes",
+            "kotlin",
+            "aws lambda"
+        ]
+    }, {
+        "companyName": "피처링",
+        "tech_stack": [
+            "jsp",
+            "bootstrap",
+            "ai/인공지능",
+            "react",
+            "node.js",
+            "angularjs",
+            "bigdata",
+            "azure",
+            "aws",
+            "python",
+            "javascript",
+            "css 3",
+            "java",
+            "vue.js",
+            "php",
+            "jquery",
+            "gcp",
+            "html5",
+            "machinelearning"
+        ]
+    }, {
+        "companyName": "프롬더레드",
+        "tech_stack": ["c++", "unreal engine"]
+    }, {
+        "companyName": "체크멀",
+        "tech_stack": ["c++", "mfc", "c", "visual studio"]
+    }, {
+        "companyName": "집닥",
+        "tech_stack": ["swift", "ios", "objective-c"]
+    }, {
+        "companyName": "찌읏",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "aws",
+            "mysql",
+            "flutter",
+            "vue.js",
+            "php",
+            "html5",
+            "laravel"
+        ]
+    }, {
+        "companyName": "레디앤스타트",
+        "tech_stack": [
+            "javascript",
+            "aws",
+            "mysql",
+            "git",
+            "github",
+            "ruby",
+            "redis",
+            "html5",
+            "rails",
+            "github actions"
+        ]
+    }, {
+        "companyName": "엔테크서비스",
+        "tech_stack": [
+            "nosql",
+            "hadoop",
+            "spring",
+            "mysql",
+            "react",
+            "oracle",
+            "node.js",
+            "vue.js",
+            "spark"
+        ]
+    }, {
+        "companyName": "Customer insight",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "mssql",
+            "rest api",
+            ".net",
+            "json",
+            "azure",
+            "aws"
+        ]
+    }, {
+        "companyName": "코액터스",
+        "tech_stack": ["swift", "ios", "rxswift", "reactivex"]
+    }, {
+        "companyName": "(주)피엘에스",
+        "tech_stack": [
+            "javascript",
+            "android os",
+            "sw",
+            "c++",
+            "ios"
+        ]
+    }, {
+        "companyName": "(주)애큐온캐피탈",
+        "tech_stack": [
+            "microsoft iis",
+            "mssql",
+            "linux",
+            "mysql",
+            "sql",
+            "mariadb",
+            "windows server",
+            "windows",
+            "oracle",
+            "ubuntu",
+            "postgresql",
+            "vmware vsphere",
+            "centos",
+            "vmware"
+        ]
+    }, {
+        "companyName": "한국거래소시스템즈",
+        "tech_stack": [
+            "mssql",
+            "java",
+            "linux",
+            "mysql",
+            "asp.net",
+            "android os",
+            "windows server",
+            "react native",
+            "codeigniter",
+            "node.js",
+            "kotlin",
+            "php",
+            "ios",
+            "mariadb",
+            "adobe xd"
+        ]
+    }, {
+        "companyName": "클라우다이크",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "azure",
+            "linux",
+            "aws",
+            "jira",
+            "django",
+            "react",
+            "python",
+            "mongodb",
+            "rabbitmq",
+            "docker",
+            "git",
+            "ansible",
+            "jenkins",
+            "amazon s3",
+            "bitbucket",
+            "docker cloud"
+        ]
+    }, {
+        "companyName": "(주)미디어스퀘어",
+        "tech_stack": ["android studio", "android os"]
+    }, {
+        "companyName": "텐일레븐",
+        "tech_stack": ["react", "rest api", "aws"]
+    }, {
+        "companyName": "아마존웹서비시즈코리아유한책임회사",
+        "tech_stack": [
+            "amazon elasticache",
+            "java",
+            "kubernetes",
+            "amazon ec2 container service",
+            "amazon ec2",
+            "amazon s3",
+            "terraform",
+            "amazon route 53",
+            "amazon rds"
+        ]
+    }, {
+        "companyName": "(주)아이나비시스템즈",
+        "tech_stack": [
+            "android os",
+            "node.js",
+            "c++",
+            "spring boot",
+            "javascript",
+            "java",
+            "docker",
+            "swiftui",
+            "vue.js",
+            "git",
+            "c",
+            "ios",
+            "linux",
+            "mysql",
+            "swift",
+            "visual studio",
+            "mongodb",
+            "kotlin",
+            "rest api",
+            "mariadb",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "하이컴프아이엔티",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "node.js",
+            "ajax",
+            "php"
+        ]
+    }, {
+        "companyName": "(주)이노룰스",
+        "tech_stack": [
+            "ai/인공지능",
+            "machinelearning",
+            "java",
+            "koa",
+            "vue.js",
+            "deeplearning"
+        ]
+    }, {
+        "companyName": "네패스",
+        "tech_stack": [
+            "c#",
+            "cisa",
+            "windows server",
+            "node.js",
+            "python",
+            "spring boot",
+            "javascript",
+            "hadoop",
+            "nosql",
+            "r",
+            "css 3",
+            "mssql",
+            "java",
+            "cissp",
+            "vue.js",
+            ".net",
+            "network",
+            "jquery",
+            "microsoft office 365",
+            "c",
+            "windows",
+            "linux",
+            "visual studio",
+            "sql",
+            "mongodb",
+            "oracle",
+            "vmware vsphere"
+        ]
+    }, {
+        "companyName": "지머니트랜스",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "java",
+            "swift",
+            "css 3",
+            "git",
+            "react",
+            "objective-c",
+            "typescript",
+            "github",
+            "html5",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)윈큐브마케팅",
+        "tech_stack": [
+            "mssql",
+            "java",
+            "mysql",
+            "linux",
+            "git",
+            "jenkins",
+            "oracle",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "마인즈앤컴퍼니",
+        "tech_stack": [
+            "ai/인공지능",
+            "machinelearning",
+            "linux",
+            "pytorch",
+            "tensorflow",
+            "aws shell",
+            "bigdata",
+            "deeplearning",
+            "python"
+        ]
+    }, {
+        "companyName": "다임리서치",
+        "tech_stack": [
+            "javascript",
+            "confluence",
+            "css 3",
+            "asp.net",
+            "jira",
+            "react",
+            "angularjs",
+            "vue.js",
+            "node.js",
+            "typescript",
+            "html5",
+            "websocket"
+        ]
+    }, {
+        "companyName": "에스이파트너즈",
+        "tech_stack": [
+            "mssql",
+            "java",
+            ".net",
+            "aws",
+            "spring framework",
+            "classic asp"
+        ]
+    }, {
+        "companyName": "(주)퍼스트정보",
+        "tech_stack": ["jsp", "java"]
+    }, {
+        "companyName": "하이어엑스",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "linux",
+            "git",
+            "docker",
+            "react native",
+            "postgresql",
+            "node.js",
+            "expressjs",
+            "koa",
+            "sentry",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)에덴룩스",
+        "tech_stack": [
+            "c#",
+            "unity",
+            "react",
+            "android os",
+            "ios",
+            "python"
+        ]
+    }, {
+        "companyName": "일레븐코퍼레이션",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "spring cloud",
+            "react",
+            "docker",
+            "kafka",
+            "jquery",
+            "html5",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "주은교육",
+        "tech_stack": [
+            "javascript",
+            "redux",
+            "css 3",
+            "swift",
+            "react",
+            "android os",
+            "react native",
+            "flutter",
+            "rxswift",
+            "node.js",
+            "kotlin",
+            "firebase",
+            "ios",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)조아라",
+        "tech_stack": [
+            "spring",
+            "php",
+            "swift",
+            "mysql",
+            "react",
+            "android os",
+            "django",
+            "gcp",
+            "flutter",
+            "codeigniter",
+            "rest api",
+            "firebase",
+            "google cloud platform",
+            "json",
+            "amazon route 53",
+            "ios",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)게이트웨이즈",
+        "tech_stack": [
+            "jsp",
+            "java",
+            "json web token",
+            "spring tools 4",
+            "php",
+            "jquery ui",
+            "spring framework",
+            "eclipse"
+        ]
+    }, {
+        "companyName": "(주)맥스퍼포먼스그룹",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react native",
+            "flutter",
+            "node.js",
+            "angularjs",
+            "grunt",
+            "vue.js",
+            "ajax",
+            "html5"
+        ]
+    }, {
+        "companyName": "튜닙",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react",
+            "node.js",
+            "vue.js",
+            "html5",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "티피엠엔",
+        "tech_stack": [
+            "javascript",
+            "spring framework",
+            "zeplin",
+            "spring",
+            "java",
+            "mysql",
+            "git",
+            "android os",
+            "gcp",
+            "spring mvc",
+            "kotlin",
+            "android sdk",
+            "android studio",
+            "mariadb",
+            "html5",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)더블미디어",
+        "tech_stack": ["c++", "kotlin", "java"]
+    }, {
+        "companyName": "(주)알고리즘코리아",
+        "tech_stack": ["c++", "c#", ".net", "wpf"]
+    }, {
+        "companyName": "아이투맥스",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "spring",
+            "java",
+            "mysql",
+            "apache http server",
+            "apache tomcat",
+            "openssl",
+            "sql",
+            "oracle",
+            "postgresql",
+            "postman",
+            "heroku",
+            "rest api",
+            ".net",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "(주) 시소",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "java",
+            "react",
+            "node.js",
+            "jquery",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)하우스미디어",
+        "tech_stack": [
+            "thymeleaf",
+            "spring",
+            "java",
+            "git",
+            "android os",
+            "rest api",
+            "firebase",
+            "android studio",
+            "jstl"
+        ]
+    }, {
+        "companyName": "그래밍",
+        "tech_stack": [
+            "react",
+            "git",
+            "node.js",
+            "expressjs",
+            "rest api",
+            "php",
+            "next.js",
+            "html5",
+            "aws",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)비모소프트",
+        "tech_stack": [
+            "java",
+            "swift",
+            "android os",
+            "objective-c",
+            "kotlin",
+            "ios"
+        ]
+    }, {
+        "companyName": "녹십자헬스케어",
+        "tech_stack": [
+            "javascript",
+            "zeplin",
+            "spring",
+            "java",
+            "jenkins",
+            "mssql",
+            "git",
+            "vue.js",
+            "jquery",
+            "typescript",
+            "redmine"
+        ]
+    }, {
+        "companyName": "(주)사이넥스",
+        "tech_stack": ["asp.net", "c#", ".net", "java"]
+    }, {
+        "companyName": "주식회사미스터픽",
+        "tech_stack": [
+            "zeplin",
+            "jira",
+            "react",
+            "android os",
+            "objective-c",
+            "node.js",
+            "javascript",
+            "css 3",
+            "apache tomcat",
+            "java",
+            "koa",
+            "vue.js",
+            "php",
+            "jquery",
+            "git",
+            "codeigniter",
+            "xcode",
+            "ios",
+            "android studio",
+            "swift",
+            "mysql",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "주식회사 디비엔텍",
+        "tech_stack": [
+            "ai/인공지능",
+            "pytorch",
+            "tensorflow",
+            "deeplearning",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)에프앤가이드",
+        "tech_stack": [
+            "r",
+            "machinelearning",
+            "aws",
+            "keras",
+            "pytorch",
+            "gcp",
+            "tensorflow",
+            "azure",
+            "python"
+        ]
+    }, {
+        "companyName": "파인애플피티엘",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "렛유인",
+        "tech_stack": [
+            "javascript",
+            "scss",
+            "css 3",
+            "git",
+            "nuxt.js",
+            "vuetify",
+            "es6",
+            "node.js",
+            "vue.js",
+            "github",
+            "php",
+            "html5"
+        ]
+    }, {
+        "companyName": "주식회사팀스노우볼",
+        "tech_stack": [
+            "javascript",
+            "bootstrap",
+            "css 3",
+            "java",
+            "linux",
+            "mysql",
+            "react",
+            "react native",
+            "oracle",
+            "rest api",
+            "ajax",
+            "php",
+            "jquery",
+            "html5",
+            "python",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "클로마운트",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "redux",
+            "css 3",
+            "mysql",
+            "react",
+            "android os",
+            "react native",
+            "node.js",
+            "rest api",
+            "github",
+            "aws lambda",
+            "ios",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "지피클럽",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "git",
+            "codeigniter",
+            "php",
+            "jquery",
+            "aws"
+        ]
+    }, {
+        "companyName": "에이팀벤처스",
+        "tech_stack": [
+            "graphql.js",
+            "graphql",
+            "redux",
+            "hasura",
+            "react",
+            "docker",
+            "kubernetes",
+            "gcp",
+            "postgresql",
+            "node.js",
+            "material-ui",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)에스아이알소프트",
+        "tech_stack": ["php", "git", "javascript", "mysql"]
+    }, {
+        "companyName": "(주)네오에이블",
+        "tech_stack": [
+            "javascript",
+            "ai/인공지능",
+            "hw",
+            "embedded",
+            "machinelearning",
+            "arduino",
+            "linux",
+            "circuit design",
+            "azure iot hub",
+            "c++",
+            "deeplearning",
+            "redis",
+            "mariadb",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "마이온컴퍼니",
+        "tech_stack": [
+            "javascript",
+            "redux",
+            "git",
+            "docker",
+            "react",
+            "slack",
+            "node.js",
+            "amazon ec2",
+            "amazon s3",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "(주)더조인",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "android os",
+            "ios",
+            "android studio",
+            "python"
+        ]
+    }, {
+        "companyName": "이지수능교육",
+        "tech_stack": ["asp.net", "network", "java", "classic asp"]
+    }, {
+        "companyName": "굿닥",
+        "tech_stack": [
+            "graphql.js",
+            "graphql",
+            "java",
+            "react",
+            "react native",
+            "flutter",
+            "node.js",
+            "kotlin",
+            "sentry",
+            "github",
+            "aws"
+        ]
+    }, {
+        "companyName": "주식회사 바이오크",
+        "tech_stack": [
+            "javascript",
+            "zeplin",
+            "css 3",
+            "html5",
+            "jira",
+            "git",
+            "react native",
+            "slack",
+            "node.js",
+            "typescript"
+        ]
+    }, {
+        "companyName": "파즈주식회사",
+        "tech_stack": [
+            "linux",
+            "mysql",
+            "laravel",
+            "node.js",
+            "rest api",
+            "github",
+            "php",
+            "nginx",
+            "zend framework",
+            "aws"
+        ]
+    }, {
+        "companyName": "대국지앤에스",
+        "tech_stack": ["postgis", "spring mvc", "java"]
+    }, {
+        "companyName": "지엔아이티",
+        "tech_stack": [
+            "jsp",
+            "spring",
+            "java",
+            "git",
+            "sql",
+            "hive",
+            "rest api",
+            "kafka"
+        ]
+    }, {
+        "companyName": "크로스앵글",
+        "tech_stack": ["nosql", "redis", "mongodb", "python"]
+    }, {
+        "companyName": "엔비스아나",
+        "tech_stack": ["visual studio", "c#"]
+    }, {
+        "companyName": "누비랩",
+        "tech_stack": [
+            "javascript",
+            "redux-saga",
+            "redux",
+            "mysql",
+            "pytorch",
+            "react",
+            "python",
+            "git",
+            "es6",
+            "node.js",
+            "slack",
+            "google docs",
+            "numpy",
+            "opencv",
+            "typescript",
+            "aws",
+            "notion.so"
+        ]
+    }, {
+        "companyName": "(주)소프트랩스",
+        "tech_stack": [
+            "node.js",
+            "phpstorm",
+            "python",
+            "javascript",
+            "java",
+            "php",
+            "codeigniter",
+            "solidity",
+            "ios",
+            "html5",
+            "mysql",
+            "swift",
+            "linux",
+            "dart",
+            "flutter",
+            "kotlin",
+            "firebase",
+            "websocket",
+            "mariadb",
+            "laravel"
+        ]
+    }, {
+        "companyName": "피유엠피",
+        "tech_stack": [
+            "nosql",
+            "linux",
+            "git",
+            "docker",
+            "mongodb",
+            "node.js",
+            "rest api",
+            "azure",
+            "aws"
+        ]
+    }, {
+        "companyName": "브이원텍",
+        "tech_stack": [
+            "r",
+            "visual studio code",
+            "c#",
+            "mfc",
+            "sw",
+            "opencv",
+            "communication",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "위대한상사",
+        "tech_stack": [
+            "java",
+            "mysql",
+            "node.js",
+            "rest api",
+            "nestjs",
+            "typescript"
+        ]
+    }, {
+        "companyName": "주식회사 링카코리아",
+        "tech_stack": [
+            "flask",
+            "java",
+            "mysql",
+            "sqlite",
+            "node.js",
+            "expressjs",
+            "solidity",
+            "php",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "해줌",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "aws",
+            "mysql",
+            "django",
+            "react",
+            "docker",
+            "angular 2",
+            "oracle",
+            "vue.js",
+            "rest api",
+            "mariadb",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)이지메디컴",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "oracle",
+            "rest api",
+            "python",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)유비씨",
+        "tech_stack": ["unity", "node.js", "vue.js", "unreal engine"]
+    }, {
+        "companyName": "히비스",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "es6",
+            "node.js",
+            "rest api",
+            "php",
+            "jquery",
+            "html5",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "메디젠휴먼케어",
+        "tech_stack": ["oracle", "spring framework", "mysql", "java"]
+    }, {
+        "companyName": "(주)브로드웨이브",
+        "tech_stack": [
+            "c#",
+            "mysql",
+            "windows",
+            "wpf",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "한경정보기술",
+        "tech_stack": ["javascript", "java"]
+    }, {
+        "companyName": "(주)스프링소프트",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "java",
+            "unity",
+            "git",
+            "android os",
+            "windows",
+            "vue.js",
+            "c++",
+            "apache cordova"
+        ]
+    }, {
+        "companyName": "블랙탠저린",
+        "tech_stack": [
+            "swift",
+            "android os",
+            "dart",
+            "flutter",
+            "kotlin",
+            "ios"
+        ]
+    }, {
+        "companyName": "(주)재미있는연구소",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "linux",
+            "ajax",
+            "php",
+            "jquery",
+            "html5",
+            "aws",
+            "centos"
+        ]
+    }, {
+        "companyName": "마드라스체크",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "mysql",
+            "linux",
+            "git",
+            "swift",
+            "figma",
+            "objective-c",
+            "postgresql",
+            "node.js",
+            "rest api",
+            "firebase",
+            "xcode",
+            "ios",
+            "jquery",
+            "aws"
+        ]
+    }, {
+        "companyName": "퓨쳐다임",
+        "tech_stack": [
+            "java",
+            "jenkins",
+            "linux",
+            "git",
+            "node.js",
+            "vue.js",
+            "redis",
+            "mariadb",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "몽키소프트",
+        "tech_stack": [
+            "jsp",
+            "c#",
+            "rdb",
+            "java",
+            "swift",
+            "mysql",
+            "react",
+            "android os",
+            "docker",
+            "rxswift",
+            "node.js",
+            "rest api",
+            "ios",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "코리아폴리스쿨",
+        "tech_stack": [
+            "electron",
+            "rdb",
+            "jenkins",
+            "webpack",
+            "react",
+            "es6",
+            "node.js",
+            "javascript",
+            "go",
+            "mssql",
+            "java",
+            "css 3",
+            "apache tomcat",
+            "dw",
+            "vue.js",
+            "jquery",
+            "typescript",
+            "grpc",
+            "spring",
+            "webrtc",
+            "html5",
+            "microsoft sql server",
+            "sql",
+            "etl",
+            "rest api",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)비덴트",
+        "tech_stack": [
+            "windows",
+            "macos",
+            "hw",
+            "qt",
+            "tcp/ip"
+        ]
+    }, {
+        "companyName": "파인더스",
+        "tech_stack": ["javascript", "jquery", "mysql"]
+    }, {
+        "companyName": "주식회사아이나비모빌리티",
+        "tech_stack": [
+            "go",
+            "java",
+            "mysql",
+            "c",
+            "kotlin",
+            "rust",
+            "c++",
+            "aws"
+        ]
+    }, {
+        "companyName": "리플에이아이",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "html5",
+            "java",
+            "spring",
+            "django",
+            "docker",
+            "git",
+            "linux",
+            "typescript",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)맵퍼스",
+        "tech_stack": [
+            "java",
+            "android os",
+            "objective-c",
+            "android sdk",
+            "kotlin",
+            "c++",
+            "ios"
+        ]
+    }, {
+        "companyName": "해피투씨유",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "mysql",
+            "react",
+            "react native",
+            "rest api",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "노르마",
+        "tech_stack": [
+            "javascript",
+            "linux",
+            "sql",
+            "python",
+            "c",
+            "postgresql",
+            "node.js",
+            "expressjs",
+            "rest api",
+            "c++",
+            "network",
+            "aws"
+        ]
+    }, {
+        "companyName": "한우리아이티",
+        "tech_stack": [
+            "java",
+            "android os",
+            "objective-c",
+            "kotlin",
+            "ios"
+        ]
+    }, {
+        "companyName": "주식회사데브툴즈",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "go",
+            "react",
+            "amazon dynamodb",
+            "angularjs",
+            "vue.js",
+            "rest api",
+            "amazon ec2",
+            "amazon s3",
+            "aws"
+        ]
+    }, {
+        "companyName": "아라인",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "java",
+            "spring",
+            "adobe photoshop",
+            "sql",
+            "oracle",
+            "orcad",
+            "html5"
+        ]
+    }, {
+        "companyName": "와이즈모빌리티",
+        "tech_stack": [
+            "git",
+            "android os",
+            "react native",
+            "flutter",
+            "github",
+            "ios",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)바로티나",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "html5",
+            "swift",
+            "apache http server",
+            "react",
+            "git",
+            "mysql",
+            "linux",
+            "react native",
+            "rxswift",
+            "firebase",
+            "ios",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "비팩토리",
+        "tech_stack": [
+            "javascript",
+            "graphql",
+            "sourcetree",
+            "css 3",
+            "apollo",
+            "html5",
+            "git",
+            "react",
+            "postgresql",
+            "node.js",
+            "expressjs",
+            "ubuntu",
+            "nestjs",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "텐덤",
+        "tech_stack": [
+            "javascript",
+            "redux",
+            "java",
+            "mysql",
+            "django",
+            "react",
+            "android os",
+            "python",
+            "objective-c",
+            "react native",
+            "es6",
+            "postgresql",
+            "ajax",
+            "ios",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)칩스앤미디어",
+        "tech_stack": [
+            "embedded",
+            "hw",
+            "c",
+            "perl",
+            "node.js",
+            "matlab",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)알티캐스트",
+        "tech_stack": [
+            "javascript",
+            "java",
+            "linux",
+            "jenkins",
+            "git",
+            "docker",
+            "android os",
+            "c",
+            "kotlin",
+            "google cloud platform",
+            "c++",
+            "mariadb",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)트레드링스",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "mssql",
+            "java",
+            "mongodb",
+            "node.js",
+            "azure kubernetes service",
+            "bigdata",
+            "azure cosmos db",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "주식회사 에이치앤에스",
+        "tech_stack": ["c++", "c#", "c", ".net"]
+    }, {
+        "companyName": "롯데면세점",
+        "tech_stack": [
+            "google bigquery",
+            "spark",
+            "aws",
+            "python",
+            "spring boot",
+            "r",
+            "javascript",
+            "apache maven",
+            "java",
+            "apache tomcat",
+            "amazon rds",
+            "amazon linux",
+            "spring",
+            "pytorch",
+            "git",
+            "amazon ec2",
+            "redis",
+            "html5",
+            "kibana",
+            "grafana",
+            "mysql",
+            "sql",
+            "tensorflow",
+            "oracle",
+            "amazon vpc",
+            "aws lambda"
+        ]
+    }, {
+        "companyName": "마켓디자이너스",
+        "tech_stack": [
+            "rdb",
+            "mysql",
+            "sql",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "(주)코그",
+        "tech_stack": [
+            "powershell",
+            "c#",
+            "prometheus",
+            "grafana",
+            "linux",
+            "windows server",
+            "elk",
+            "c++",
+            "unreal engine",
+            "azure",
+            "xen",
+            "aws",
+            "vmware"
+        ]
+    }, {
+        "companyName": "(주)지앤티솔루션",
+        "tech_stack": ["jsp", "jquery", "java"]
+    }, {
+        "companyName": "주식회사글래스돔코리아",
+        "tech_stack": [
+            "javascript",
+            "go",
+            "react",
+            "aws lambda",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "올카커뮤니케이션",
+        "tech_stack": ["javascript", "react", "spring"]
+    }, {
+        "companyName": "바스미디어",
+        "tech_stack": ["php", "git", "mysql"]
+    }, {
+        "companyName": "애드선샤인",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "swift",
+            "react",
+            "react native",
+            "node.js",
+            "vue.js",
+            "jquery",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "주식회사 포밸류소프트",
+        "tech_stack": ["spring boot", "spring framework", "spring", "java"]
+    }, {
+        "companyName": "일렉트로닉아츠코리아유한책임회사",
+        "tech_stack": [
+            "perforce",
+            "jira",
+            "git",
+            "c",
+            "qa",
+            "c++"
+        ]
+    }, {
+        "companyName": "유니원아이앤씨",
+        "tech_stack": [
+            "machinelearning",
+            "rdb",
+            "spring",
+            "java",
+            "mysql",
+            "jira",
+            "git",
+            "slack",
+            "rest api",
+            "bigdata"
+        ]
+    }, {
+        "companyName": "빅인사이트",
+        "tech_stack": [
+            "react",
+            "node.js",
+            "python",
+            "notion.so",
+            "spring boot",
+            "javascript",
+            "d3.js",
+            "java",
+            "docker",
+            "rabbitmq",
+            "sass",
+            "deeplearning",
+            "typescript",
+            "mybatis",
+            "angular 2",
+            "apache flink",
+            "machinelearning",
+            "mysql",
+            "sql",
+            "mongodb",
+            "kubernetes",
+            "bitbucket"
+        ]
+    }, {
+        "companyName": "썬더소프트코리아",
+        "tech_stack": [
+            "embedded",
+            "java",
+            "git",
+            "android os",
+            "c",
+            "c++"
+        ]
+    }, {
+        "companyName": "엘유티",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "sql",
+            "php",
+            "jquery",
+            "html5",
+            "jquery ui"
+        ]
+    }, {
+        "companyName": "아이엠파인",
+        "tech_stack": ["unity", "git", "c#"]
+    }, {
+        "companyName": "(주)미스터멘션",
+        "tech_stack": [
+            "confluence",
+            "aws lambda",
+            "aws",
+            "jira",
+            "git",
+            "docker",
+            "rest api",
+            "amazon ec2",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "사나이시스템",
+        "tech_stack": ["sw", "qt", "opencv"]
+    }, {
+        "companyName": "셰빌리티",
+        "tech_stack": [
+            "mysql",
+            "sql",
+            "node.js",
+            "rest api",
+            "socket.io",
+            "php",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "(주)파토스",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "linux",
+            "sql",
+            "docker",
+            "docker compose",
+            "microsoft azure",
+            "postgresql",
+            "node.js",
+            "vue.js",
+            "nginx",
+            "html5"
+        ]
+    }, {
+        "companyName": "에잇퍼센트",
+        "tech_stack": [
+            "aws",
+            "django",
+            "react",
+            "vue.js",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사 시루정보",
+        "tech_stack": [
+            "javascript",
+            "scss",
+            "graphql",
+            "spring",
+            "java",
+            "css 3",
+            "git",
+            "android os",
+            "oracle",
+            "node.js",
+            "vue.js",
+            "json",
+            "github",
+            "network",
+            "html5",
+            "eclipse"
+        ]
+    }, {
+        "companyName": "좋은습관",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react",
+            "android os",
+            "flutter",
+            "vue.js",
+            "ios",
+            "html5"
+        ]
+    }, {
+        "companyName": "(주)마크로밀엠브레인",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "c#",
+            "css 3",
+            "java",
+            "mssql",
+            "mysql",
+            "react",
+            "asp.net",
+            "es6",
+            "node.js",
+            "vue.js",
+            "html5",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)에이테크",
+        "tech_stack": [
+            "c#",
+            "java",
+            "mysql",
+            "linux",
+            "windows",
+            "oracle",
+            "sw",
+            "python"
+        ]
+    }, {
+        "companyName": "Klinelex",
+        "tech_stack": [
+            "bootstrap",
+            "java",
+            "swift",
+            "c++",
+            "node.js",
+            "jquery",
+            "php",
+            "ios",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "키박스",
+        "tech_stack": ["django", "node.js", "git", "spring"]
+    }, {
+        "companyName": "코어트러스트",
+        "tech_stack": [
+            "spring",
+            "java",
+            "linux",
+            "apache tomcat",
+            "jira",
+            "visual studio",
+            "c",
+            "postgresql",
+            "c++"
+        ]
+    }, {
+        "companyName": "(주)인투씨엔에스",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "git",
+            "spring mvc",
+            "vue.js",
+            "html5"
+        ]
+    }, {
+        "companyName": "(주)와이즈덴",
+        "tech_stack": [
+            "java",
+            "linux",
+            "android sdk",
+            "c++",
+            "tcp/ip"
+        ]
+    }, {
+        "companyName": "오리샌드박스",
+        "tech_stack": [
+            "nosql",
+            "elasticsearch",
+            "aws",
+            "redux",
+            "react",
+            "android os",
+            "mongodb",
+            "docker",
+            "react native",
+            "gcp",
+            "flutter",
+            "git",
+            "node.js",
+            "google cloud platform",
+            "ios",
+            "python"
+        ]
+    }, {
+        "companyName": "소셜빈",
+        "tech_stack": [
+            "javascript",
+            "r",
+            "amazon rds",
+            "rdb",
+            "aws",
+            "java",
+            "webpack",
+            "git",
+            "react",
+            "angular 2",
+            "apache spark",
+            "vue.js",
+            "aws glue",
+            "amazon s3",
+            "amazon athena",
+            "typescript",
+            "python",
+            "jupyter"
+        ]
+    }, {
+        "companyName": "한화테크윈",
+        "tech_stack": [
+            "r",
+            "c#",
+            "linux",
+            "git",
+            "c",
+            "bigdata",
+            "c++",
+            "deeplearning",
+            "tcp/ip",
+            "python"
+        ]
+    }, {
+        "companyName": "베스핀글로벌",
+        "tech_stack": [
+            "azure data factory",
+            "azure functions",
+            "microsoft azure",
+            "azure kubernetes service",
+            "azure websites",
+            "azure",
+            "aws",
+            "azure devops",
+            "azure pipelines"
+        ]
+    }, {
+        "companyName": "솔텍인포넷",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "java",
+            "linux",
+            "c",
+            "wpf",
+            ".net",
+            "sw",
+            "c++",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "열림데이타시스템",
+        "tech_stack": [
+            "mssql",
+            "linux",
+            "mysql",
+            "windows",
+            "oracle",
+            "network"
+        ]
+    }, {
+        "companyName": "(주)넷커스터마이즈",
+        "tech_stack": ["c#", "c"]
+    }, {
+        "companyName": "(주)예스오예스",
+        "tech_stack": [
+            "javascript",
+            "mssql",
+            "asp.net",
+            "node.js",
+            "classic asp"
+        ]
+    }, {
+        "companyName": "(주)오션펀딩",
+        "tech_stack": ["javascript", "c#", "java"]
+    }, {
+        "companyName": "큐로드",
+        "tech_stack": ["jira", "git", "redmine", "qa"]
+    }, {
+        "companyName": "주)아이로",
+        "tech_stack": [
+            "hw",
+            "circuit design",
+            "c",
+            "fw",
+            "sw",
+            "c++",
+            "python"
+        ]
+    }, {
+        "companyName": "주식회사푸짐",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "react",
+            "vue.js",
+            "rest api",
+            "aws elastic load balancing",
+            "php",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)카비",
+        "tech_stack": [
+            "rdb",
+            "react",
+            "android os",
+            "objective-c",
+            "node.js",
+            "angularjs",
+            "python",
+            "aws",
+            "r",
+            "nosql",
+            "trello",
+            "amazon dynamodb",
+            "vue.js",
+            "orcad",
+            "typescript",
+            "git",
+            "hw",
+            "ios",
+            "amazon api gateway",
+            "swift",
+            "sql",
+            "slack",
+            "rest api",
+            "aws lambda"
+        ]
+    }, {
+        "companyName": "(주)담비기술",
+        "tech_stack": [
+            "javascript",
+            "spring",
+            "java",
+            "mysql",
+            "css 3",
+            "node.js",
+            "rest api",
+            "jquery",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "(주)포씨게이트",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "spring",
+            "java",
+            "linux",
+            "react",
+            "es6",
+            "node.js",
+            "rest api",
+            "nginx",
+            "html5",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)비솔",
+        "tech_stack": [
+            "c#",
+            "visual studio",
+            "pytorch",
+            "mysql",
+            "tensorflow",
+            "c++",
+            "unreal engine",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)고스트패스",
+        "tech_stack": [
+            "ai/인공지능",
+            "c#",
+            "react",
+            "android os",
+            "objective-c",
+            "angularjs",
+            "javascript",
+            "css 3",
+            "java",
+            "vue.js",
+            "deeplearning",
+            "spring",
+            "mybatis",
+            "pytorch",
+            "c",
+            "ios",
+            "html5",
+            "linux",
+            "swift",
+            "sql",
+            "tensorflow",
+            "kotlin",
+            "rest api"
+        ]
+    }, {
+        "companyName": "(주)도움이티에스",
+        "tech_stack": ["expressjs", "c#", "mssql"]
+    }, {
+        "companyName": "(주)엔디소프트",
+        "tech_stack": [
+            "ai/인공지능",
+            "cisco",
+            "bigdata",
+            "c++",
+            "material design",
+            "go",
+            "java",
+            "apache spark",
+            "rxswift",
+            "network",
+            "router",
+            "grpc",
+            "switch",
+            "ubuntu",
+            "postgresql",
+            "ios",
+            "linux",
+            "swift",
+            "sql"
+        ]
+    }, {
+        "companyName": "아이담비즈",
+        "tech_stack": ["ios", "node.js", "android os"]
+    }, {
+        "companyName": "주식회사 벨시온",
+        "tech_stack": ["c#", "classic asp"]
+    }, {
+        "companyName": "(주)보이스루",
+        "tech_stack": [
+            "javascript",
+            "aws",
+            "java",
+            "react",
+            "kubernetes",
+            "kotlin",
+            "typescript",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)크렐로",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "git",
+            "docker",
+            "docker compose",
+            "pm2",
+            "node.js",
+            "typescript",
+            "aws"
+        ]
+    }, {
+        "companyName": "푼타컴퍼니",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "react",
+            "vue.js",
+            "rest api",
+            "php",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "리마케팅컴퍼니",
+        "tech_stack": ["javascript", "jquery", "html5", "css 3"]
+    }, {
+        "companyName": "이모션글로벌",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "rdb",
+            "spring",
+            "react",
+            "vue.js",
+            "rest api",
+            "aws"
+        ]
+    }, {
+        "companyName": "엠아이큐브솔루션(주)",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "mssql",
+            "java",
+            "css 3",
+            "kubernetes",
+            "oracle",
+            "postgresql",
+            "bigdata",
+            "html5",
+            "python",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)에이더블테크놀러지",
+        "tech_stack": ["c++", "mfc", "hw", "c"]
+    }, {
+        "companyName": "아레나캐스트",
+        "tech_stack": [
+            "javascript",
+            "redux",
+            "css 3",
+            "react",
+            "git",
+            "react native",
+            "node.js",
+            "html5"
+        ]
+    }, {
+        "companyName": "워드바이스",
+        "tech_stack": [
+            "java",
+            "pytorch",
+            "git",
+            "tensorflow",
+            "rest api",
+            "deeplearning",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "토포스스튜디오",
+        "tech_stack": ["c++", "opencv", "windows server"]
+    }, {
+        "companyName": "한국축산데이터",
+        "tech_stack": [
+            "ai/인공지능",
+            "react",
+            "android os",
+            "react native",
+            "node.js",
+            "c++",
+            "python",
+            "r",
+            "flask",
+            "deeplearning",
+            "azure devops",
+            "django",
+            "pytorch",
+            "c",
+            "mysql",
+            "sql",
+            "kubernetes",
+            "tensorflow",
+            "rest api",
+            "mariadb"
+        ]
+    }, {
+        "companyName": "한라홀딩스",
+        "tech_stack": [
+            "isms",
+            "c#",
+            "microsoft office 365",
+            "windows server",
+            ".net",
+            "network",
+            "azure"
+        ]
+    }, {
+        "companyName": "꿀비",
+        "tech_stack": [
+            "jsp",
+            "ai/인공지능",
+            "elasticsearch",
+            "react",
+            "bigdata",
+            "python",
+            "javascript",
+            "r",
+            "hadoop",
+            "vue.js",
+            "github",
+            "embedded",
+            "django",
+            "hw",
+            "redis",
+            "linux",
+            "mysql",
+            "mongodb",
+            "oracle",
+            "sw",
+            "spring framework"
+        ]
+    }, {
+        "companyName": "(주)아데나소프트웨어",
+        "tech_stack": [
+            "java",
+            "mysql",
+            "sql",
+            "git",
+            "slack",
+            "spring mvc",
+            "kotlin",
+            "rest api",
+            "firebase",
+            "php",
+            "jquery"
+        ]
+    }, {
+        "companyName": "에스엠케이",
+        "tech_stack": ["embedded", "fw"]
+    }, {
+        "companyName": "(주)뉴지스탁",
+        "tech_stack": ["rest api", "nosql", "c", "python"]
+    }, {
+        "companyName": "소프티스",
+        "tech_stack": [
+            "javascript",
+            "css 3",
+            "mysql",
+            "django",
+            "react",
+            "node.js",
+            "vue.js",
+            "html5",
+            "python"
+        ]
+    }, {
+        "companyName": "스탠다임",
+        "tech_stack": [
+            "redux",
+            "babel",
+            "react",
+            "git",
+            "webpack",
+            "es6",
+            "rest api"
+        ]
+    }, {
+        "companyName": "카룸",
+        "tech_stack": [
+            "javascript",
+            "nosql",
+            "mysql",
+            "linux",
+            "node.js",
+            "amazon ec2",
+            "php",
+            "laravel"
+        ]
+    }, {
+        "companyName": "와이즈넛",
+        "tech_stack": ["jsp", "machinelearning", "spring framework", "java"]
+    }, {
+        "companyName": "소프트베리",
+        "tech_stack": [
+            "javascript",
+            "mysql",
+            "postgresql",
+            "node.js",
+            "rest api",
+            "php"
+        ]
+    }, {
+        "companyName": "에스넷",
+        "tech_stack": [
+            "jsp",
+            "javascript",
+            "mssql",
+            "java",
+            "jstl"
+        ]
+    }, {
+        "companyName": "이몰디노",
+        "tech_stack": [
+            "nosql",
+            "java",
+            "mysql",
+            "git",
+            "python",
+            "postgresql",
+            "rest api",
+            "azure",
+            "aws",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "(주)트리니티소프트",
+        "tech_stack": ["git", "c#", "java"]
+    }, {
+        "companyName": "크리에이터버스",
+        "tech_stack": ["javascript", "unity", "c#"]
+    }, {
+        "companyName": "EVAR",
+        "tech_stack": [
+            "bootstrap",
+            "c#",
+            "react",
+            "react native",
+            "node.js",
+            "expressjs",
+            "numpy",
+            "c++",
+            "python",
+            "aws",
+            "javascript",
+            "css 3",
+            "docker",
+            "vue.js",
+            "opencv",
+            "html5",
+            "ionic",
+            "kubernetes",
+            "flutter",
+            "firebase",
+            "websocket"
+        ]
+    }, {
+        "companyName": "주식회사위아컴퍼니",
+        "tech_stack": ["swift", "ios"]
+    }, {
+        "companyName": "티원세미콘",
+        "tech_stack": ["sw", "fw"]
+    }, {
+        "companyName": "쿠기",
+        "tech_stack": ["hw", "c#", ".net", "bigdata"]
+    }, {
+        "companyName": "더블다운인터액티브",
+        "tech_stack": [
+            "javascript",
+            "c#",
+            "spring",
+            "java",
+            "mysql",
+            "unity",
+            "amazon dynamodb",
+            "docker",
+            "amazon redshift",
+            "swift",
+            "objective-c",
+            "rest api",
+            "c++",
+            "html5",
+            "aws"
+        ]
+    }, {
+        "companyName": "테스트웍스",
+        "tech_stack": [
+            "embedded",
+            "jira",
+            "linux",
+            "github",
+            "qa",
+            "sw",
+            "python"
+        ]
+    }, {
+        "companyName": "드림시스",
+        "tech_stack": [
+            "c#",
+            "java",
+            ".net",
+            "kafka",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "퍼블리시(주)",
+        "tech_stack": ["docker", "aws"]
+    }, {
+        "companyName": "인타임센터",
+        "tech_stack": [
+            "javascript",
+            "jsp",
+            "nosql",
+            "spring",
+            "css 3",
+            "java",
+            "mysql",
+            "c",
+            "c++",
+            "jquery",
+            "html5"
+        ]
+    }, {
+        "companyName": "슈퍼브에이아이",
+        "tech_stack": [
+            "javascript",
+            "ai/인공지능",
+            "aws cloudformation",
+            "machinelearning",
+            "aws",
+            "spring",
+            "linux",
+            "django",
+            "sql",
+            "git",
+            "kubernetes",
+            "docker",
+            "nginx",
+            "gcp",
+            "expressjs",
+            "deeplearning",
+            "azure",
+            "python"
+        ]
+    }, {
+        "companyName": "(주)가이던스",
+        "tech_stack": ["rest api", "html5", "css 3"]
+    }, {
+        "companyName": "(주)엔토파즈",
+        "tech_stack": ["node.js", "flutter"]
+    }, {
+        "companyName": "koco",
+        "tech_stack": ["javascript", "html5", "php"]
+    }, {
+        "companyName": "(주)아이도트",
+        "tech_stack": [
+            "ai/인공지능",
+            "css 3",
+            "java",
+            "mysql",
+            "pytorch",
+            "git",
+            "android os",
+            "kubernetes",
+            "docker",
+            "tensorflow",
+            "kotlin",
+            "html5",
+            "python",
+            "spring boot"
+        ]
+    }, {
+        "companyName": "더아이엠",
+        "tech_stack": [
+            "c#",
+            "mssql",
+            "asp.net",
+            ".net",
+            "jquery"
+        ]
+    }, {
+        "companyName": "마지막삼십분",
+        "tech_stack": [
+            "confluence",
+            "swift",
+            "jira",
+            "react",
+            "slack",
+            "angularjs",
+            "vue.js",
+            "ios",
+            "bitbucket"
+        ]
+    }
+]

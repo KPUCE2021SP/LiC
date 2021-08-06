@@ -71,7 +71,7 @@ class JumpitbotSpider(Spider):
         tech_stacks = {
             "id": int(json_response["companyProfileId"]),
             "name": json_response["companyName"],
-            "tech_stack": tech,
+            "techStack": tech,
         }
 
         yield tech_stacks

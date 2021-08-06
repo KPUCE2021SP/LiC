@@ -35,35 +35,35 @@ class ProgrammersPipeline:
 
     def close_spider(self, spider):
         for key in self.json_response:
-            self.json_response[key]["tech_stack"] = list(
-                set(self.json_response[key]["tech_stack"])
+            self.json_response[key]["techStack"] = list(
+                set(self.json_response[key]["techStack"])
             )
             document = self.collection.find_one(
                 {"companyName": self.json_response[key]["companyName"]}
             )
-            if not len(document["tech_stack"]) == len(
-                self.json_response[key]["tech_stack"]
-            ):
-                tech_stack = document["tech_stack"]
-                tech_stack.extend(self.json_response[key]["tech_stack"])
-                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+            if not document == None:
+                if not len(document["techStack"]) == len(
+                    self.json_response[key]["techStack"]
+                ):
+                    tech_stack = document["techStack"]
+                    tech_stack.extend(self.json_response[key]["techStack"])
+                    self.json_response[key]["techStack"] = list(set(tech_stack))
 
             self.collection.update_one(
                 {"companyName": self.json_response[key]["companyName"]},
                 {"$set": self.json_response[key]},
                 upsert=True,
             )
-
     def process_item(self, item, spider):
         if item["flag"]:
-            self.json_response[str(item["id"])] = {"companyName": "", "tech_stack": []}
+            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
             logging.info(f"NAME : {item['name']}")
             self.json_response[str(item["id"])]["companyName"] = item["name"]
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
         else:
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
 
         return item
 
@@ -86,18 +86,19 @@ class JumpitPipeline:
 
     def close_spider(self, spider):
         for key in self.json_response:
-            self.json_response[key]["tech_stack"] = list(
-                set(self.json_response[key]["tech_stack"])
+            self.json_response[key]["techStack"] = list(
+                set(self.json_response[key]["techStack"])
             )
             document = self.collection.find_one(
                 {"companyName": self.json_response[key]["companyName"]}
             )
-            if not len(document["tech_stack"]) == len(
-                self.json_response[key]["tech_stack"]
-            ):
-                tech_stack = document["tech_stack"]
-                tech_stack.extend(self.json_response[key]["tech_stack"])
-                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+            if not document == None:
+                if not len(document["techStack"]) == len(
+                    self.json_response[key]["techStack"]
+                ):
+                    tech_stack = document["techStack"]
+                    tech_stack.extend(self.json_response[key]["techStack"])
+                    self.json_response[key]["techStack"] = list(set(tech_stack))
 
             self.collection.update_one(
                 {"companyName": self.json_response[key]["companyName"]},
@@ -107,13 +108,13 @@ class JumpitPipeline:
 
     def process_item(self, item, spider):
         if str(item["id"]) in self.json_response:
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
         else:
-            self.json_response[str(item["id"])] = {"companyName": "", "tech_stack": []}
+            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
             self.json_response[str(item["id"])]["companyName"] = item["name"]
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
 
 
 class KiwizzlePipeline:
@@ -137,18 +138,19 @@ class KiwizzlePipeline:
 
     def close_spider(self, spider):
         for key in self.json_content:
-            self.json_content[key]["tech_stack"] = list(
-                set(self.json_content[key]["tech_stack"])
+            self.json_content[key]["techStack"] = list(
+                set(self.json_content[key]["techStack"])
             )
             document = self.collection.find_one(
                 {"companyName": self.json_response[key]["companyName"]}
             )
-            if not len(document["tech_stack"]) == len(
-                self.json_response[key]["tech_stack"]
-            ):
-                tech_stack = document["tech_stack"]
-                tech_stack.extend(self.json_response[key]["tech_stack"])
-                self.json_response[key]["tech_stack"] = list(set(tech_stack))
+            if not document == None:
+                if not len(document["techStack"]) == len(
+                    self.json_response[key]["techStack"]
+                ):
+                    tech_stack = document["techStack"]
+                    tech_stack.extend(self.json_response[key]["techStack"])
+                    self.json_response[key]["techStack"] = list(set(tech_stack))
 
             self.collection.update_one(
                 {"companyName": self.json_response[key]["companyName"]},
@@ -162,7 +164,7 @@ class KiwizzlePipeline:
         except KeyError:
             self.json_content[str(item["companyId"])] = {
                 "companyName": "",
-                "tech_stack": [],
+                "techStack": [],
             }
 
         self.json_content[str(item["companyId"])]["companyName"] = self.key["company"][
@@ -170,7 +172,7 @@ class KiwizzlePipeline:
         ]
 
         for language_key in item["language"]:
-            self.json_content[str(item["companyId"])]["tech_stack"].append(
+            self.json_content[str(item["companyId"])]["techStack"].append(
                 self.key["language"][str(language_key)]
             )
 
@@ -193,21 +195,25 @@ class RawPipeline:
         db = connection[settings["MONGODB_DB"]]
         self.collection = db[settings["MONGODB_COLLECTION"][1]]  # set to kiwizzle
 
-        self.json_content = json.loads(open("raw_data.json"))
+        self.json_content = json.load(fp=open("raw_data.json"))
 
     def close_spider(self, spider):
         for key in self.json_content:
             document = self.collection.find_one({"companyName": key})
-            if not len(document["tech_stack"]) == len(self.json_content[key]):
-                tech_stack = document["tech_stack"]
-                tech_stack.extend(self.json_content[key])
-                self.json_content[key] = list(set(tech_stack))
+            if not document == None:
+                if not len(document["techStack"]) == len(self.json_content[key]):
+                    tech_stack = document["techStack"]
+                    tech_stack.extend(self.json_content[key])
+                    self.json_content[key] = list(set(tech_stack))
 
             self.collection.update_one(
                 {"companyName": key},
-                {"$set": self.json_content[key]},
+                {"$set": {"techStack": self.json_content[key]}},
                 upsert=True,
             )
+            
+            
+            
 
     def process_item(self, item, spider):
         ...
@@ -220,21 +226,21 @@ class JsonPipeline:
 
     def close_spider(self, spider):
         for key in self.json_response:
-            self.json_response[key]["tech_stack"] = list(
-                set(self.json_response[key]["tech_stack"])
+            self.json_response[key]["techStack"] = list(
+                set(self.json_response[key]["techStack"])
             )
         json.dump(self.json_response, self.file)
         self.file.close()
 
     def process_item(self, item, spider):
         if item["flag"]:
-            self.json_response[str(item["id"])] = {"companyName": "", "tech_stack": []}
+            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
             logging.info(f"NAME : {item['name']}")
             self.json_response[str(item["id"])]["companyName"] = item["name"]
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
         else:
-            for tech in item["tech_stack"]:
-                self.json_response[str(item["id"])]["tech_stack"].append(tech)
+            for tech in item["techStack"]:
+                self.json_response[str(item["id"])]["techStack"].append(tech)
 
         return item
