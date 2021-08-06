@@ -60,7 +60,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
 
-    //jsoup
-    implementation 'org.jsoup:jsoup:1.14.1'
-
 }

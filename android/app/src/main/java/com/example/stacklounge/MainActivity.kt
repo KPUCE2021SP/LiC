@@ -12,9 +12,7 @@ import com.example.stacklounge.login.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.select.Elements
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,66 +33,14 @@ class MainActivity : AppCompatActivity() {
 //        }
 
         val user = Firebase.auth.currentUser
-        //Toast.makeText(applicationContext,"${user?.email}", Toast.LENGTH_SHORT).show()
         val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
         Log.d("username = $userName","userName")
 
-        //val githubTopic = githubTopics()
-        //githubTopic.start()
         
         //Fragment & bottom navigation view
         configureBottomNavigation()
 
 
-    }
-
-    // jsoup를 이용해 사용자의 github topics 크롤링
-    class githubTopics : Thread(){
-        override fun run() {
-            // github email에서 id만 추출
-            val user = Firebase.auth.currentUser
-            val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
-
-            // userName에 따른 topic html 파싱
-            val doc: Document = Jsoup.connect("https://github.com/stars/$userName/topics").get()
-
-            val mElementDatas: Elements =
-                doc.select("ul[class=\"repo-list list-style-none js-navigation-container js-active-navigation-container\"]")
-                    .select("li[class=\"d-md-flex flex-justify-between py-4 border-bottom\"] a")
-
-            var mDatas = mElementDatas.toString()
-
-            val startString = "<a href=\"/topics/"
-            val endString = "\" class"
-            var topicList = arrayOf<String>()
-            var selectedTopic : String = ""
-            var i = 0
-
-            while (true) {
-                //Log.d("startString = ${mDatas.indexOf(startString)}", "startString")
-                if(mDatas.indexOf(startString) == -1){
-                    break
-                }
-                else{
-                    selectedTopic = mDatas.substring(mDatas.indexOf(startString),
-                        mDatas.indexOf(endString)) // <a href="/topics/rest-api
-                    //Log.d("selectedTopic", "${selectedTopic}")
-                    // 문자열 분리
-                    var topic = selectedTopic.split("/")
-
-                    // 재귀로 해서 데이터가 커져 느리고 오류가 난다...
-                    //mDatas = mDatas.substring(mDatas.indexOf("class=\"d-flex flex-md-items-center flex-auto no-underline\""))
-
-                    topicList = topicList.plus(topic[2])
-
-
-
-                }
-            }
-            Log.d("topic", topicList[0])
-//            Log.d("topic", topicList[1])
-//            Log.d("topic", topicList[2])
-        }
     }
 
     //firebase 연결됐는지 체크

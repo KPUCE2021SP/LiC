@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:elevation="5dp"
-    android:background="@color/pale_silver"
     android:layout_gravity="bottom"
     android:orientation="horizontal">
 
@@ -17,7 +16,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/githubblack32px" />
+            android:src="@drawable/ic_baseline_favorite_24" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:gravity="center"
+                android:fontFamily="@font/dahang"
+                android:textStyle="bold"
+                android:text="Favorite" />
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -29,7 +44,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/githubblack32px" />
+            android:src="@drawable/ic_baseline_search_24" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/dahang"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:text="Search" />
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -41,7 +72,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/githubblack32px" />
+            android:src="@drawable/ic_baseline_community_24" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/dahang"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:text="Lounge" />
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -53,7 +100,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/githubblack32px" />
+            android:src="@drawable/ic_baseline_user_24" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/dahang"
+                android:textStyle="bold"
+                android:padding="4dp"
+                android:text="User" />
+        </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>
