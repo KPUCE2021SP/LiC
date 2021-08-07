@@ -81,7 +81,7 @@ USERNAME = "seanhong2000"
 PASSWORD = "Suskyssc2"
 # USERNAME = "sangwoo"
 # PASSWORD = "password"
-MONGODB_COLLECTION = ["programmers", "kiwizzle", "jumpit"]
+MONGODB_COLLECTION = ["companyStacks"]
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 # AUTOTHROTTLE_ENABLED = True
