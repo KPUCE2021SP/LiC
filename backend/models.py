@@ -1,25 +1,15 @@
 from mongoengine import Document
 from mongoengine.fields import (
-    StringField, ListField, DictField, URLField, IntField
+    StringField, 
+    URLField, 
+    ListField,
+    IntField,
 )
 
-class CompanyProgrammers(Document):
-    meta = {"collection": "programmers"}
+class Company(Document):
+    meta = {"collection": "companyStacks"}
     companyName = StringField()
-    techStack = ListField()
-
-
-class CompanyKiwizzle(Document):
-    meta = {"collection": "kiwizzle"}
-    companyName = StringField()
-    techStack = ListField()
-
-
-class CompanyJumpit(Document):
-    meta = {"collection": "jumpit"}
-    companyName = StringField()
-    techStack = ListField()
-
+    techStack = ListField(StringField())
 
 class Tool(Document):
     meta = {"collection": "tools"}

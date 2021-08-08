@@ -82,7 +82,7 @@ class JumpitPipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][2]]  # set to jumpit
+        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to jumpit
 
     def close_spider(self, spider):
         for key in self.json_response:
@@ -132,7 +132,7 @@ class KiwizzlePipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][1]]  # set to kiwizzle
+        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to kiwizzle
 
         self.json_content = defaultdict()
 
@@ -193,7 +193,7 @@ class RawPipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][1]]  # set to kiwizzle
+        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to kiwizzle
 
         self.json_content = json.load(fp=open("raw_data.json"))
 
