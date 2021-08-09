@@ -9,7 +9,9 @@
 *** To avoid retyping too much info. Do a search and replace for the following:
 *** github_username, repo_name, twitter_handle, email, project_title, project_description
 -->
-
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Python: Version](https://img.shields.io/badge/python-3.9.5-blue)
+![Docker: Version](https://img.shields.io/badge/docker-3.9-blue)
 
 
 <!-- PROJECT SHIELDS -->

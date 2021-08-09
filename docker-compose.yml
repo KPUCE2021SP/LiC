@@ -73,38 +73,49 @@ services:
     depends_on: 
       - mongodb
 
+  # 번역 자동화 할거면 이런식으로 할 생각이다.
+  # translate:
+  #   image: app
+  #   build: .
+  #   command: python translate.py
+  #   volumes:
+  #     - .:/backend
+  #   depends_on: 
+  #     - mongodb
+  
 
-  web:
-    image: app
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/backend
-    ports:
-      - "8000:8000"
-    expose: 
-      - "8000"
-    depends_on:
-      - mongodb
 
-  migration:
-    build: .
-    image: app
-    command: python manage.py migrate
-    volumes:
-      - .:/StackLounge
-    links:
-      - mongodb
-    depends_on:
-      - make_migrations
+  # web:
+  #   image: app
+  #   build: .
+  #   command: python manage.py runserver 0.0.0.0:8000
+  #   volumes:
+  #     - .:/backend
+  #   ports:
+  #     - "8000:8000"
+  #   expose: 
+  #     - "8000"
+  #   depends_on:
+  #     - mongodb
 
-  make_migrations:
-    build: .
-    image: app
-    command: python manage.py makemigrations
-    volumes:
-      - .:/StackLounge
-    links:
-      - mongodb
-    depends_on:
-      - mongodb
+  # migration:
+  #   build: .
+  #   image: app
+  #   command: python manage.py migrate
+  #   volumes:
+  #     - .:/StackLounge
+  #   links:
+  #     - mongodb
+  #   depends_on:
+  #     - make_migrations
+
+  # make_migrations:
+  #   build: .
+  #   image: app
+  #   command: python manage.py makemigrations
+  #   volumes:
+  #     - .:/StackLounge
+  #   links:
+  #     - mongodb
+  #   depends_on:
+  #     - mongodb
