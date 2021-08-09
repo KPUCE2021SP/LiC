@@ -83,6 +83,7 @@
             android:fontFamily="@font/dahang"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:textColor="@color/white"
             android:text="로그아웃"
 
             >
