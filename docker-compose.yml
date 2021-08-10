@@ -84,19 +84,24 @@ services:
   #     - mongodb
   
 
-
-  # web:
-  #   image: app
-  #   build: .
-  #   command: python manage.py runserver 0.0.0.0:8000
-  #   volumes:
-  #     - .:/backend
-  #   ports:
-  #     - "8000:8000"
-  #   expose: 
-  #     - "8000"
-  #   depends_on:
-  #     - mongodb
+  web:
+    image: app
+    build: .
+    command: bash -c "cd backend && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/backend
+    environment:
+      MONGOHOST: mongodb
+      MONGODB: stackdb
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      USERNAME: root
+      PASSWORD: example
+    ports:
+      - "8000:8000"
+    expose: 
+      - "8000"
+    depends_on:
+      - mongodb
 
   # migration:
   #   build: .

@@ -72,16 +72,16 @@ LOG_LEVEL = "INFO"
 #    'stackspider.pipelines.JumpitPipeline':400,
 #    #'stackspider.pipelines.MongoDBPipeline': 800,
 # }
-MONGODB_SERVER = "mongodb://localhost"
+MONGODB_SERVER = "mongodb://mongodb"
 MONGODB_PORT = 27017
 MONGODB_DB = "stackdb"
 USERNAME = "root"
 PASSWORD = "example"
-USERNAME = "seanhong2000"
-PASSWORD = "Suskyssc2"
+# USERNAME = "seanhong2000"
+# PASSWORD = "Suskyssc2"
 # USERNAME = "sangwoo"
 # PASSWORD = "password"
-MONGODB_COLLECTION = ["companyStacks"]
+MONGODB_COLLECTION = ["companyStacks", "tools"]
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 # AUTOTHROTTLE_ENABLED = True

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from mongoengine import connect
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'graphene_django'
+    'graphene_django',
+    'graphene_mongo'
 ]
 
 MIDDLEWARE = [
@@ -71,34 +74,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'ENFORCE_SCHEMA': False,
-        'NAME': 'stackdb',
-        'CLIENT': {
-            'host': 'mongodb',
-            'port': 27017,
-            'username': 'root',
-            'password': 'example',
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
-        },
-        'LOGGING': {
-            'version': 1,
-            'loggers': {
-                'djongo': {
-                    'level': 'DEBUG',
-                    'propagate': False,                        
-                }
-            },
-        },
-    }
-}
+# DATABASES = {
+#     # 'default': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': 'mydatabase',
+#     # }
+# }
 
 
 # Password validation
@@ -144,6 +128,26 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# AUTHENTICATION_BACKENDS = [
+#     "graphql_jwt.backends.JSONWebTokenBackend",
+#     "django.contrib.auth.backends.ModelBackend",
+# ]
+
+# GRAPHQL_JWT = {
+#     "JWT_VERIFY_EXPIRATION": True,
+# }
+
+MONGO_HOST = os.getenv("MONGOHOST")
+MONGO_PORT = os.getenv("MONGOPORT")
+DB_NAME = os.getenv("MONGODB")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+
+connect(db=DB_NAME, host=MONGO_HOST, port=27017, username=USERNAME, password=PASSWORD, authentication_source='admin')
+
 GRAPHENE = {
-    "SCHEMA": "backend.schema.schema"
+    "SCHEMA": "api.schema.schema",
+    # "MIDDLEWARE": [
+    #     # "graphql_jwt.middleware.JSONWebTokenMiddleware",
+    # ]
 }
