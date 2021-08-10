@@ -211,9 +211,7 @@ class RawPipeline:
                 {"$set": {"techStack": self.json_content[key]}},
                 upsert=True,
             )
-            
-            
-            
+
 
     def process_item(self, item, spider):
         ...
@@ -222,25 +220,21 @@ class RawPipeline:
 class JsonPipeline:
     def open_spider(self, spider):
         self.json_response = defaultdict()
-        self.file = open("data.json", "w")
+        connection = MongoClient(
+            host=settings["MONGODB_SERVER"],
+            port=settings["MONGODB_PORT"],
+            username=settings["USERNAME"],
+            password=settings["PASSWORD"],
+        )
+        db = connection[settings["MONGODB_DB"]]
+        self.collection = db[settings["MONGODB_COLLECTION"][1]]  # set to tools collection
+
 
     def close_spider(self, spider):
-        for key in self.json_response:
-            self.json_response[key]["techStack"] = list(
-                set(self.json_response[key]["techStack"])
-            )
-        json.dump(self.json_response, self.file)
-        self.file.close()
+        fixture = json.load(fp=open("stack_fixture.json"))
+        if not self.collection.find_one({"id": 0}):
+            self.collection.insert_many(fixture)
+
 
     def process_item(self, item, spider):
-        if item["flag"]:
-            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
-            logging.info(f"NAME : {item['name']}")
-            self.json_response[str(item["id"])]["companyName"] = item["name"]
-            for tech in item["techStack"]:
-                self.json_response[str(item["id"])]["techStack"].append(tech)
-        else:
-            for tech in item["techStack"]:
-                self.json_response[str(item["id"])]["techStack"].append(tech)
-
-        return item
+        ...

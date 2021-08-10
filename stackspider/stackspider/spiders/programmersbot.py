@@ -19,6 +19,7 @@ class ProgrammersbotSpider(Spider):
     custom_settings = {
         "ITEM_PIPELINES": {
             "stackspider.pipelines.ProgrammersPipeline": 300,
+            "stackspider.pipelines.JsonPipeline":500,
         }
     }
 

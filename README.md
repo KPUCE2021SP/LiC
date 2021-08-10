@@ -150,7 +150,11 @@
    python3 -m pip install -r requirements.txt
    ```
 
-
+### Starting Up
+1. Docker Container를 시작해주세요
+   ```sh
+   git clone https://github.com/KPUCE2021SP/LiC.git
+   ```
 
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
