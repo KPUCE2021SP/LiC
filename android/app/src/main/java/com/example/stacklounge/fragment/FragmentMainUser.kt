@@ -36,6 +36,7 @@ class FragmentMainUser : Fragment() {
             startActivity(intent)
 
         }
+        setHasOptionsMenu(true)
         return view
 
     }

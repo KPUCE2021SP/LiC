@@ -2,6 +2,7 @@ package com.example.stacklounge.fragment
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.stacklounge.R
 
@@ -9,6 +10,7 @@ class FragmentMainFavorite : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setHasOptionsMenu(true)
 
     }
@@ -18,6 +20,7 @@ class FragmentMainFavorite : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
 
         return inflater.inflate(R.layout.fragment_main_favorite, container, false)
     }
