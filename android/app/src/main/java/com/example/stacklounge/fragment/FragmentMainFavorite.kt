@@ -5,6 +5,7 @@ import android.view.*
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.stacklounge.R
+import kotlinx.android.synthetic.main.fragment_main_favorite.view.*
 
 class FragmentMainFavorite : Fragment() {
 
@@ -19,7 +20,8 @@ class FragmentMainFavorite : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+        val view = inflater.inflate(R.layout.fragment_main_favorite, null)
 
 
         return inflater.inflate(R.layout.fragment_main_favorite, container, false)
