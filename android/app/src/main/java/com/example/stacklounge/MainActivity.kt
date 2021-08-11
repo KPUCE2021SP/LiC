@@ -2,12 +2,10 @@ package com.example.stacklounge
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils.substring
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.example.stacklounge.databinding.ActivityMainBinding
 import com.example.stacklounge.login.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -17,24 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
         isFirebaseConnected() // firebase 연결되있는지 확인
 
-//        btnLogout.setOnClickListener{
-//            // 로그아웃하고 다시 LoginActivity로 이동
-//            Firebase.auth.signOut()
-//
-//            startActivity(
-//                Intent(this, LoginActivity::class.java)
-//            )
-//            finish()
-//        }
-
-        val user = Firebase.auth.currentUser
-        val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
-        Log.d("username = $userName","userName")
+//        val user = Firebase.auth.currentUser
+//        val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
+//        Log.d("username = $userName","userName")
 
         
         //Fragment & bottom navigation view
