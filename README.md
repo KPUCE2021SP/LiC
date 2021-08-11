@@ -153,8 +153,13 @@
 ### Starting Up
 1. Docker Container를 시작해주세요
    ```sh
-   git clone https://github.com/KPUCE2021SP/LiC.git
+   docker-compose up -d
    ```
+2. 컨테이너 확인 
+    ```
+    localhost:8081 -> MongoExpress
+    localhost:8000/graphql -> Django / GraphQL
+    ```
 
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
