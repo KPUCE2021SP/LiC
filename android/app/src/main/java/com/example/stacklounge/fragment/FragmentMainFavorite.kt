@@ -12,6 +12,7 @@ class FragmentMainFavorite : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //appbar랑 메뉴xml 연결
         setHasOptionsMenu(true)
 
     }
