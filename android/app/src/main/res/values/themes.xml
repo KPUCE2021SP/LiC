@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.StackLounge" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/btcolor</item>   <!-- appbar 색 -->
+        <item name="colorPrimary">@color/stcolor</item>   <!-- appbar 색 -->
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>  <!-- appbar 글자 색 -->
         <!-- Secondary brand color. -->
