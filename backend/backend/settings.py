@@ -147,7 +147,4 @@ connect(db=DB_NAME, host=MONGO_HOST, port=27017, username=USERNAME, password=PAS
 
 GRAPHENE = {
     "SCHEMA": "api.schema.schema",
-    # "MIDDLEWARE": [
-    #     # "graphql_jwt.middleware.JSONWebTokenMiddleware",
-    # ]
 }
