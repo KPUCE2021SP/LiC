@@ -4744,17 +4744,6 @@
         "websiteUrl": "http://nodejs.org/"
     },
     {
-        "name": "Node.js",
-        "title": "A platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications",
-        "slug": "node-js",
-        "canonicalUrl": null,
-        "id": 432,
-        "imageUrl": "https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png",
-        "ossRepo": "https://github.com/nodejs/node",
-        "description": "Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.",
-        "websiteUrl": "http://nodejs.org/"
-    },
-    {
         "name": "NoSQLBooster",
         "title": "MongoDB Admin GUI tool",
         "slug": "nosqlbooster",
