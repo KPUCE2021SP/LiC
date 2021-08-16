@@ -11,7 +11,7 @@ const getHTML = async(username) => {
   }
 }
 
-// crawling한 데이터를 parsing
+// crawling한 데이터를 parsing해준다.
 const parsing = async(username) => {
   const html = await(getHTML(username));
   const $ = cheerio.load(html.data);
