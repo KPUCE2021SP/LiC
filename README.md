@@ -99,7 +99,7 @@
 
 ### Built With
 <details>
-<summary> <b>🧑🏻‍💻 이러한 기술들로 만들고 있습니다.</b></summary>
+<summary> <b> 이러한 기술들로 만들고 있습니다.</b></summary>
 </br>
 
 * ![Docker](https://img.shields.io/badge/-Docker-000000?style=flat&logo=docker)
