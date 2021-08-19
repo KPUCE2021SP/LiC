@@ -189,7 +189,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 ## Team Members
 
 * [Sean Hong](https://github.com/KKodiac)
-* [Bae Joonil](https://github.com/bjo6300)
+* [Bae Jnil](https://github.com/bjo6300)
 * [Han Sangwoo](https://github.com/sktkddn777)
 
 
