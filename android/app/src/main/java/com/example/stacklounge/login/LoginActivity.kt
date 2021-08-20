@@ -9,6 +9,7 @@ import android.text.SpannableString
 import android.text.TextPaint
 import android.text.style.URLSpan
 import android.text.util.Linkify
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import com.example.stacklounge.MainActivity
@@ -20,15 +21,20 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var functions: FirebaseFunctions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        functions = Firebase.functions
 
         //github 로그인
         btnLogin.setOnClickListener {
@@ -71,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getCredential().getAccessToken().
 
                         val user = Firebase.auth.currentUser
-
+                        Log.d("HELLO", user.toString())
                         //var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
 
                         // 로그인 성공 시 MainActivity로 이동
@@ -94,6 +100,17 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
+
+                        val user = Firebase.auth.currentUser
+                        functions.getHttpsCallable("lic").call(user?.uid).continueWith { task ->
+                            // This continuation runs on either success or failure, but if the task
+                            // has failed then result will throw an Exception which will be
+                            // propagated down.
+                            val result = task.result?.data as String
+                            result
+                            Log.d("HELLO", result)
+                        }
+
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
