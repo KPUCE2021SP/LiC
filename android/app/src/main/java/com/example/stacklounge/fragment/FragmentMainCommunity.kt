@@ -5,6 +5,8 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.stacklounge.R
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class FragmentMainCommunity : Fragment() {
 
@@ -19,6 +21,11 @@ class FragmentMainCommunity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+        val database = Firebase.database
+        val myRef = database.getReference("message")
+
+        myRef.setValue("Hello, World!")
 
         return inflater.inflate(R.layout.fragment_main_community, container, false)
     }
