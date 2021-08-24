@@ -22,10 +22,7 @@ class FragmentMainCommunity : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello, World!")
+      
 
         return inflater.inflate(R.layout.fragment_main_community, container, false)
     }
