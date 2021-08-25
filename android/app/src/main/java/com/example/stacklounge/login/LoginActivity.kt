@@ -2,15 +2,9 @@ package com.example.stacklounge.login
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.SpannableString
-import android.text.TextPaint
-import android.text.style.URLSpan
-import android.text.util.Linkify
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.MainActivity
 import com.example.stacklounge.R
 import com.google.android.gms.tasks.OnFailureListener
@@ -22,13 +16,14 @@ import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val actionBar = supportActionBar
+        actionBar!!.hide()
 
         //github 로그인
         btnLogin.setOnClickListener {
