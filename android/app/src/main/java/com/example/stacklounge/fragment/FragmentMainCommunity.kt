@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.example.stacklounge.R
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -11,50 +13,55 @@ import kotlinx.android.synthetic.main.fragment_main_community.view.*
 
 
 class FragmentMainCommunity : Fragment() {
+    val user = Firebase.auth.currentUser
+
+    val userId : String = "bjo6300" // functions에서 받아올 예정
+    val uid = user?.uid
+    var boardNumber : Int = 0 // 글 번호
+    var boardContents : String = "hello firebase" // 글 내용
+    var title = "title" // 글 제목
+
+    // 게시판 hashmap
+    val userInfo = hashMapOf(
+        "user" to userId,
+        "uid" to uid,
+        "number" to boardNumber,
+        "contents" to boardContents,
+        "title" to title
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //appbar랑 메뉴xml 연결
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_main_community, null)
 
-        val userId : String = "bjo6300"
-        val uid : String = "123456"
-        var boardNumber : Int = 0
-        var boardContents : String = "hello firebase"
-
-        // 게시판 hashmap
-        val itemMap = hashMapOf(
-            "user" to userId,
-            "uid" to uid,
-            "number" to boardNumber,
-            "contents" to boardContents
-        )
-
-//        //데이터 가져오기
-//        val database = Firebase.database
-//        val itemsRef = database.getReference("userlist")
-//        itemsRef.child("123").child("name")
-
         view.btnBoardCreate.setOnClickListener {
-            val database = Firebase.database
-            val itemsRef = database.getReference("userlist")
-            val itemRef = itemsRef.push()
-            itemRef.setValue(itemMap)
+            //메인 쓰레드 말고 다른 쓰레드 사용
+            object : Thread(){
+                override fun run() {
+                    // realtimeDB에 추가
+                    adduserInfoinDB()
+                    boardNumber++
+                }
+            }.start()
         }
 
         view.btnBoardDelete.setOnClickListener {
-            val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference("message")
-
-            myRef.setValue("Hello, World!")
+            object : Thread(){
+                override fun run() {
+                    // DB 삭제
+                    deleteuserInfoinDB()
+                }
+            }.start()
         }
 
         view.btnBoardUpdate.setOnClickListener {
@@ -83,6 +90,20 @@ class FragmentMainCommunity : Fragment() {
             }
 
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    fun adduserInfoinDB(){
+        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        val userRef = database.getReference("$uid")
+        userRef.setValue(userInfo)
+    }
+
+    fun deleteuserInfoinDB() {
+        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        val userRef = database.getReference("$uid")
+        if (uid != null) {
+            userRef.removeValue()
         }
     }
 
