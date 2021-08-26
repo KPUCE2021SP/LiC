@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //상단 바 숨김
         val actionBar = supportActionBar
         actionBar!!.hide()
 
