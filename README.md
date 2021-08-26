@@ -99,7 +99,7 @@
 
 ### Built With
 <details>
-<summary> <b>🧑🏻‍💻 이러한 기술들로 만들고 있습니다.</b></summary>
+<summary> <b> 이러한 기술들로 만들고 있습니다.</b></summary>
 </br>
 
 * ![Docker](https://img.shields.io/badge/-Docker-000000?style=flat&logo=docker)
@@ -150,7 +150,16 @@
    python3 -m pip install -r requirements.txt
    ```
 
-
+### Starting Up
+1. Docker Container를 시작해주세요
+   ```sh
+   docker-compose up -d
+   ```
+2. 컨테이너 확인 
+    ```
+    localhost:8081 -> MongoExpress
+    localhost:8000/graphql -> Django / GraphQL
+    ```
 
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
