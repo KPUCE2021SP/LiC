@@ -5,7 +5,7 @@ const { graphql } = require("@octokit/graphql");
 // token은 github에서 발급받은 토큰을 넣어주면 된다.
 const graphqlWithAuth = graphql.defaults({
   headers: {
-    authorization: `token ${token}`,
+    authorization: `token {token}`,
   },
 });
 

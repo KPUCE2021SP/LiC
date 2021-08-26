@@ -61,7 +61,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.firebase:firebase-database-ktx' // realtimeDB++
+    implementation 'com.google.firebase:firebase-functions-ktx'
+
 
     //상단 바 implements
     implementation 'androidx.legacy:legacy-support-v4:1.0.0' // DrawerLayout
