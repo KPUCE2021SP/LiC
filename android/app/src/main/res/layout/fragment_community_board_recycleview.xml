@@ -23,11 +23,14 @@
 
     <TextView
         android:id="@+id/tvboardContent"
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:layout_marginEnd="30dp"
         android:text="글 내용"
         android:textSize="10sp"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintBottom_toTopOf="@+id/tvboardTime"
         app:layout_constraintStart_toStartOf="@+id/tvboardTime" />
 

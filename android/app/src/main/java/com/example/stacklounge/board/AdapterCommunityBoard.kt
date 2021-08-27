@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.stacklounge.R
 
 
-class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<BoardData>) :
+class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<BoardData>, val itemClick: (BoardData) -> Unit) :
     RecyclerView.Adapter<AdapterCommunityBoard.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -44,6 +44,7 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
             tvboardContent?.text = BoardData.boardContents
             tvboardTime?.text = BoardData.boardTime
 
+            itemView.setOnClickListener { itemClick(BoardData) } // 아이템(게시글)을 클릭했을 때
         }
     }
 
