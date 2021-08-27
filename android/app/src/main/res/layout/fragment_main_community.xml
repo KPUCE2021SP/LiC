@@ -135,12 +135,6 @@
                 android:background="@drawable/square_border_btcolor"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textViewm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="여긴어떻게 꾸미지" />
                 <Button
                     android:id="@+id/btnBoardCreate"
                     android:layout_width="match_parent"
@@ -164,6 +158,19 @@
                     android:text="DB 수정 - 임시용"
                     >
                 </Button>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/boardRecycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/fragment_community_board_recycleview">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+
 
 
             </LinearLayout>
