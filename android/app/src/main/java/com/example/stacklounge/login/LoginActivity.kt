@@ -3,13 +3,7 @@ package com.example.stacklounge.login
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.SpannableString
-import android.text.TextPaint
-import android.text.style.URLSpan
-import android.text.util.Linkify
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.MainActivity

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".board.BoardWriteText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:scaleType="matrix"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            app:srcCompat="@drawable/ic_baseline_close_24"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnWriteComplete"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:background="@drawable/oval_border_button"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:text="완료" />
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/writingTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목"
+        android:layout_margin="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/underline_writing"
+        android:textStyle="bold"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/writingContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="내용을 입력해주세요."
+        android:backgroundTint="@android:color/transparent"
+        android:layout_margin="5dp"
+        android:paddingBottom="5dp"
+        android:text="" />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
