@@ -135,6 +135,7 @@
                 android:background="@drawable/square_border_btcolor"
                 android:orientation="vertical">
 
+
                 <Button
                     android:id="@+id/btnBoardCreate"
                     android:layout_width="match_parent"
@@ -168,9 +169,6 @@
                     tools:listitem="@layout/fragment_community_board_recycleview">
 
                 </androidx.recyclerview.widget.RecyclerView>
-
-
-
 
 
             </LinearLayout>

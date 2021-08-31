@@ -50,6 +50,7 @@ class FragmentMainCommunity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         val view = inflater.inflate(R.layout.fragment_main_community, null)
 
         fragmentCommunity = container?.getContext()
@@ -128,7 +129,7 @@ class FragmentMainCommunity : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+    
     fun adduserInfoinDB(){
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
         val userRef = database.getReference("board/$uid") // realtime db 경로
