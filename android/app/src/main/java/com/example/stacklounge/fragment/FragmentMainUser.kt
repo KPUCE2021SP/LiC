@@ -16,8 +16,6 @@ class FragmentMainUser : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-
 
     }
 
@@ -25,6 +23,8 @@ class FragmentMainUser : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
 
         val view = inflater.inflate(R.layout.fragment_main_user, null)
 
@@ -36,31 +36,9 @@ class FragmentMainUser : Fragment() {
             startActivity(intent)
 
         }
-        setHasOptionsMenu(true)
+
         return view
 
-    }
-
-    //appbar 메뉴
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_navi_menu, menu)
-    }
-
-    //appbar 메뉴 클릭 시
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.tbmenu -> {
-                //Toast.makeText(activity,"메뉴",Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            R.id.tbsearch -> {
-                // navigate to settings screen
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
 }

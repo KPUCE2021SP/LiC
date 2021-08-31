@@ -10,6 +10,7 @@ import com.example.stacklounge.login.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_main_user.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         
         //Fragment & bottom navigation view
         configureBottomNavigation()
-
 
     }
 
