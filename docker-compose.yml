@@ -6,6 +6,7 @@ volumes:
 services:
   mongodb:
     container_name: mongodb
+    # image: seanhong2000/mongo # 도커 허브에 있는 이미지
     image: mongo
     restart: unless-stopped
     volumes:
@@ -22,6 +23,7 @@ services:
     #   retries: 3
 
   mongo-express:
+    # image: seanhong2000/mongo-express # 도커 허브에 있는 이미지
     image: mongo-express
     container_name: mongodb-express
     restart: unless-stopped
@@ -46,6 +48,7 @@ services:
   #   restart: unless-stopped
  
   spider_1:
+    # image: seanhong2000/app # 도커 허브에 있는 이미지
     image: app
     build: .
     command: bash -c "cd stackspider && scrapy crawl programmersbot"
@@ -55,6 +58,7 @@ services:
       - mongodb
 
   spider_2:
+    # image: seanhong2000/app
     image: app
     build: .
     command: bash -c "cd stackspider && scrapy crawl jumpitbot"
@@ -65,6 +69,7 @@ services:
 
 
   spider_3:
+    # image: seanhong2000/app
     image: app
     build: .
     command: bash -c "cd stackspider && scrapy crawl kiwizzlebot"
@@ -85,6 +90,7 @@ services:
   
 
   web:
+    # image: seanhong2000/app
     image: app
     build: .
     command: bash -c "cd backend && python manage.py runserver 0.0.0.0:8000"
