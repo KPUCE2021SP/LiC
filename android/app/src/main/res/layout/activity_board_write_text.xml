@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".board.BoardWriteText">
+    tools:context=".board.BoardWriteFeed">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/btnBackText"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_weight="1"
@@ -30,10 +30,10 @@
             android:id="@+id/btnWriteComplete"
             android:layout_width="50dp"
             android:layout_height="35dp"
-            android:layout_gravity="end"
-            android:background="@drawable/oval_border_button"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/oval_border_button"
             android:textColor="@color/white"
             android:text="완료" />
 
@@ -45,7 +45,7 @@
         android:id="@+id/writingTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="제목"
+        android:hint=" 제목"
         android:layout_margin="5dp"
         android:paddingBottom="5dp"
         android:background="@drawable/underline_writing"

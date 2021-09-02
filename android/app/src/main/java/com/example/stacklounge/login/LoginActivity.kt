@@ -12,7 +12,10 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.EmailAuthProvider.getCredential
+import com.google.firebase.auth.FacebookAuthProvider.getCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GithubAuthProvider.getCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.functions.FirebaseFunctions
@@ -74,12 +77,19 @@ class LoginActivity : AppCompatActivity() {
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
 
+
                         val user = Firebase.auth.currentUser
+
+
+
                         Log.d("HELLO", user.toString())
                         //var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
+
+
+
 
                     })
                 .addOnFailureListener(
@@ -93,17 +103,9 @@ class LoginActivity : AppCompatActivity() {
                 .startActivityForSignInWithProvider( /* activity= */this, provider.build())
                 .addOnSuccessListener(
                     OnSuccessListener<AuthResult?> {
-                        // User is signed in.
-                        // IdP data available in
-                        // authResult.getAdditionalUserInfo().getProfile().
-                        // The OAuth access token can also be retrieved:
-                        // authResult.getCredential().getAccessToken().
-
                         val user = Firebase.auth.currentUser
                         functions.getHttpsCallable("lic").call(user?.uid).continueWith { task ->
-                            // This continuation runs on either success or failure, but if the task
-                            // has failed then result will throw an Exception which will be
-                            // propagated down.
+
                             val result = task.result?.data as String
                             result
                             Log.d("HELLO", result)
@@ -112,6 +114,7 @@ class LoginActivity : AppCompatActivity() {
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
+                        
                     })
                 .addOnFailureListener(
                     OnFailureListener {
