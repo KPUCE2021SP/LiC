@@ -24,19 +24,31 @@ exports.lic = functions
 })
 
 // 특정 시간마다 github에서 받아온 topics들을 update해준다.
-exports.scheduledFunctionCrontab = functions.pubsub.schedule('every 5 minutes').onRun((context) => {
-  console.log('This will be run every day at 12:00');
+exports.scheduledFunctionCrontab = functions.pubsub.schedule('5 11 * * *')
+.timeZone('America/New_York')
+.onRun((context) => {
+  console.log('This will be run every day at 11:05 AM Eastern!');
 
   database.ref('userlist/').once('value', (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-      parsing(childData['username'])
-      .then(userdata => {
-        database.ref(`usertopics/${data}`).set({
-          usertopics: userdata[0].topicName,
-        });
-      })
-    });
+    if (snapshot.exists()) {
+      snapshot.forEach((childSnapshot) => {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        console.log(childData['username']);
+        parsing(childData['username'])
+        .then(userdata => {
+          database.ref(`usertopics/${childData['username']}`).set({
+            usertopics: userdata[0].topicName,
+          });
+          return userdata;
+        })
+      });
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
   });
+  return null;
+    
 });
