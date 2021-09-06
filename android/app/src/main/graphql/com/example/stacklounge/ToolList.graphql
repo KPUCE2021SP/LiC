@@ -1,0 +1,45 @@
+query GetToolByName($name: String!){
+    toolByName(name: $name){
+        id
+        name
+        slug
+        title
+        description
+        imageUrl
+        ossRepo
+        canonicalUrl
+        websiteUrl
+    }
+}
+
+query GetToolBySlug($slug: String!){
+    toolBySlug(slug: $slug){
+        id
+        name
+        slug
+        title
+        description
+        imageUrl
+        ossRepo
+        canonicalUrl
+        websiteUrl
+    }
+}
+
+query GetToolAll{
+    allTools{
+        edges{
+            node{
+                id
+                name
+                slug
+                title
+                description
+                imageUrl
+                ossRepo
+                canonicalUrl
+                websiteUrl
+            }
+        }
+    }
+}
