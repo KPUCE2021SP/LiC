@@ -3,10 +3,10 @@ const firebase = require("firebase");
 
 // real-time database setting
 let config = {
-  apiKey: "YOUR API KEY",
-  authDomain: "stacklounge-62ffd.firebaseapp.com",
-  databaseURL: "https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app",
-  storageBucket: "stacklounge-62ffd.appspot.com" 
+  apiKey: "your api key",
+  authDomain: "stacklounge-62ffd-21842.firebaseapp.com",
+  databaseURL: "https://stacklounge-62ffd-21842.firebaseio.com/",
+  storageBucket: "stacklounge-62ffd-21842.appspot.com" 
 };
 firebase.initializeApp(config);
 

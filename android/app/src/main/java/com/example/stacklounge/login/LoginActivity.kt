@@ -19,8 +19,10 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.OAuthCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.oAuthProvider
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.ktx.Firebase
@@ -36,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         //상단 바 숨김
         val actionBar = supportActionBar
         actionBar!!.hide()
-        
+
         functions = Firebase.functions
 
 
@@ -79,8 +81,8 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
-
                         val user = Firebase.auth.currentUser
+
                         Log.d("HELLO", user.toString())
                         //var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
 
@@ -106,15 +108,9 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getCredential().getAccessToken().
 
                         val user = Firebase.auth.currentUser
-                        functions.getHttpsCallable("lic").call(user?.uid).continueWith { task ->
-                            // This continuation runs on either success or failure, but if the task
-                            // has failed then result will throw an Exception which will be
-                            // propagated down.
-                            val result = task.result?.data as String
-                            result
-                            Log.d("HELLO", result)
-                        }
 
+                        //functions 부분
+                        addMessage("KKodiac")
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
@@ -141,6 +137,23 @@ class LoginActivity : AppCompatActivity() {
     private fun doSignup(){
         var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"))
         startActivity(intent)
+    }
+
+    // functions
+    // data에는 유저 이름을 받아오면 된다.
+    private fun addMessage(text: String): Task<String> {
+        // Create the arguments to the callable function.
+
+        return functions
+            .getHttpsCallable("lic")
+            .call(text)
+            .continueWith { task ->
+                // This continuation runs on either success or failure, but if the task
+                // has failed then result will throw an Exception which will be
+                // propagated down.
+                val result = task.result?.data as String
+                result
+            }
     }
 
 }
