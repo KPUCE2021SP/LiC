@@ -3,13 +3,7 @@ package com.example.stacklounge.login
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.SpannableString
-import android.text.TextPaint
-import android.text.style.URLSpan
-import android.text.util.Linkify
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.MainActivity
@@ -18,6 +12,8 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.EmailAuthProvider.getCredential
+import com.google.firebase.auth.FacebookAuthProvider.getCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.OAuthCredential
 import com.google.firebase.auth.OAuthProvider
@@ -89,6 +85,9 @@ class LoginActivity : AppCompatActivity() {
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
 
+
+
+
                     })
                 .addOnFailureListener(
                     OnFailureListener {
@@ -101,12 +100,6 @@ class LoginActivity : AppCompatActivity() {
                 .startActivityForSignInWithProvider( /* activity= */this, provider.build())
                 .addOnSuccessListener(
                     OnSuccessListener<AuthResult?> {
-                        // User is signed in.
-                        // IdP data available in
-                        // authResult.getAdditionalUserInfo().getProfile().
-                        // The OAuth access token can also be retrieved:
-                        // authResult.getCredential().getAccessToken().
-
                         val user = Firebase.auth.currentUser
 
                         //functions 부분
@@ -114,6 +107,7 @@ class LoginActivity : AppCompatActivity() {
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
+                        
                     })
                 .addOnFailureListener(
                     OnFailureListener {
