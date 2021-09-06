@@ -12,7 +12,10 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.EmailAuthProvider.getCredential
+import com.google.firebase.auth.FacebookAuthProvider.getCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GithubAuthProvider.getCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
@@ -21,13 +24,18 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var functions: FirebaseFunctions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
         //상단 바 숨김
         val actionBar = supportActionBar
         actionBar!!.hide()
+        
+        functions = Firebase.functions
+
 
         //github 로그인
         btnLogin.setOnClickListener {
@@ -74,6 +82,9 @@ class LoginActivity : AppCompatActivity() {
                         Log.d("Auth", it.additionalUserInfo?.profile.toString())
                         githubLoginClear()
 
+
+
+
                     })
                 .addOnFailureListener(
                     OnFailureListener {
@@ -105,7 +116,6 @@ class LoginActivity : AppCompatActivity() {
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
-
                     })
                 .addOnFailureListener(
                     OnFailureListener {

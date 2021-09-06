@@ -1,6 +1,7 @@
 package com.example.stacklounge.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -9,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.stacklounge.R
 import com.example.stacklounge.board.AdapterCommunityBoard
 import com.example.stacklounge.board.BoardData
+import com.example.stacklounge.board.BoardShowFeed
+import com.example.stacklounge.board.BoardWriteFeed
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -48,6 +51,7 @@ class FragmentMainCommunity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         val view = inflater.inflate(R.layout.fragment_main_community, null)
 
         fragmentCommunity = container?.getContext()
@@ -79,10 +83,10 @@ class FragmentMainCommunity : Fragment() {
 
         // 데이터를 db에서 가져와야한다.
         var boardList = arrayListOf<BoardData>(
-            BoardData("firsttitle","firstcontents","12:01"),
-            BoardData("second","secondcontentsasdlfkjweoirjozxlkfv;sdfdsflaksdjf;lkajsdfl;kaj;sldkfj;ladsjf;lkasjd;lfkja;lkdfj;aksdjf;aksdjf;ldskfjas;kldfj;aldskf","12:02"),
-            BoardData("third","thirdcontents","12:03"),
-            BoardData("fourth","fourthcontents","12:04")
+            BoardData("firsttitle","firstcontents","12:01", userId,"$uid",0,9),
+//            BoardData("second","secondcontentsasdlfkjweoirjozxlkfv;sdfdsflaksdjf;lkajsdfl;kaj;sldkfj;ladsjf;lkasjd;lfkja;lkdfj;aksdjf;aksdjf;ldskfjas;kldfj;aldskf","12:02"),
+//            BoardData("third","thirdcontents","12:03"),
+//            BoardData("fourth","fourthcontents","12:04")
 
         )
 
@@ -90,7 +94,9 @@ class FragmentMainCommunity : Fragment() {
         val rAdapter = AdapterCommunityBoard(context,boardList) { BoardData ->
             // 아이템 클릭했을 때 필요한 동작
             // 게시글 클릭했을때 fragment로 이동시켜야함.
-            Toast.makeText(fragmentCommunity, "${BoardData.boardTime}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(fragmentCommunity, BoardData.boardTime, Toast.LENGTH_SHORT).show()
+            val commentintent = Intent(activity, BoardShowFeed::class.java)
+            startActivity(commentintent)
         }
 
         rAdapter.notifyDataSetChanged() //어댑터의 데이터가 변했다는 notify를 날린다
@@ -113,6 +119,8 @@ class FragmentMainCommunity : Fragment() {
         return when (item.itemId) {
             R.id.menuBoardWrite -> {
                 //Toast.makeText(activity,"메뉴",Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, BoardWriteFeed::class.java)
+                startActivity(intent)
                 true
             }
 
@@ -124,16 +132,16 @@ class FragmentMainCommunity : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+    
     fun adduserInfoinDB(){
-        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
-        val userRef = database.getReference("$uid")
+        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
+        val userRef = database.getReference("board/$uid") // realtime db 경로
         userRef.setValue(userInfo)
     }
 
     fun deleteuserInfoinDB() {
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
-        val userRef = database.getReference("$uid")
+        val userRef = database.getReference("board/$uid")
         if (uid != null) {
             userRef.removeValue()
         }
