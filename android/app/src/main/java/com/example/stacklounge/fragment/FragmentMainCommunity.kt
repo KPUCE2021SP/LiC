@@ -83,10 +83,10 @@ class FragmentMainCommunity : Fragment() {
 
         // 데이터를 db에서 가져와야한다.
         var boardList = arrayListOf<BoardData>(
-            BoardData("firsttitle","firstcontents","12:01"),
-            BoardData("second","secondcontentsasdlfkjweoirjozxlkfv;sdfdsflaksdjf;lkajsdfl;kaj;sldkfj;ladsjf;lkasjd;lfkja;lkdfj;aksdjf;aksdjf;ldskfjas;kldfj;aldskf","12:02"),
-            BoardData("third","thirdcontents","12:03"),
-            BoardData("fourth","fourthcontents","12:04")
+            BoardData("firsttitle","firstcontents","12:01", userId,"$uid",0,9),
+//            BoardData("second","secondcontentsasdlfkjweoirjozxlkfv;sdfdsflaksdjf;lkajsdfl;kaj;sldkfj;ladsjf;lkasjd;lfkja;lkdfj;aksdjf;aksdjf;ldskfjas;kldfj;aldskf","12:02"),
+//            BoardData("third","thirdcontents","12:03"),
+//            BoardData("fourth","fourthcontents","12:04")
 
         )
 
@@ -94,7 +94,7 @@ class FragmentMainCommunity : Fragment() {
         val rAdapter = AdapterCommunityBoard(context,boardList) { BoardData ->
             // 아이템 클릭했을 때 필요한 동작
             // 게시글 클릭했을때 fragment로 이동시켜야함.
-            Toast.makeText(fragmentCommunity, "${BoardData.boardTime}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(fragmentCommunity, BoardData.boardTime, Toast.LENGTH_SHORT).show()
             val commentintent = Intent(activity, BoardShowFeed::class.java)
             startActivity(commentintent)
         }

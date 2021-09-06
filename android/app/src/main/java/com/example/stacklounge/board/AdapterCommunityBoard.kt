@@ -10,6 +10,7 @@ import com.example.stacklounge.R
 
 
 class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<BoardData>, val itemClick: (BoardData) -> Unit) :
+
     RecyclerView.Adapter<AdapterCommunityBoard.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -35,6 +36,8 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
         val tvboardTitle = itemView?.findViewById<TextView>(R.id.tvboardTitle)
         val tvboardContent = itemView?.findViewById<TextView>(R.id.tvboardContent)
         val tvboardTime = itemView?.findViewById<TextView>(R.id.tvboardTime)
+        val tvuserID = itemView?.findViewById<TextView>(R.id.tvuserID)
+        val commentNum = itemView?.findViewById<TextView>(R.id.commentNum)
 
         fun bind (BoardData: BoardData, context: Context?) {
 
@@ -43,6 +46,9 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
             tvboardTitle?.text = BoardData.title
             tvboardContent?.text = BoardData.boardContents
             tvboardTime?.text = BoardData.boardTime
+            tvuserID?.text = "|  " + BoardData.userId
+            commentNum?.text = BoardData.commentNum.toString()
+
 
             itemView.setOnClickListener { itemClick(BoardData) } // 아이템(게시글)을 클릭했을 때
         }

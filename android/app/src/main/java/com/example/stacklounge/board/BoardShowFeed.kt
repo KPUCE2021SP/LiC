@@ -12,6 +12,8 @@ class BoardShowFeed : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_show_feed)
 
+
+
         var commentData = arrayListOf<BoardCommentData>(
             BoardCommentData("KKodiac", "oh good", "03:05", "stackloungeicon"),
         )
