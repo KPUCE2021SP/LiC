@@ -41,8 +41,6 @@ class FragmentMainUser : Fragment() {
 
         }
 
-
-
         return view
 
     }

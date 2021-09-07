@@ -120,7 +120,7 @@ class LoginActivity : AppCompatActivity() {
                         database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
                         //functions 부분
-                        addMessage("KKodiac")
+                        addMessage("profile?.get(\"login\").")
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
