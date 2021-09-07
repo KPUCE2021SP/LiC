@@ -1,4 +1,3 @@
-from typing_extensions import Required
 import graphene
 from graphene.relay import Node
 from graphene_mongo import MongoengineConnectionField, MongoengineObjectType
@@ -25,7 +24,7 @@ class Query(graphene.ObjectType):
 
     company_by_name = graphene.Field(Companies, name=graphene.String(required=True))
     tool_by_name = graphene.Field(Tools, name=graphene.String(required=True))
-    tool_by_slug = graphene.FIeld(Tools, slug=graphene.String(Required=True))
+    tool_by_slug = graphene.Field(Tools, slug=graphene.String(required=True))
 
 
     def resolve_company_by_name(root, info, name):
