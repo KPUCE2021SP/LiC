@@ -18,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GithubAuthProvider.getCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.functions.FirebaseFunctions
-import com.google.firebase.functions.ktx.functions
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -76,16 +76,10 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
-
-
-                        val user = Firebase.auth.currentUser
-
-
-
-                        Log.d("HELLO", user.toString())
                         //var confirmedEmail = user?.email // 로그인 확인된 이메일 저장
 
                         // 로그인 성공 시 MainActivity로 이동
+                        Log.d("Auth", it.additionalUserInfo?.profile.toString())
                         githubLoginClear()
 
 
@@ -103,18 +97,25 @@ class LoginActivity : AppCompatActivity() {
                 .startActivityForSignInWithProvider( /* activity= */this, provider.build())
                 .addOnSuccessListener(
                     OnSuccessListener<AuthResult?> {
-                        val user = Firebase.auth.currentUser
-                        functions.getHttpsCallable("lic").call(user?.uid).continueWith { task ->
+                        // User is signed in.
+                        // IdP data available in
+                        // authResult.getAdditionalUserInfo().getProfile().
+                        // The OAuth access token can also be retrieved:
+                        // authResult.getCredential().getAccessToken().
+                        val profile = it.additionalUserInfo?.profile
+                        val v = profile?.values
+                        val k = profile?.keys
+                        Log.d("Profile", profile.toString())
 
-                            val result = task.result?.data as String
-                            result
-                            Log.d("HELLO", result)
-                        }
+                        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app").reference
+                        database.root.child("current-user").child("avatar_url").setValue(profile?.get("avatar_url"))
+                        database.root.child("current-user").child("html_url").setValue(profile?.get("html_url"))
+                        database.root.child("current-user").child("login").setValue(profile?.get("login"))
+                        database.root.child("current-user").child("name").setValue(profile?.get("name"))
 
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
-                        
                     })
                 .addOnFailureListener(
                     OnFailureListener {

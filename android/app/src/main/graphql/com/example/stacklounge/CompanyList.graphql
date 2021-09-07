@@ -1,0 +1,18 @@
+query GetCompanyByName($name: String!){
+    companyByName(name: $name){
+        companyName
+        techStack
+    }
+}
+
+query GetCompanyAll{
+    allCompanies {
+        edges{
+            node{
+                id
+                companyName
+                techStack
+            }
+        }
+    }
+}
