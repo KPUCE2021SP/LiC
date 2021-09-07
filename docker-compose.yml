@@ -5,6 +5,7 @@ volumes:
 
 services:
   mongodb:
+    restart: always
     container_name: mongodb
     # image: seanhong2000/mongo # 도커 허브에 있는 이미지
     image: mongo
@@ -23,6 +24,7 @@ services:
     #   retries: 3
 
   mongo-express:
+    restart: always
     # image: seanhong2000/mongo-express # 도커 허브에 있는 이미지
     image: mongo-express
     container_name: mongodb-express
@@ -91,6 +93,7 @@ services:
 
   web:
     # image: seanhong2000/app
+    restart: always
     image: app
     build: .
     command: bash -c "cd backend && python manage.py runserver 0.0.0.0:8000"
