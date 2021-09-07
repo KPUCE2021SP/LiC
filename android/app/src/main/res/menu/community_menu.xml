@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tbsearch"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="찾기"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/menuBoardWrite"
+        android:title="글 쓰기" />
+    <item
+        android:id="@+id/menuBoardAddStar"
+        android:title="즐겨찾기에 추가" />
+</menu>

@@ -13,6 +13,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -26,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:text="MongoDB vs MySQL"
                     android:textSize="20sp"
@@ -133,12 +135,40 @@
                 android:background="@drawable/square_border_btcolor"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textViewm"
+
+                <Button
+                    android:id="@+id/btnBoardCreate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="여긴어떻게 꾸미지" />
+                    android:layout_height="match_parent"
+                    android:text="DB 쓰기 - 임시용"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnBoardDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="DB 삭제 - 임시용"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnBoardUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="DB 수정 - 임시용"
+                    >
+                </Button>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/boardRecycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/fragment_community_board_recycleview">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
 
             </LinearLayout>

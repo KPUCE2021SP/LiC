@@ -15,6 +15,9 @@ buildscript {
         //Add firebase SDK
         classpath 'com.google.gms:google-services:4.3.10'
 
+        //Add Apollographql SDK
+        classpath 'com.apollographql.apollo:apollo-gradle-plugin:2.5.9'
+
 
     }
 }
