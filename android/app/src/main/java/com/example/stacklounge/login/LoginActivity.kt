@@ -105,16 +105,19 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
+                        val user = Firebase.auth.currentUser
+
+
                         val profile = it.additionalUserInfo?.profile
                         val v = profile?.values
                         val k = profile?.keys
                         Log.d("Profile", profile.toString())
 
                         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app").reference
-                        database.root.child("current-user").child("avatar_url").setValue(profile?.get("avatar_url"))
-                        database.root.child("current-user").child("html_url").setValue(profile?.get("html_url"))
-                        database.root.child("current-user").child("login").setValue(profile?.get("login"))
-                        database.root.child("current-user").child("name").setValue(profile?.get("name"))
+                        database.root.child("current-user").child("${user?.uid}").child("avatar_url").setValue(profile?.get("avatar_url"))
+                        database.root.child("current-user").child("${user?.uid}").child("html_url").setValue(profile?.get("html_url"))
+                        database.root.child("current-user").child("${user?.uid}").child("login").setValue(profile?.get("login"))
+                        database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
                         //functions 부분
                         addMessage("KKodiac")

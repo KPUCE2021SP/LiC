@@ -46,7 +46,7 @@ class BoardWriteFeed : AppCompatActivity() {
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
-        val userIdRef = database.getReference("current-user") // userId 불러오는 경로
+        val userIdRef = database.getReference("current-user/${user?.uid}") // userId 불러오는 경로
 
 
         userIdRef.addValueEventListener(object : ValueEventListener{
