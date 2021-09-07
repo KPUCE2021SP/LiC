@@ -14,7 +14,6 @@ class AdapterMainFragment(fm : FragmentManager, private val fragmentCount : Int)
             0 -> FragmentMainFavorite()
             1 -> FragmentMainSearch()
             2 -> FragmentMainCommunity()
-
             else  -> FragmentMainUser()
         }
     }
