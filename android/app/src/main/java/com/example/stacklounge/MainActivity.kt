@@ -19,6 +19,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         isFirebaseConnected() // firebase 연결되있는지 확인
+        val user = Firebase.auth.currentUser
+        Log.d("Hello", user?.displayName.toString())
+        Log.d("Hello", user?.email.toString())
+        Log.d("Hello", user?.tenantId.toString())
+        Log.d("Hello", user?.metadata.toString())
+        Log.d("Hello", user?.tenantId.toString())
+        Log.d("Hello", user?.phoneNumber.toString())
+        Log.d("Hello", user.toString())
+        Log.d("Hello", user?.photoUrl.toString())
+
 
 //        val user = Firebase.auth.currentUser
 //        val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
