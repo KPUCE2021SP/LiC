@@ -11,7 +11,8 @@ const getHTML = async(username) => {
   }
 }
 
-// crawling한 데이터를 parsing해준다.
+// 이유는 모르겠지만, 17번 줄이 실행되는데 시간이 오래걸린다.
+// 사용자의 star한 topics들을 userData에 넣어준다음 반환해준다.
 const parsing = async(username) => {
   const html = await(getHTML(username));
   const $ = cheerio.load(html.data);

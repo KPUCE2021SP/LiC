@@ -15,9 +15,12 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.EmailAuthProvider.getCredential
 import com.google.firebase.auth.FacebookAuthProvider.getCredential
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GithubAuthProvider.getCredential
+import com.google.firebase.auth.OAuthCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.oAuthProvider
+import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.ktx.functions
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -33,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         //상단 바 숨김
         val actionBar = supportActionBar
         actionBar!!.hide()
-        
+
         functions = Firebase.functions
 
 
@@ -102,17 +105,22 @@ class LoginActivity : AppCompatActivity() {
                         // authResult.getAdditionalUserInfo().getProfile().
                         // The OAuth access token can also be retrieved:
                         // authResult.getCredential().getAccessToken().
+                        val user = Firebase.auth.currentUser
+
+
                         val profile = it.additionalUserInfo?.profile
                         val v = profile?.values
                         val k = profile?.keys
                         Log.d("Profile", profile.toString())
 
                         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app").reference
-                        database.root.child("current-user").child("avatar_url").setValue(profile?.get("avatar_url"))
-                        database.root.child("current-user").child("html_url").setValue(profile?.get("html_url"))
-                        database.root.child("current-user").child("login").setValue(profile?.get("login"))
-                        database.root.child("current-user").child("name").setValue(profile?.get("name"))
+                        database.root.child("current-user").child("${user?.uid}").child("avatar_url").setValue(profile?.get("avatar_url"))
+                        database.root.child("current-user").child("${user?.uid}").child("html_url").setValue(profile?.get("html_url"))
+                        database.root.child("current-user").child("${user?.uid}").child("login").setValue(profile?.get("login"))
+                        database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
+                        //functions 부분
+                        addMessage("profile?.get(\"login\").")
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
@@ -139,6 +147,23 @@ class LoginActivity : AppCompatActivity() {
     private fun doSignup(){
         var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"))
         startActivity(intent)
+    }
+
+    // functions
+    // data에는 유저 이름을 받아오면 된다.
+    private fun addMessage(text: String): Task<String> {
+        // Create the arguments to the callable function.
+
+        return functions
+            .getHttpsCallable("lic")
+            .call(text)
+            .continueWith { task ->
+                // This continuation runs on either success or failure, but if the task
+                // has failed then result will throw an Exception which will be
+                // propagated down.
+                val result = task.result?.data as String
+                result
+            }
     }
 
 }
