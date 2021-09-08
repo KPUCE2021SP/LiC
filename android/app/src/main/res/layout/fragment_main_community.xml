@@ -136,30 +136,6 @@
                 android:orientation="vertical">
 
 
-                <Button
-                    android:id="@+id/btnBoardCreate"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="DB 쓰기 - 임시용"
-                    >
-                </Button>
-
-                <Button
-                    android:id="@+id/btnBoardDelete"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="DB 삭제 - 임시용"
-                    >
-                </Button>
-
-                <Button
-                    android:id="@+id/btnBoardUpdate"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="DB 수정 - 임시용"
-                    >
-                </Button>
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/boardRecycleview"
                     android:layout_width="match_parent"

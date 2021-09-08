@@ -65,7 +65,7 @@ class BoardWriteFeed : AppCompatActivity() {
                 boardNumber++
 
                 var duserId = aUserId.toString()+"+$boardNumber"
-                
+
                 val addRef = database.getReference("board/$duserId") // 저장경로
 
 
