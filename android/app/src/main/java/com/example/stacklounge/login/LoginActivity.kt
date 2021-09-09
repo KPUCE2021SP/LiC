@@ -120,7 +120,9 @@ class LoginActivity : AppCompatActivity() {
                         database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
                         //functions 부분
-                        addMessage("profile?.get(\"login\")")
+                        val login = profile?.get("login").toString()
+                        addMessage(login)
+
 
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
