@@ -32,81 +32,84 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imgBoardUser"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/stackloungeicon" />
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgBoardUser"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/stackloungeicon" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/BoardUserId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="17sp"
+                            android:text="userId" />
+
+                        <TextView
+                            android:id="@+id/WritingTime"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:text="writingTime" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/underline_writing"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/BoardUserId"
-                        android:layout_width="match_parent"
+                        android:id="@+id/BoardShowTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_height="wrap_content"
-                        android:textSize="17sp"
-                        android:text="userId" />
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="제목" />
 
                     <TextView
-                        android:id="@+id/WritingTime"
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
+                        android:id="@+id/BoardShowContent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="13sp"
-                        android:text="writingTime" />
-
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="15sp"
+                        android:text="dd\n\n\n\n\n\n\ndd\ndd" />
 
                 </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/underline_writing"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/BoardShowTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="제목" />
-
-                <TextView
-                    android:id="@+id/BoardShowContent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="15sp"
-                    android:text="내용" />
-
-            </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -123,43 +126,36 @@
             </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:hint="댓글을 입력하세요.">
+
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/imgWriteComment"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom"
+                    android:clickable="true"
+                    android:layout_marginBottom="10dp"
+                    android:src="@android:drawable/ic_menu_send"
+                    android:focusable="true" />
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:hint="댓글을 입력하세요.">
-
-        </EditText>
-
-        <ImageView
-            android:id="@+id/imgWriteComment"
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="bottom"
-            android:clickable="true"
-            android:layout_marginBottom="10dp"
-            android:src="@android:drawable/ic_menu_send"
-            android:focusable="true" />
-
-
-    </LinearLayout>
-
-
-
-
-
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

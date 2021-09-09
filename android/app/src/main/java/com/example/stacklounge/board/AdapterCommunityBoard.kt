@@ -30,14 +30,13 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
         return BoardData.size
     }
 
-
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
         val tvboardTitle = itemView?.findViewById<TextView>(R.id.tvboardTitle)
         val tvboardContent = itemView?.findViewById<TextView>(R.id.tvboardContent)
         val tvboardTime = itemView?.findViewById<TextView>(R.id.tvboardTime)
         val tvuserID = itemView?.findViewById<TextView>(R.id.tvuserID)
-        val commentNum = itemView?.findViewById<TextView>(R.id.commentNum)
+
 
         fun bind (BoardData: BoardData, context: Context?) {
 

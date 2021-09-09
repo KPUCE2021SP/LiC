@@ -1,13 +1,16 @@
 package com.example.stacklounge.board
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.R
+import com.example.stacklounge.fragment.FragmentMainCommunity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -20,6 +23,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class BoardWriteFeed : AppCompatActivity() {
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +41,6 @@ class BoardWriteFeed : AppCompatActivity() {
         // 글 작성
         btnWriteComplete.setOnClickListener {
             writingText()
-
         }
 
     }
@@ -64,7 +67,7 @@ class BoardWriteFeed : AppCompatActivity() {
                 var boardNumber = snapshot.child("board").child("boardNumber").child("boardNumber").value.toString().toInt()
                 boardNumber++
 
-                var duserId = aUserId.toString()+"+$boardNumber"
+                var duserId = writingTime +"+"+aUserId.toString()
 
                 val addRef = database.getReference("board/$duserId") // 저장경로
 
