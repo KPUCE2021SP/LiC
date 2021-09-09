@@ -123,6 +123,7 @@ class LoginActivity : AppCompatActivity() {
                         val login = profile?.get("login").toString()
                         addMessage(login)
 
+
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
                     })

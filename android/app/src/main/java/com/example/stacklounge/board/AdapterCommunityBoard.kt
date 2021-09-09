@@ -44,10 +44,9 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
             /* TextView와 String 데이터를 연결한다. */
 
             tvboardTitle?.text = BoardData.title
-            tvboardContent?.text = BoardData.boardContents
-            tvboardTime?.text = BoardData.boardTime
+            tvboardContent?.text ="  "+ BoardData.contents
+            tvboardTime?.text = "  "+BoardData.feedTime
             tvuserID?.text = "|  " + BoardData.userId
-            commentNum?.text = BoardData.commentNum.toString()
 
 
             itemView.setOnClickListener { itemClick(BoardData) } // 아이템(게시글)을 클릭했을 때
