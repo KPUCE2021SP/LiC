@@ -55,6 +55,7 @@ class FragmentMainUser : Fragment() {
         userIdRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
+
                 val aUserId = snapshot.child("login").value
 
                 tvUserIDinUser.text = aUserId.toString()
