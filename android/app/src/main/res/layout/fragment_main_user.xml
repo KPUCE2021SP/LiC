@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Kkodiac"
+                android:text="사용자 아이디"
                 android:textSize="30sp"
                  />
 
