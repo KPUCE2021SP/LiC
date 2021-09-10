@@ -20,10 +20,12 @@ exports.lic = functions
       });
     })
   }
+  
   getHTML(data);
 })
 
 // 특정 시간마다 github에서 받아온 topics들을 update해준다.
+// 아직 함수를 firebase에 올리지는 않았어요.
 exports.scheduledFunctionCrontab = functions.pubsub.schedule('5 11 * * *')
 .timeZone('America/New_York')
 .onRun((context) => {
