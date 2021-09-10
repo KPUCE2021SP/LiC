@@ -125,6 +125,7 @@ class LoginActivity : AppCompatActivity() {
                         database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
                         val login = profile?.get("login").toString()
+
                         val userlist = database.root.child("userlist").addValueEventListener(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 val aUserId = snapshot.value.toString()
@@ -139,6 +140,7 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                         })
+
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
                     })
