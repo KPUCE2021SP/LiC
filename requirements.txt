@@ -24,7 +24,7 @@ graphene==2.1.9
 graphene-django==2.15.0
 graphene-mongo==0.2.13
 graphql-core==3.1.6
-graphql-relay==2.0.1
+graphql-relay==3.1.0
 graphql-server-core==1.2.0
 h2==3.2.0
 hpack==3.0.0
