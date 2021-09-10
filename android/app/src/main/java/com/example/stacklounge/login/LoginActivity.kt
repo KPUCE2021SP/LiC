@@ -19,12 +19,16 @@ import com.google.firebase.auth.OAuthCredential
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.oAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.ktx.functions
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_main_user.*
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var functions: FirebaseFunctions
@@ -114,15 +118,27 @@ class LoginActivity : AppCompatActivity() {
                         Log.d("Profile", profile.toString())
 
                         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app").reference
+
                         database.root.child("current-user").child("${user?.uid}").child("avatar_url").setValue(profile?.get("avatar_url"))
                         database.root.child("current-user").child("${user?.uid}").child("html_url").setValue(profile?.get("html_url"))
                         database.root.child("current-user").child("${user?.uid}").child("login").setValue(profile?.get("login"))
                         database.root.child("current-user").child("${user?.uid}").child("name").setValue(profile?.get("name"))
 
-                        //functions 부분
                         val login = profile?.get("login").toString()
-                        addMessage(login)
+                        val userlist = database.root.child("userlist").addValueEventListener(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val aUserId = snapshot.value.toString()
+                                // 처음 온 사용자면 realtime-db에 새로등록해준다.
+                                if (!aUserId.contains(login)) {
+                                    addDatabase(login)
+                                }
+                            }
 
+                            override fun onCancelled(error: DatabaseError) {
+                                println("Failed to read value")
+                            }
+
+                        })
                         // 로그인 성공 시 MainActivity로 이동
                         githubLoginClear()
                     })
@@ -152,7 +168,7 @@ class LoginActivity : AppCompatActivity() {
 
     // functions
     // data에는 유저 이름을 받아오면 된다.
-    private fun addMessage(text: String): Task<String> {
+    private fun addDatabase(text: String): Task<String> {
         // Create the arguments to the callable function.
 
         return functions
