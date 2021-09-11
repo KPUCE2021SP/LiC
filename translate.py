@@ -32,19 +32,18 @@ class Papago:
         with open(f"./{self.file_name}", "r", encoding='UTF8') as f:
             json_data = json.load(f)
 
-        info_dict = json_data[0]
-        stack_data = list(info_dict)
-        # amazon redshift 부터 돌리면 된다.
+        stack_data = list(json_data)
+        print(stack_data)
         for data in stack_data:
             try:
-                info_dict[data]["title"] = self.translate(info_dict[data]["title"])
-                info_dict[data]["description"] = self.translate(
-                    info_dict[data]["description"]
+                data["title"] = self.translate(data["title"])
+                data["description"] = self.translate(
+                    data["description"]
                 )
             except:
                 pass
 
-        with open(f"./{self.file_name}", "w", encoding="utf-8") as make_file:
+        with open(f"./translated_{self.file_name}", "w", encoding="utf-8") as make_file:
             json.dump(json_data, make_file, indent="\t", ensure_ascii=False)
 
     def translate(self, text):
@@ -84,7 +83,7 @@ class Papago:
 if __name__ == "__main__":
     client_id = "client_id"  # 발급받은 아이디 입력
     client_secret = "client_secret"  # 발급받은 secret입력
-    file_name = "stack_information.json"
+    file_name = "stack_fixture.json"
 
     papago = Papago(
         client_id=client_id, client_secret=client_secret, file_name=file_name
