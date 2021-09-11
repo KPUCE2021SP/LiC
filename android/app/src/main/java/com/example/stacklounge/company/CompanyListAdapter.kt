@@ -3,9 +3,6 @@ package com.example.stacklounge.company
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.textservice.TextInfo
-import android.widget.ImageView
-import android.widget.ListView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.stacklounge.GetCompanyAllQuery

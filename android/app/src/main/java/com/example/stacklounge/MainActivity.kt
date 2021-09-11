@@ -16,18 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        isFirebaseConnected() // firebase 연결되있는지 확인
-        val user = Firebase.auth.currentUser
-
-//        val user = Firebase.auth.currentUser
-//        val userName = user?.email?.substring(0, user.email?.indexOf("@")!!)
-//        Log.d("username = $userName","userName")
-
-        
-        //Fragment & bottom navigation view
+        isFirebaseConnected()
         configureBottomNavigation()
-
     }
 
     //firebase 연결됐는지 체크
@@ -46,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         xml_main_tablayout.setupWithViewPager(xml_main_viewpaper)
 
         val viewBtmNaviMain : View = this.layoutInflater.inflate(R.layout.activity_btm_navigation_main, null, false)
-
         xml_main_tablayout.getTabAt(0)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_favorite)  as RelativeLayout
         xml_main_tablayout.getTabAt(1)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_search)  as RelativeLayout
         xml_main_tablayout.getTabAt(2)!!.customView = viewBtmNaviMain.findViewById(R.id.main_btn_community)   as RelativeLayout

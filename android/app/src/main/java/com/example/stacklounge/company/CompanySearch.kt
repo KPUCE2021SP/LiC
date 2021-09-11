@@ -35,22 +35,22 @@ class CompanySearch : AppCompatActivity() {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
         inflater.inflate(R.menu.company_search_menu_inflated, menu)
-        // Associate searchable configuration with the SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         (menu.findItem(R.id.search_inflated).actionView as SearchView).apply {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
             setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                // SearchView 에서 텍스트 입력 시
                 override fun onQueryTextChange(newText: String): Boolean {
                     return false
                 }
-
+                // SearchView 에서 텍스트 쿼리 입력 시
                 override fun onQueryTextSubmit(query: String): Boolean {
                     Log.d("onQueryTextSubmit", "$query")
                     lifecycleScope.launchWhenResumed {
                         val response = try {
                             apolloClient.query(GetCompanyByNameQuery(name = query)).await()
                         } catch (e: ApolloException) {
-                            Log.d("CompanyList", "Failure", e)
+                            Log.d("ApolloQuery", "Failure", e)
                             null
                         }
 
@@ -60,7 +60,6 @@ class CompanySearch : AppCompatActivity() {
                                 companyNameView.text = company.companyName
                                 techStackView.text = company.techStack.toString()
                             })
-                            Log.d("RESPONSE", "${company.companyName}")
                         }
                     }
                     return true
@@ -76,15 +75,11 @@ class CompanySearch : AppCompatActivity() {
             R.id.search_inflated -> {
                 true
             }
-
             R.id.backBton -> {
                 finish()
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
 }
