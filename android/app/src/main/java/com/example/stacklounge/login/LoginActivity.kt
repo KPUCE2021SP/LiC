@@ -13,6 +13,10 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.functions.ktx.functions
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
@@ -85,6 +89,22 @@ class LoginActivity : AppCompatActivity() {
                         .setValue(profile?.get("login"))
                     database.root.child("current-user").child("${user?.uid}").child("name")
                         .setValue(profile?.get("name"))
+                        val login = profile?.get("login").toString()
+
+                        val userlist = database.root.child("userlist").addValueEventListener(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val aUserId = snapshot.value.toString()
+                                // 처음 온 사용자면 realtime-db에 새로등록해준다.
+                                if (!aUserId.contains(login)) {
+                                    addDatabase(login)
+                                }
+                            }
+
+                            override fun onCancelled(error: DatabaseError) {
+                                println("Failed to read value")
+                            }
+
+                        })
 
                     // 로그인 성공 시 MainActivity로 이동
                     githubLoginClear()
@@ -110,4 +130,22 @@ class LoginActivity : AppCompatActivity() {
         var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"))
         startActivity(intent)
     }
+
+    // functions
+    // data에는 유저 이름을 받아오면 된다.
+    private fun addDatabase(text: String): Task<String> {
+        // Create the arguments to the callable function.
+        val functions = Firebase.functions
+        return functions
+            .getHttpsCallable("lic")
+            .call(text)
+            .continueWith { task ->
+                // This continuation runs on either success or failure, but if the task
+                // has failed then result will throw an Exception which will be
+                // propagated down.
+                val result = task.result?.data as String
+                result
+            }
+    }
+
 }

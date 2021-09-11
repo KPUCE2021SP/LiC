@@ -29,13 +29,12 @@ class Papago:
         self.source = source
         self.target = target
 
-        with open(f"./{self.file_name}", "r") as f:
+        with open(f"./{self.file_name}", "r", encoding='UTF8') as f:
             json_data = json.load(f)
 
         info_dict = json_data[0]
         stack_data = list(info_dict)
-        print(info_dict[".net"])
-        stack_data = [".net", "3ds_amx", "3ds_max"]
+        # amazon redshift 부터 돌리면 된다.
         for data in stack_data:
             try:
                 info_dict[data]["title"] = self.translate(info_dict[data]["title"])
