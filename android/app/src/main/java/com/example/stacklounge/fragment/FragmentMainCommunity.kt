@@ -142,11 +142,4 @@ class FragmentMainCommunity : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    // fragment 새로고침
-    fun refreshFragment(fragment: Fragment, fragmentManager: FragmentManager) {
-        var ft: FragmentTransaction = fragmentManager.beginTransaction()
-        ft.detach(fragment).attach(fragment).commit()
-    }
-
 }
