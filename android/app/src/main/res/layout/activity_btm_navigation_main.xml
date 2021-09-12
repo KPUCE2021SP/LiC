@@ -5,6 +5,7 @@
     android:layout_height="50dp"
     android:elevation="5dp"
     android:layout_gravity="bottom"
+    android:background="@color/stcolor"
     android:orientation="horizontal">
 
     <RelativeLayout
@@ -16,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_baseline_favorite_24" />
+            android:src="@drawable/baseline_home_24" />
 
     </RelativeLayout>
 
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_baseline_search_24" />
+            android:src="@drawable/baseline_search_24" />
 
     </RelativeLayout>
 
@@ -42,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_baseline_community_24" />
+            android:src="@drawable/baseline_people_24" />
 
     </RelativeLayout>
 
@@ -55,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_baseline_user_24" />
+            android:src="@drawable/baseline_account_circle_24" />
     </RelativeLayout>
 
 </LinearLayout>
