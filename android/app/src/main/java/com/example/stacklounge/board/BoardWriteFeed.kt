@@ -1,5 +1,6 @@
 package com.example.stacklounge.board
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
@@ -21,6 +22,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_board_write_text.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import kotlin.properties.Delegates
 
 class BoardWriteFeed : AppCompatActivity() {
 

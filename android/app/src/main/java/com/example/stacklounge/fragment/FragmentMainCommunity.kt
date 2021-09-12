@@ -28,7 +28,6 @@ import kotlinx.android.synthetic.main.fragment_main_community.view.*
 
 
 class FragmentMainCommunity : Fragment() {
-    lateinit var context_main : Context
 
     // recycleview에 연결되는 리스트
     var boardList = arrayListOf<BoardData>()
@@ -52,11 +51,8 @@ class FragmentMainCommunity : Fragment() {
         val view = inflater.inflate(R.layout.fragment_main_community, null)
         Log.d("보드리스트", "${boardList.size}")
 
-        context_main = this.requireActivity();
         //글쓰기 xml 들어가기
         fragmentCommunity = container?.getContext()
-
-
 
         //board recycleview를 community에 부착
         val rAdapter = AdapterCommunityBoard(context,boardList) { BoardData ->
@@ -83,7 +79,7 @@ class FragmentMainCommunity : Fragment() {
 
         userIdRef.child("board").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                boardList.clear() // 기존list data + 기존 snapshot data + 추가된 snapshot data가 추가된다.. clear 필수
+                boardList.clear() // clear 안하면 기존list data + 기존 snapshot data + 추가된 snapshot data가 추가된다.. clear 필수
                 for(postSnapshot in snapshot.children){
 
                     val get: BoardData? = postSnapshot.getValue(BoardData::class.java)

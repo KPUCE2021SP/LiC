@@ -133,10 +133,12 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/edtCreateText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="15sp"
+                    android:text=""
                     android:hint="댓글을 입력하세요.">
 
                 </EditText>
