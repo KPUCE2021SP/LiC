@@ -99,17 +99,14 @@ class BoardWriteFeed : AppCompatActivity() {
                 else{
                     userIdRef.child("board").child("boardNumber").setValue(aboardInfo)
                     addRef.setValue(aUserInfo)
-
                     finish()
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
                 //실패할 때
                 Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
             }
-
         })
     }
 
