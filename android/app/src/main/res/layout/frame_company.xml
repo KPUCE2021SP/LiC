@@ -9,10 +9,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/text"
         android:id="@+id/companyTextView"/>
 
     <TextView
         android:id="@+id/techStackTextView"
         android:layout_width="match_parent"
+        android:textColor="@color/text"
         android:layout_height="wrap_content" />
 </LinearLayout>
