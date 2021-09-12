@@ -211,9 +211,9 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGEMENTS -->
 ## Team Members
 
-* [홍성민](https://github.com/KKodiac)
-* [배준일](https://github.com/bjo6300)
-* [한상우](https://github.com/sktkddn777)
+* [홍성민](https://github.com/KKodiac) - Scrapy, MongoDB, Django, Docker, Graphql, EC2, Client(UI, Home, Search)
+* [배준일](https://github.com/bjo6300) - Client(Community, Base UI)
+* [한상우](https://github.com/sktkddn777) - Scrapy, Cloud Functions, MongoDB
 
 
 ## Wiki
