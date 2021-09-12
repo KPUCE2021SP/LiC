@@ -8,15 +8,19 @@ import android.os.Looper
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.stacklounge.GetCompanyByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.query.apolloClient
+import kotlinx.android.synthetic.main.activity_company_search.*
+import kotlinx.android.synthetic.main.fragment_main_search.*
 
 
 class CompanySearch : AppCompatActivity() {
@@ -25,6 +29,7 @@ class CompanySearch : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_search)
+        cardView.visibility = View.INVISIBLE
         title = ""
         companyNameView = findViewById(R.id.companyNameTextView)
         techStackView = findViewById(R.id.techStackTextView)
@@ -55,8 +60,10 @@ class CompanySearch : AppCompatActivity() {
                         }
 
                         val company = response?.data?.companyByName
+
                         if(company != null && !response.hasErrors()) {
                             Handler(Looper.getMainLooper()).post(Runnable {
+                                cardView.visibility = View.VISIBLE
                                 companyNameView.text = company.companyName
                                 techStackView.text = company.techStack.toString()
                             })
@@ -77,6 +84,7 @@ class CompanySearch : AppCompatActivity() {
             }
             R.id.backBton -> {
                 finish()
+                this.overridePendingTransition(R.anim.fling_right_to_left,R.anim.fling_left_to_right_out)
                 true
             }
             else -> super.onOptionsItemSelected(item)

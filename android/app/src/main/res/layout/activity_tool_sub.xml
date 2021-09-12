@@ -10,7 +10,7 @@
         app:cardCornerRadius="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/stcolor"
+        app:cardBackgroundColor="#2C2B3C"
         tools:context=".tool.ToolSubActivity">
 
 
