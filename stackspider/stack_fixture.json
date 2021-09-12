@@ -451,7 +451,7 @@
         "websiteUrl": "http://aws.amazon.com/"
     },
     {
-        "name": "Android OS",
+        "name": "Android",
         "title": "An open source mobile operating system by Google",
         "slug": "android-os",
         "canonicalUrl": null,
@@ -539,7 +539,7 @@
         "websiteUrl": "https://github.com/ReactiveX/RxAndroid"
     },
     {
-        "name": "AngularJS",
+        "name": "Angular",
         "title": "Superheroic JavaScript MVW Framework",
         "slug": "angularjs",
         "canonicalUrl": null,
@@ -779,6 +779,17 @@
         "ossRepo": "https://github.com/cloudera/kudu",
         "description": "A new addition to the open source Apache Hadoop ecosystem, Kudu completes Hadoop's storage layer to enable fast analytics on fast data.",
         "websiteUrl": "https://kudu.apache.org"
+    },
+    {
+        "name": "Maven",
+        "title": "Apache build manager for Java projects. ",
+        "slug": "apache-maven",
+        "canonicalUrl": null,
+        "id": 71,
+        "imageUrl": "https://img.stackshare.io/service/977/maven.png",
+        "ossRepo": "https://github.com/apache/maven",
+        "description": "Maven allows a project to build using its project object model (POM) and a set of plugins that are shared by all projects using Maven, providing a uniform build system. Once you familiarize yourself with how one Maven project builds you automatically know how all Maven projects build saving you immense amounts of time when trying to navigate many projects.",
+        "websiteUrl": "http://maven.apache.org/"
     },
     {
         "name": "Apache Maven",
@@ -2357,7 +2368,7 @@
         "websiteUrl": "https://crossbrowsertesting.com"
     },
     {
-        "name": "CSS 3",
+        "name": "CSS",
         "title": "The latest evolution of the Cascading Style Sheets language",
         "slug": "css",
         "canonicalUrl": null,
@@ -2830,7 +2841,7 @@
         "websiteUrl": "https://expo.io"
     },
     {
-        "name": "ExpressJS",
+        "name": "Express",
         "title": "Sinatra inspired web development framework for node.js -- insanely fast, flexible, and simple",
         "slug": "expressjs",
         "canonicalUrl": null,
@@ -5427,7 +5438,7 @@
         "websiteUrl": "http://reactivex.io/"
     },
     {
-        "name": "React js",
+        "name": "React",
         "title": "A JavaScript library for building user interfaces",
         "slug": "react-js",
         "canonicalUrl": null,
@@ -5559,7 +5570,7 @@
         "websiteUrl": "http://aps-web.com/"
     },
     {
-        "name": "RESTful API",
+        "name": "REST API",
         "title": "The official Twitter account for the sum of all knowledge, Wikipedia. Overseen by @jeffelder.",
         "slug": "restful-api",
         "canonicalUrl": null,

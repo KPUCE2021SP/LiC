@@ -138,5 +138,8 @@ class FragmentMainCommunity : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2770f70cd5ddab53bda68710b11b54620a81feae
 }

@@ -8,10 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#c0c0c0</color>
-    <color name="mint">#91F9E5</color>
+    <color name="mint">#A2BCE0</color>
+    <color name="text">#BFC0C0</color>
     <color name="charcoal">#373F51</color>
     <color name="dark_cyan">#0F8B8D</color>
     <color name="pale_silver">#BEB0A7</color>
-    <color name="stcolor">#cfe3e9</color>
+    <color name="stcolor">#121420</color>
     <color name="btcolor">#117791</color>
 </resources>

@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.stacklounge.GetCompanyAllQuery
+import com.example.stacklounge.GetCompanyByNameQuery
 import com.example.stacklounge.R
 
-class CompanyListAdapter(
-    private val companies : List<GetCompanyAllQuery.Edge?>
-) : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>() {
+class CompanySearchAdapter(
+    private val query : GetCompanyByNameQuery.CompanyByName,
+) : RecyclerView.Adapter<CompanySearchAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,13 +22,14 @@ class CompanyListAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val company = companies[position]
-        holder.companyTextView.text = company?.node?.companyName ?: ""
-        holder.companyTechStackView.text = company?.node?.techStack?.toString() ?: ""
+        val company = query.companyName
+        val techStack = query.techStack
+        holder.companyTextView.text = company.toString() ?: ""
+        holder.companyTechStackView.text = techStack.toString() ?: ""
     }
 
     override fun getItemCount(): Int {
-        return companies.size
+        return 1
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

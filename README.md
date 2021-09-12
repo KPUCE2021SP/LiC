@@ -176,7 +176,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 [open issues](https://github.com/KPUCE2021SP/LiC/issues)에 추가할 기능 사항을 올리고 개발할 때 참고해주세요.
 
 
+## Basic Layout
 
+![image](https://raw.githubusercontent.com/KPUCE2021SP/LiC/develop/.github/images/backbone.jpeg)
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
 
