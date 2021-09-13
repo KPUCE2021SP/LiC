@@ -1,8 +1,13 @@
 package com.example.stacklounge.board
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -12,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.stacklounge.R
+import com.example.stacklounge.company.CompanySearch
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,7 +38,7 @@ class BoardShowFeed : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board_show_feed)
-
+        title = ""
         //게시글 정보 받아와서 적용
         showBoard()
 
@@ -176,17 +182,29 @@ class BoardShowFeed : AppCompatActivity() {
 
         }
 
-        //앱바 숨김
-        val actionBarBoardWriteText: ActionBar? = supportActionBar
-        actionBarBoardWriteText?.hide()
-
-        //뒤로가기 이미지
-        imgBackShow.setOnClickListener{
-            finish()
-        }
-
+    }
+    //appbar 메뉴
+    override fun onCreateOptionsMenu(menu: Menu) : Boolean {
+        super.onCreateOptionsMenu(menu)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.company_search_menu_inflated, menu)
+        return true
     }
 
+    //appbar 메뉴 클릭 시
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.search_inflated -> {
+                true
+            }
+            R.id.backBton -> {
+                finish()
+                this.overridePendingTransition(R.anim.fling_right_to_left,R.anim.fling_left_to_right_out)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
     fun showBoard(){
         //게시글 정보 받아와서 적용
         val gtitle = intent.getStringExtra("title").toString()

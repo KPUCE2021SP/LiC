@@ -29,40 +29,25 @@ import kotlinx.android.synthetic.main.fragment_main_community.view.*
 
 
 class FragmentMainCommunity : Fragment() {
-
-    // recycleview에 연결되는 리스트
     var boardList = arrayListOf<BoardData>()
-
-
     private var fragmentCommunity : Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //appbar랑 메뉴xml 연결
         setHasOptionsMenu(true)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_main_community, null)
-        Log.d("보드리스트", "${boardList.size}")
-
-        //글쓰기 xml 들어가기
-        fragmentCommunity = container?.getContext()
-
-        //board recycleview를 community에 부착
+        fragmentCommunity = container?.context
         val rAdapter = AdapterCommunityBoard(context,boardList) { BoardData ->
-            // 아이템 클릭했을 때 필요한 동작
-
             val commentintent = Intent(activity, BoardShowFeed::class.java)
-
-            // index 값 BoardShowFeed에 넘겨준다.
             commentintent.putExtra("index",boardList.indexOf(BoardData))
+
             Log.d("index",boardList.indexOf(BoardData).toString())
 
 //            val user = Firebase.auth.currentUser
@@ -77,27 +62,22 @@ class FragmentMainCommunity : Fragment() {
 //                    commentintent.putExtra("userphoto1",avatarImage)
 //                }
 
+
             commentintent.putExtra("title",BoardData.title)
             commentintent.putExtra("contents",BoardData.contents)
             commentintent.putExtra("feedTime",BoardData.feedTime)
             commentintent.putExtra("userId",BoardData.userId)
-
             startActivity(commentintent)
         }
 
-
         // db에서 데이터를 가져와 community recycleview에 부착
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
-        val userIdRef = database.getReference() // userId 불러오는 경로
-
+        val userIdRef = database.reference // userId 불러오는 경로
         userIdRef.child("board").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 boardList.clear() // clear 안하면 기존list data + 기존 snapshot data + 추가된 snapshot data가 추가된다.. clear 필수
                 for(postSnapshot in snapshot.children){
-
                     val get: BoardData? = postSnapshot.getValue(BoardData::class.java)
-                    Log.d("get", get.toString())
-
 
                     val addtitle = get?.title.toString()
                     val addcontents = get?.contents.toString()
@@ -113,26 +93,21 @@ class FragmentMainCommunity : Fragment() {
             }
             override fun onCancelled(error: DatabaseError) {
                 //실패할 때
-
             }
-
         })
         view.boardRecycleview.adapter = rAdapter
 
         val lm = LinearLayoutManager(context)
         view.boardRecycleview.layoutManager = lm
         view.boardRecycleview.setHasFixedSize(true)
-        rAdapter.notifyDataSetChanged() //어댑터의 데이터가 변했다는 notify를 날린다
+        rAdapter.notifyDataSetChanged()
 
         return view
     }
-
-
     //appbar 메뉴
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.community_menu, menu)
     }
-
     //appbar 메뉴 클릭 시
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

@@ -59,7 +59,7 @@ class FragmentMainFavorite : Fragment() {
                                 }
                             }
                             // 이거 고쳐야 합니다;;; 코루틴을 잘 몰라서 이렇게 해버렸어요... - 홍
-                            delay(500)
+                            delay(350)
                             val mAdapter = ToolListAdapter(toolList)
                             val gridLayoutManager = GridLayoutManager(view?.context, 2)
                             topicRecyclerView.layoutManager = gridLayoutManager
