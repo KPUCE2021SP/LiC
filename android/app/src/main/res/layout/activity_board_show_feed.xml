@@ -5,35 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    app:layout_constraintCircleRadius="25dp"
     tools:context=".board.BoardShowFeed">
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imgBackShow"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:scaleType="matrix"
-            android:clickable="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
-            android:focusable="true" />
-
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
+        android:background="@color/stcolor"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,14 +20,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:orientation="horizontal">
-
                     <ImageView
                         android:id="@+id/imgBoardUser"
                         android:layout_width="50dp"
@@ -63,34 +39,32 @@
 
                         <TextView
                             android:id="@+id/BoardUserId"
+                            android:textColor="@color/text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
                             android:text="userId" />
-
                         <TextView
                             android:id="@+id/WritingTime"
                             android:layout_marginTop="5dp"
+                            android:textColor="@color/text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:text="writingTime" />
-
-
                     </LinearLayout>
-
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/underline_writing"
+                    android:background="@color/stcolor"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/BoardShowTitle"
                         android:layout_width="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:textColor="@color/text"
                         android:layout_marginEnd="10dp"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
@@ -103,29 +77,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="10dp"
+                        android:textColor="@color/text"
                         android:layout_marginEnd="10dp"
                         android:textSize="15sp"
-                        android:text="dd\n\n\n\n\n\n\ndd\ndd" />
+                        android:text="" />
 
                 </LinearLayout>
-
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/commentRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-            </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -133,10 +91,14 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/edtCreateText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/text"
                     android:layout_weight="1"
                     android:textSize="15sp"
+                    android:text=""
+                    android:textColorHint="@color/text"
                     android:hint="댓글을 입력하세요.">
 
                 </EditText>
@@ -151,11 +113,20 @@
                     android:layout_marginBottom="10dp"
                     android:src="@android:drawable/ic_menu_send"
                     android:focusable="true" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentRecyclerView"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content">
+                </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
 </androidx.appcompat.widget.LinearLayoutCompat>
