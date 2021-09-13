@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.stacklounge.R
 import com.example.stacklounge.board.AdapterCommunityBoard
 import com.example.stacklounge.board.BoardData
@@ -63,6 +64,18 @@ class FragmentMainCommunity : Fragment() {
             // index 값 BoardShowFeed에 넘겨준다.
             commentintent.putExtra("index",boardList.indexOf(BoardData))
             Log.d("index",boardList.indexOf(BoardData).toString())
+
+//            val user = Firebase.auth.currentUser
+
+//            val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+//            database1.child("current-user")
+//                .child("${user?.uid}")
+//                .child("avatar_url")
+//                .get().addOnSuccessListener {
+//                    val avatarImage = it.value as String
+//                    Log.d("avatarImage",avatarImage)
+//                    commentintent.putExtra("userphoto1",avatarImage)
+//                }
 
             commentintent.putExtra("title",BoardData.title)
             commentintent.putExtra("contents",BoardData.contents)

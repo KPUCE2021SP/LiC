@@ -47,6 +47,9 @@ class BoardShowFeed : AppCompatActivity() {
         //db 찾기용 변수
         val gfeedTime = intent.getStringExtra("feedTime").toString()
         val guserId = intent.getStringExtra("userId").toString()
+//        val guserphoto = intent.getStringExtra("userphoto1").toString()
+//        Log.d("guserphoto",guserphoto)
+//        Glide.with(applicationContext).load(guserphoto).into(imgBoardUser)
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
@@ -57,7 +60,7 @@ class BoardShowFeed : AppCompatActivity() {
 
         val boardPath = "$gfeedTime+$guserId"
 
-        // 이미지 세팅
+        // 게시글 이미지 세팅
         val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
         database1.child("current-user")
             .child("${user?.uid}")
@@ -67,6 +70,7 @@ class BoardShowFeed : AppCompatActivity() {
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
             }
 
+        // 댓글 recyclerview
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(postSnapshot in snapshot.child("board/$boardPath/comment").children){
@@ -77,7 +81,7 @@ class BoardShowFeed : AppCompatActivity() {
 
                     val get: BoardCommentData? = postSnapshot.getValue(BoardCommentData::class.java)
 
-                    if(key.contains(cUserId)){
+                    if(key.contains("+")){
                         val adduserphoto = get?.userphoto.toString()
                         val addcomment = get?.boardCommment.toString()
                         val adduserid  =  get?.userId.toString()
@@ -119,11 +123,11 @@ class BoardShowFeed : AppCompatActivity() {
                     override fun onDataChange(snapshot: DataSnapshot) {
 
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
-                        val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 작성자 프사
+                        val cUserphoto = snapshot.child("board/$boardPath").child("userphoto").value.toString() // 작성자 프사
 
-//                        Glide.with(applicationContext)
-//                            .load(cUserphoto)
-//                            .into(imgBoardUser)
+                        Glide.with(applicationContext)
+                            .load(cUserphoto)
+                            .into(imgBoardUser)
 
                         val boardPath = "$gfeedTime+$guserId"
 
