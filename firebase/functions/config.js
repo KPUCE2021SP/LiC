@@ -3,7 +3,7 @@ const firebase = require("firebase");
 
 // real-time database setting
 let config = {
-  apiKey: "YOUR API KEY",
+  apiKey: "AIzaSyCNZsv6TB_jJKYTAHJGZpJluOFAcOPPK9c",
   authDomain: "stacklounge-62ffd.firebaseapp.com",
   databaseURL: "https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app",
   storageBucket: "stacklounge-62ffd.appspot.com" 

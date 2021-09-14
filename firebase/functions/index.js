@@ -26,31 +26,37 @@ exports.lic = functions
 
 // 특정 시간마다 github에서 받아온 topics들을 update해준다.
 // 아직 함수를 firebase에 올리지는 않았어요.
-exports.scheduledFunctionCrontab = functions.pubsub.schedule('5 11 * * *')
+exports.scheduledFunctionCrontab = functions.pubsub.schedule('00 11 * * *')
 .timeZone('America/New_York')
 .onRun((context) => {
-  console.log('This will be run every day at 11:05 AM Eastern!');
-
+  console.log('This will be run every day at 12:00 AM!');
+  userlist = [];
   database.ref('userlist/').once('value', (snapshot) => {
     if (snapshot.exists()) {
       snapshot.forEach((childSnapshot) => {
         var childKey = childSnapshot.key;
         var childData = childSnapshot.val();
-        console.log(childData['username']);
-        parsing(childData['username'])
+        
+        userlist.push(childData['username']);
+      });
+      console.log(userlist)
+
+      for (const user of userlist) {
+        parsing(user)
         .then(userdata => {
-          database.ref(`usertopics/${childData['username']}`).set({
+          database.ref(`usertopics/${user}`).set({
             usertopics: userdata[0].topicName,
           });
-          return userdata;
+          console.log(`${user} update done`);
         })
-      });
+      }
     } else {
       console.log("No data available");
     }
   }).catch((error) => {
     console.error(error);
   });
+
   return null;
     
 });
