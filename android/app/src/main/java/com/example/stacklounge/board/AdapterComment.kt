@@ -45,44 +45,24 @@ class AdapterComment (val context: Context?, val BoardCommentData: ArrayList<Boa
 
         fun bind (BoardCommentData: BoardCommentData, context: Context?) {
 
-            /* userphoto의 setImageResource에 들어갈 이미지의 id를 파일명(String)으로 찾고,
-          이미지가 없는 경우 안드로이드 기본 아이콘을 표시한다.*/
-            if (BoardCommentData.userphoto != "") {
-                val resourceId = context!!.resources.getIdentifier(BoardCommentData.userphoto, "drawable", context.packageName)
-                imgCommentUser?.setImageResource(resourceId)
-            } else {
-                imgCommentUser?.setImageResource(R.mipmap.ic_launcher)
-            }
-
             /* TextView와 String 데이터를 연결한다. */
 
             tvcommentUser?.text = BoardCommentData.userId
             tvboardcomment?.text = BoardCommentData.boardCommment
             tvcommentTime?.text = BoardCommentData.commentTime
 
-            // db
-            val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
-            val userIdRef = database.getReference() // userId 불러오는 경로
-
-            // firebase auth
+            val boardpath = "${BoardCommentData.commentTime}+${BoardCommentData.userId}"
             val user = Firebase.auth.currentUser
 
-            userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-
-                    //commentData.clear()
-                    val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 작성자 프사
-                    Log.d("USER", tvcommentUser.toString())
-                    Glide.with(itemView.context).load(cUserphoto).into(imgCommentUser!!)
-
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    //실패할 때
-
-                }
-
-            })
+             //게시글 이미지 세팅
+        val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+        database1.child("current-user")
+            .child("${user?.uid}")
+            .child("avatar_url")
+            .get().addOnSuccessListener {
+                val avatarImage = it.value as String
+                Glide.with(itemView.context).load(avatarImage).into(imgCommentUser!!)
+            }
 
         }
     }
