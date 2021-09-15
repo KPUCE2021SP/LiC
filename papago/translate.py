@@ -1,7 +1,11 @@
-import os
+from os import path
 import sys
 import urllib.request
 import json
+
+
+# LIC Project를 가리킨다.
+BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
 
 class Papago:
@@ -96,16 +100,20 @@ class Papago:
 
 
 if __name__ == "__main__":
-    client_id = "client_id"  # 발급받은 아이디 입력
-    client_secret = "client_seret"  # 발급받은 secret입력
+
+    SECRET_PATH = path.join(BASE_DIR, 'papago/secret.json')
+    secrets = json.loads(open(SECRET_PATH).read())
+
+    client_id = secrets['SECRET_ID']  # 발급받은 아이디 입력
+    client_secret = secrets['SECRET_PW']  # 발급받은 secret입력
     file_name = "stack_fixture.json"
 
-    row = open("./last_row.txt", "r")
-    start_row = int(row.readline())
-    papago = Papago(
-        client_id=client_id, client_secret=client_secret, file_name=file_name, row=start_row
-    )
-    papago.translate_txt(source="en", target="ko")
+    # row = open("./last_row.txt", "r")
+    # start_row = int(row.readline())
+    # papago = Papago(
+    #     client_id=client_id, client_secret=client_secret, file_name=file_name, row=start_row
+    # )
+    # papago.translate_txt(source="en", target="ko")
 
     """
     ko : 한국어     fr : 프랑스어
