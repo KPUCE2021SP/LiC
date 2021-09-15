@@ -108,12 +108,12 @@ if __name__ == "__main__":
     client_secret = secrets['SECRET_PW']  # 발급받은 secret입력
     file_name = "stack_fixture.json"
 
-    # row = open("./last_row.txt", "r")
-    # start_row = int(row.readline())
-    # papago = Papago(
-    #     client_id=client_id, client_secret=client_secret, file_name=file_name, row=start_row
-    # )
-    # papago.translate_txt(source="en", target="ko")
+    row = open("./last_row.txt", "r")
+    start_row = int(row.readline())
+    papago = Papago(
+        client_id=client_id, client_secret=client_secret, file_name=file_name, row=start_row
+    )
+    papago.translate_txt(source="en", target="ko")
 
     """
     ko : 한국어     fr : 프랑스어
