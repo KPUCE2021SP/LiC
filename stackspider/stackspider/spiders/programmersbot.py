@@ -56,6 +56,7 @@ class ProgrammersbotSpider(Spider):
         기업 소개 페이지에 있는 기술 스택 리스트를 매개변수로 다음 callback 에 넣어준다.
         """
         companyName = response.css("h1::text").get()
+        companyLogo = response.css("img[class=company-logo]::attr(src)").get()
         list_of_tech_stacks = response.css("tr[class=heavy-use] code::text").getall()
         list_of_job_positions = response.css(
             "ul[class=list-positions] a::attr(href)"
@@ -65,6 +66,7 @@ class ProgrammersbotSpider(Spider):
             "id": int(response.url[36:]),
             "name": companyName,
             "techStack": list_of_tech_stacks,
+            "companyLogo": companyLogo
         }
 
         yield company_card
