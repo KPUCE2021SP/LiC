@@ -3,6 +3,7 @@ package com.example.stacklounge.login
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.stacklounge.MainActivity
@@ -46,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         var mAuth = FirebaseAuth.getInstance()
         val provider = OAuthProvider.newBuilder("github.com")
 
-        provider.addCustomParameter("login", "")
+        provider.addCustomParameter("login", "seanhong2000@gmail.com\n")
 
         val scopes: ArrayList<String?> = object : ArrayList<String?>() {
             init {
@@ -103,15 +104,15 @@ class LoginActivity : AppCompatActivity() {
                             override fun onCancelled(error: DatabaseError) {
                                 println("Failed to read value")
                             }
-
                         })
 
                     // 로그인 성공 시 MainActivity로 이동
                     githubLoginClear()
                 }
                 .addOnFailureListener {
+                    Log.d("Exception", "${it}")
                     // 로그인 실패
-                    Toast.makeText(applicationContext, "로그인을 실패했습니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "로그인을 실패했습니다!", Toast.LENGTH_SHORT).show()
                 }
         }
 

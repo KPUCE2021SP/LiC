@@ -13,6 +13,7 @@ class Company(Document):
     meta = {"collection": "companyStacks"}
     companyName = StringField()
     techStack = ListField(StringField())
+    companyLogo = StringField()
 
 class Tool(Document):
     meta = {"collection": "tools"}
