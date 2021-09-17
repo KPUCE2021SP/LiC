@@ -12,7 +12,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
@@ -20,17 +19,18 @@ import com.example.stacklounge.GetCompanyByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.query.apolloClient
 import kotlinx.android.synthetic.main.activity_company_search.*
-import kotlinx.android.synthetic.main.fragment_main_search.*
 
 
 class CompanySearch : AppCompatActivity() {
     lateinit var companyNameView : TextView
     lateinit var techStackView : TextView
+    lateinit var companyTextImage : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_search)
         cardView.visibility = View.INVISIBLE
         title = ""
+        companyTextImage = findViewById(R.id.companyTextImage)
         companyNameView = findViewById(R.id.companyNameTextView)
         techStackView = findViewById(R.id.techStackTextView)
     }
@@ -64,6 +64,7 @@ class CompanySearch : AppCompatActivity() {
                         if(company != null && !response.hasErrors()) {
                             Handler(Looper.getMainLooper()).post(Runnable {
                                 cardView.visibility = View.VISIBLE
+                                companyTextImage.text = company.companyName?.first().toString()
                                 companyNameView.text = company.companyName
                                 techStackView.text = company.techStack.toString()
                             })

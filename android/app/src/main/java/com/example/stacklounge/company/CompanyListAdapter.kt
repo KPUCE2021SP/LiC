@@ -23,6 +23,7 @@ class CompanyListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val company = companies[position]
+        holder.companyTextImage.text = company?.node?.companyName?.first().toString() ?: ""
         holder.companyTextView.text = company?.node?.companyName ?: ""
         holder.companyTechStackView.text = company?.node?.techStack?.toString() ?: ""
     }
@@ -32,6 +33,7 @@ class CompanyListAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val companyTextImage : TextView = view.findViewById(R.id.companyTextImage)
         val companyTextView : TextView = view.findViewById(R.id.companyTextView)
         val companyTechStackView : TextView = view.findViewById(R.id.techStackTextView)
     }
