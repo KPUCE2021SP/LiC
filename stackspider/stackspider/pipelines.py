@@ -240,8 +240,10 @@ class JsonPipeline:
 
     def close_spider(self, spider):
         fixture = json.load(fp=open("stack_fixture.json"))
-        if not self.collection.find_one({"id": 0}):
-            self.collection.insert_many(fixture)
+        logging.info(f"TOOL: {fixture}") 
+        self.collection.insert_many(fixture)
+        # if not self.collection.find_one({"id": 0}):
+        #    self.collection.insert_many(fixture)
 
 
     def process_item(self, item, spider):
