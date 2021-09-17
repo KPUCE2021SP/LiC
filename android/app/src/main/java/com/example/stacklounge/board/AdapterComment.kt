@@ -1,13 +1,21 @@
 package com.example.stacklounge.board
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.stacklounge.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
 
 class AdapterComment (val context: Context?, val BoardCommentData: ArrayList<BoardCommentData>) :
     RecyclerView.Adapter<AdapterComment.Holder>() {
@@ -37,20 +45,24 @@ class AdapterComment (val context: Context?, val BoardCommentData: ArrayList<Boa
 
         fun bind (BoardCommentData: BoardCommentData, context: Context?) {
 
-            /* userphoto의 setImageResource에 들어갈 이미지의 id를 파일명(String)으로 찾고,
-          이미지가 없는 경우 안드로이드 기본 아이콘을 표시한다.*/
-            if (BoardCommentData.userphoto != "") {
-                val resourceId = context!!.resources.getIdentifier(BoardCommentData.userphoto, "drawable", context.packageName)
-                imgCommentUser?.setImageResource(resourceId)
-            } else {
-                imgCommentUser?.setImageResource(R.mipmap.ic_launcher)
-            }
-
             /* TextView와 String 데이터를 연결한다. */
 
             tvcommentUser?.text = BoardCommentData.userId
             tvboardcomment?.text = BoardCommentData.boardCommment
             tvcommentTime?.text = BoardCommentData.commentTime
+
+            val boardpath = "${BoardCommentData.commentTime}+${BoardCommentData.userId}"
+            val user = Firebase.auth.currentUser
+
+             //게시글 이미지 세팅
+        val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+        database1.child("current-user")
+            .child("${user?.uid}")
+            .child("avatar_url")
+            .get().addOnSuccessListener {
+                val avatarImage = it.value as String
+                Glide.with(itemView.context).load(avatarImage).into(imgCommentUser!!)
+            }
 
         }
     }

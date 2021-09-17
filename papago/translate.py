@@ -97,7 +97,7 @@ class Papago:
 
 if __name__ == "__main__":
     client_id = "client_id"  # 발급받은 아이디 입력
-    client_secret = "client_secret"  # 발급받은 secret입력
+    client_secret = "client_seret"  # 발급받은 secret입력
     file_name = "stack_fixture.json"
 
     row = open("./last_row.txt", "r")

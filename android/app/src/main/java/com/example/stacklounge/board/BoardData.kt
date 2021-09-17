@@ -6,4 +6,5 @@ data class BoardData(
     var contents : String="",
     var feedTime : String="",
     var userId : String="",
+    var userphoto : String=""
 )

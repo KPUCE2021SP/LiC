@@ -1,5 +1,6 @@
 package com.example.stacklounge.board
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
@@ -21,8 +22,11 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_board_write_text.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import kotlin.properties.Delegates
 
 class BoardWriteFeed : AppCompatActivity() {
+
+    var boardList = arrayListOf<BoardData>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +67,7 @@ class BoardWriteFeed : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val aUserId = snapshot.child("current-user/${user?.uid}").child("login").value
+                val aUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString()
 
                 var boardNumber = snapshot.child("board").child("boardNumber").child("boardNumber").value.toString().toInt()
                 boardNumber++
@@ -81,7 +86,8 @@ class BoardWriteFeed : AppCompatActivity() {
                     "userId" to aUserId,
                     "contents" to aContents,
                     "title" to aTitle,
-                    "feedTime" to writingTime
+                    "feedTime" to writingTime,
+                    "userphoto" to aUserphoto
                 )
 
                 val aboardInfo = hashMapOf(
@@ -95,19 +101,17 @@ class BoardWriteFeed : AppCompatActivity() {
                     Toast.makeText(applicationContext,"내용을 입력해주세요.",Toast.LENGTH_SHORT).show()
                 }
                 else{
+                    boardList.add((BoardData(aTitle,aContents,writingTime,aUserId as String)))
                     userIdRef.child("board").child("boardNumber").setValue(aboardInfo)
                     addRef.setValue(aUserInfo)
-
                     finish()
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
                 //실패할 때
                 Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
             }
-
         })
     }
 
