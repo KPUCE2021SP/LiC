@@ -9,12 +9,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
+import com.bumptech.glide.Glide
 import com.example.stacklounge.GetCompanyByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.query.apolloClient
@@ -24,7 +26,7 @@ import kotlinx.android.synthetic.main.activity_company_search.*
 class CompanySearch : AppCompatActivity() {
     lateinit var companyNameView : TextView
     lateinit var techStackView : TextView
-    lateinit var companyTextImage : TextView
+    lateinit var companyTextImage : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_search)
@@ -64,7 +66,14 @@ class CompanySearch : AppCompatActivity() {
                         if(company != null && !response.hasErrors()) {
                             Handler(Looper.getMainLooper()).post(Runnable {
                                 cardView.visibility = View.VISIBLE
-                                companyTextImage.text = company.companyName?.first().toString()
+                                val logo = company.companyLogo
+                                if(logo == ""){
+                                    companyTextImage.setImageResource(R.drawable.stackloungeicon)
+                                }
+                                else {
+                                    Glide.with(context).load(logo)
+                                        .into(companyTextImage)
+                                }
                                 companyNameView.text = company.companyName
                                 techStackView.text = company.techStack.toString()
                             })
