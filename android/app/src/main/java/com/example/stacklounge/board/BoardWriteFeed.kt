@@ -26,6 +26,8 @@ import kotlin.properties.Delegates
 
 class BoardWriteFeed : AppCompatActivity() {
 
+    var boardList = arrayListOf<BoardData>()
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,13 +60,14 @@ class BoardWriteFeed : AppCompatActivity() {
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
-        val userIdRef = database.getReference() // userId 불러오는 경로
+        val userIdRef = database.reference // userId 불러오는 경로
 
 
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val aUserId = snapshot.child("current-user/${user?.uid}").child("login").value
+                val aUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString()
 
                 var boardNumber = snapshot.child("board").child("boardNumber").child("boardNumber").value.toString().toInt()
                 boardNumber++
@@ -83,7 +86,8 @@ class BoardWriteFeed : AppCompatActivity() {
                     "userId" to aUserId,
                     "contents" to aContents,
                     "title" to aTitle,
-                    "feedTime" to writingTime
+                    "feedTime" to writingTime,
+                    "userphoto" to aUserphoto
                 )
 
                 val aboardInfo = hashMapOf(
@@ -97,6 +101,7 @@ class BoardWriteFeed : AppCompatActivity() {
                     Toast.makeText(applicationContext,"내용을 입력해주세요.",Toast.LENGTH_SHORT).show()
                 }
                 else{
+                    boardList.add((BoardData(aTitle,aContents,writingTime,aUserId as String)))
                     userIdRef.child("board").child("boardNumber").setValue(aboardInfo)
                     addRef.setValue(aUserInfo)
                     finish()

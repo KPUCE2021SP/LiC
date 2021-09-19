@@ -56,11 +56,13 @@ class ProgrammersPipeline:
             )
     def process_item(self, item, spider):
         if item["flag"]:
-            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
+            self.json_response[str(item["id"])] = {"companyName": "", "techStack": [], "companyLogo": ""}
             logging.info(f"NAME : {item['name']}")
             self.json_response[str(item["id"])]["companyName"] = item["name"]
             for tech in item["techStack"]:
                 self.json_response[str(item["id"])]["techStack"].append(tech)
+            self.json_response[str(item["id"])]["companyLogo"] = item["companyLogo"]
+            
         else:
             for tech in item["techStack"]:
                 self.json_response[str(item["id"])]["techStack"].append(tech)
@@ -111,11 +113,12 @@ class JumpitPipeline:
             for tech in item["techStack"]:
                 self.json_response[str(item["id"])]["techStack"].append(tech)
         else:
-            self.json_response[str(item["id"])] = {"companyName": "", "techStack": []}
+            self.json_response[str(item["id"])] = {"companyName": "", "techStack": [], "companyLogo": ""}
             self.json_response[str(item["id"])]["companyName"] = item["name"]
             for tech in item["techStack"]:
                 self.json_response[str(item["id"])]["techStack"].append(tech)
 
+        return item
 
 class KiwizzlePipeline:
     """
@@ -165,6 +168,7 @@ class KiwizzlePipeline:
             self.json_content[str(item["companyId"])] = {
                 "companyName": "",
                 "techStack": [],
+                "companyLogo": ""
             }
 
         self.json_content[str(item["companyId"])]["companyName"] = self.key["company"][
@@ -208,7 +212,11 @@ class RawPipeline:
 
             self.collection.update_one(
                 {"companyName": key},
-                {"$set": {"techStack": self.json_content[key]}},
+                {"$set": {
+                    "techStack": self.json_content[key],
+                    "companyLogo": ""
+                    }
+                },
                 upsert=True,
             )
 
@@ -232,8 +240,10 @@ class JsonPipeline:
 
     def close_spider(self, spider):
         fixture = json.load(fp=open("stack_fixture.json"))
-        if not self.collection.find_one({"id": 0}):
-            self.collection.insert_many(fixture)
+        logging.info(f"TOOL: {fixture}") 
+        self.collection.insert_many(fixture)
+        # if not self.collection.find_one({"id": 0}):
+        #    self.collection.insert_many(fixture)
 
 
     def process_item(self, item, spider):
