@@ -51,11 +51,8 @@ class BoardShowFeed : AppCompatActivity() {
         commentRecyclerView.setHasFixedSize(true)
 
         //db 찾기용 변수
-        val gfeedTime = intent.getStringExtra("feedTime").toString()
-        val guserId = intent.getStringExtra("userId").toString()
-//        val guserphoto = intent.getStringExtra("userphoto1").toString()
-//        Log.d("guserphoto",guserphoto)
-//        Glide.with(applicationContext).load(guserphoto).into(imgBoardUser)
+        val gfeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
+        val guserId = intent.getStringExtra("userId").toString() // 글 작성자
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
@@ -68,9 +65,9 @@ class BoardShowFeed : AppCompatActivity() {
 
         // 게시글 이미지 세팅
         val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-        database1.child("current-user")
-            .child("${user?.uid}")
-            .child("avatar_url")
+        database1.child("board")
+            .child(boardPath)
+            .child("userphoto")
             .get().addOnSuccessListener {
                 val avatarImage = it.value as String
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
@@ -83,7 +80,7 @@ class BoardShowFeed : AppCompatActivity() {
                     //commentData.clear()
                     val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
 
-                    val key = postSnapshot.key.toString()
+                    val key = postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로 + commentNumber
 
                     val get: BoardCommentData? = postSnapshot.getValue(BoardCommentData::class.java)
 
@@ -94,8 +91,21 @@ class BoardShowFeed : AppCompatActivity() {
                         val addcommentTime = get?.commentTime.toString()
                         Log.d("addcomment",addcomment)
 
-
                         commentData.add((BoardCommentData(adduserid,addcomment,addcommentTime,adduserphoto)))
+
+//                        // 댓글 이미지 경로
+//                        val database2 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+//                        database2.child("board")
+//                            .child(boardPath)
+//                            .child("comment")
+//                            .child(key)
+//                            .child("userphoto")
+//                            .get().addOnSuccessListener {
+//                                val avatarImage = it.value as String
+//                                Log.d("avatarImage",avatarImage)
+//                                Glide.with(applicationContext).load(avatarImage).into(imgCommentUser)
+//                            }
+
                         mAdapter.notifyDataSetChanged()
                     }
                     else{
@@ -116,7 +126,7 @@ class BoardShowFeed : AppCompatActivity() {
         // 댓글 작성 버튼
         imgWriteComment.setOnClickListener{
             val createComment = edtCreateText.text.toString() // 댓글 내용
-            
+
             if(createComment==""){
                 Toast.makeText(this,"댓글을 입력해주세요.",Toast.LENGTH_SHORT).show()
             }
@@ -127,17 +137,16 @@ class BoardShowFeed : AppCompatActivity() {
 
                 userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        val commentpath = "$gfeedTime+$guserId"
 
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
-                        val cUserphoto = snapshot.child("board/$boardPath").child("userphoto").value.toString() // 작성자 프사
+                        val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 댓글 작성자 프사
 
                         Glide.with(applicationContext)
                             .load(cUserphoto)
-                            .into(imgBoardUser)
+                            .into(imgCommentUser)
 
-                        val boardPath = "$gfeedTime+$guserId"
-
-                        val cPath = database.getReference("board/$boardPath").child("comment")  // 저장경로
+                        val cPath = database.getReference("board/$commentpath").child("comment")  // 저장경로
 
                         // 댓글 작성자 db
                         val cUserInfo = hashMapOf(
@@ -149,12 +158,12 @@ class BoardShowFeed : AppCompatActivity() {
 
                         // db에 댓글 작성자 정보 저장
                         cPath.child("$cwritingTime+$cUserId").setValue(cUserInfo)
-                        
+
                         //db에 commentNumber 저장
-                        if(snapshot.child("board").child(boardPath).child("comment").child("commentNumber").child("commentNumber").exists()){
+                        if(snapshot.child("board").child(commentpath).child("comment").child("commentNumber").child("commentNumber").exists()){
 
                             //db에 commentNumber이 있을 때
-                            var commentNumber = snapshot.child("board/$boardPath").child("comment").child("commentNumber").child("commentNumber").value.toString().toInt()
+                            var commentNumber = snapshot.child("board/$commentpath").child("comment").child("commentNumber").child("commentNumber").value.toString().toInt()
                             commentNumber++
                             cPath.child("commentNumber").child("commentNumber").setValue(commentNumber)
                         }
