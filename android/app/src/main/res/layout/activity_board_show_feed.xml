@@ -57,6 +57,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@color/stcolor"
                     android:orientation="vertical">
 
@@ -87,6 +88,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
@@ -123,7 +127,6 @@
                     android:id="@+id/commentRecyclerView"
                     android:layout_width="match_parent"
                     android:padding="5dp"
-                    android:layout_margin="5dp"
                     android:layout_height="wrap_content">
                 </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
