@@ -51,11 +51,8 @@ class BoardShowFeed : AppCompatActivity() {
         commentRecyclerView.setHasFixedSize(true)
 
         //db 찾기용 변수
-        val gfeedTime = intent.getStringExtra("feedTime").toString()
-        val guserId = intent.getStringExtra("userId").toString()
-//        val guserphoto = intent.getStringExtra("userphoto1").toString()
-//        Log.d("guserphoto",guserphoto)
-//        Glide.with(applicationContext).load(guserphoto).into(imgBoardUser)
+        val gfeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
+        val guserId = intent.getStringExtra("userId").toString() // 글 작성자
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
@@ -68,9 +65,9 @@ class BoardShowFeed : AppCompatActivity() {
 
         // 게시글 이미지 세팅
         val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-        database1.child("current-user")
-            .child("${user?.uid}")
-            .child("avatar_url")
+        database1.child("board")
+            .child(boardPath)
+            .child("userphoto")
             .get().addOnSuccessListener {
                 val avatarImage = it.value as String
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
@@ -129,7 +126,7 @@ class BoardShowFeed : AppCompatActivity() {
                     override fun onDataChange(snapshot: DataSnapshot) {
 
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
-                        val cUserphoto = snapshot.child("board/$boardPath").child("userphoto").value.toString() // 작성자 프사
+                        val cUserphoto = snapshot.child("board/$boardPath").child("userphoto").value.toString() // 댓글 작성자 프사
 
                         Glide.with(applicationContext)
                             .load(cUserphoto)
@@ -166,6 +163,7 @@ class BoardShowFeed : AppCompatActivity() {
                         edtCreateText.setText("")
 
                         commentData.add((BoardCommentData(cUserId,createComment,cwritingTime,cUserphoto)))
+
 
                         mAdapter.notifyDataSetChanged()
 
