@@ -2,6 +2,7 @@ query GetCompanyByName($name: String!){
     companyByName(name: $name){
         companyName
         techStack
+        companyLogo
     }
 }
 
@@ -12,6 +13,7 @@ query GetCompanyAll{
                 id
                 companyName
                 techStack
+                companyLogo
             }
         }
     }
