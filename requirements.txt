@@ -61,7 +61,7 @@ Rx==3.2.0
 Scrapy==2.5.0
 scrapy-inline-requests==0.3.1
 service-identity==21.1.0
-singledispatch==3.6.2
+singledispatch==3.7.0
 six==1.16.0
 soupsieve==2.2.1
 sqlparse==0.2.4
