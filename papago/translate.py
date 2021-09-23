@@ -38,8 +38,13 @@ class Papago:
             json_data = json.load(f)
 
         stack_data = list(json_data)
-
-        for index, data in enumerate(stack_data):
+        
+        # for i, data in enumerate(stack_data):
+        #     if "Apache Hive" == data['name']:
+        #         print(i, data)
+        #         break
+            
+        for index, data in enumerate(stack_data[self.row:]):
             if len(data) == 1:
                 continue
             else:
