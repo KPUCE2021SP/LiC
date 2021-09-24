@@ -73,7 +73,7 @@ class BoardShowFeed : AppCompatActivity() {
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
             }
 
-        // 댓글 recyclerview
+        // 댓글 recyclerview commentData에 저장
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(postSnapshot in snapshot.child("board/$boardPath/comment").children){
@@ -92,19 +92,6 @@ class BoardShowFeed : AppCompatActivity() {
                         Log.d("addcomment",addcomment)
 
                         commentData.add((BoardCommentData(adduserid,addcomment,addcommentTime,adduserphoto)))
-
-//                        // 댓글 이미지 경로
-//                        val database2 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-//                        database2.child("board")
-//                            .child(boardPath)
-//                            .child("comment")
-//                            .child(key)
-//                            .child("userphoto")
-//                            .get().addOnSuccessListener {
-//                                val avatarImage = it.value as String
-//                                Log.d("avatarImage",avatarImage)
-//                                Glide.with(applicationContext).load(avatarImage).into(imgCommentUser)
-//                            }
 
                         mAdapter.notifyDataSetChanged()
                     }

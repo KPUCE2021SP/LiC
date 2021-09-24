@@ -73,9 +73,7 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
                         val key = postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로 + commentNumber
                         Log.d("commentkey", key)
 
-                        //val get: BoardCommentData? = postSnapshot.getValue(com.example.stacklounge.board.BoardCommentData::class.java)
-
-                        if (key.contains("+")) {
+                        if (key.contains("+")) { //boardNumber 빼기
 
                             var keysplitArray = key.split("+")
                             var commentID = keysplitArray[1]
@@ -93,35 +91,6 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
                                             .into(imgCommentUser!!)
                                     }
                             }
-//                            if (commentID.equals(BoardCommentData.userId)) {
-//                                userIdRef.addListenerForSingleValueEvent(object :
-//                                    ValueEventListener {
-//                                    override fun onDataChange(snapshot: DataSnapshot) {
-//                                        for (postSnapshot2 in snapshot.child("board/$commentPath/comment").children) {
-//
-//                                            val commentphoto =
-//                                                snapshot.child("current-user/${user?.uid}")
-//                                                    .child("login").value.toString() // 댓글 작성자
-//
-//                                            val key =
-//                                                postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로 + commentNumber
-//                                            Log.d("commentkey", key)
-//
-//                                            val get: BoardCommentData? =
-//                                                postSnapshot.getValue(com.example.stacklounge.board.BoardCommentData::class.java)
-//
-//
-//                                        }
-//
-//                                    }
-//
-//                                    override fun onCancelled(error: DatabaseError) {
-//
-//                                    }
-//
-//                                })
-//                            }
-
 
                         } else {
                             continue
@@ -136,14 +105,6 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
 
             })
 
-//            val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-//            database1.child("current-user")
-//                .child("${user?.uid}")
-//                .child("avatar_url")
-//                .get().addOnSuccessListener {
-//                    val avatarImage = it.value as String
-//                    Glide.with(itemView.context).load(avatarImage).into(imgCommentUser!!)
-//                }
 
         }
     }
