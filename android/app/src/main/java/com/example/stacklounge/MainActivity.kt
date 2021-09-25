@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             .setFullScreen(true)
             .showProgress(true)
             .setProgressColor(R.color.stcolor)
-            .setTime(5000)
+            .setTime(2500)
             .show()
         isFirebaseConnected()
         configureBottomNavigation()

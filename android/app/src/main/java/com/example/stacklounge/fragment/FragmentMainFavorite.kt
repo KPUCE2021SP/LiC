@@ -58,15 +58,7 @@ class FragmentMainFavorite : Fragment() {
                                     loadData(item = item)
                                 }
                             }
-                            // 이거 고쳐야 합니다;;; 코루틴을 잘 몰라서 이렇게 해버렸어요... - 홍
-                            delay(350)
-                            val mAdapter = ToolListAdapter(toolList)
-                            val gridLayoutManager = GridLayoutManager(view?.context, 2)
-                            topicRecyclerView.layoutManager = gridLayoutManager
-                            topicRecyclerView.adapter = mAdapter
-                            Log.d("TL", "$toolList")
                         }
-
                     }
             }
     }
@@ -112,7 +104,10 @@ class FragmentMainFavorite : Fragment() {
                     websiteUrl = response.data?.toolByName?.websiteUrl,
                 )
                 toolList.add(tooldata)
-                Log.d("LIST", "${toolList.size}")
+                val mAdapter = ToolListAdapter(toolList)
+                val gridLayoutManager = GridLayoutManager(view?.context, 2)
+                topicRecyclerView.layoutManager = gridLayoutManager
+                topicRecyclerView.adapter = mAdapter
             }
         }
     }
