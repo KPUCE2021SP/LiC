@@ -58,6 +58,7 @@ class ProgrammersbotSpider(Spider):
         companyName = response.css("h1::text").get()
         companyLogo = response.css("img[class=company-logo]::attr(src)").get()
         list_of_tech_stacks = response.css("tr[class=heavy-use] code::text").getall()
+        list_of_tech_stacks = [ts.lower() for ts in list_of_tech_stacks]
         list_of_job_positions = response.css(
             "ul[class=list-positions] a::attr(href)"
         ).getall()
@@ -80,15 +81,11 @@ class ProgrammersbotSpider(Spider):
 
     def parseJobCardContent(self, response):
         json_of_job_card_content = json.loads(response.text)
+        card_content_tech_stack = [ts.lower() for ts in json_of_job_card_content["technicalTags"] + json_of_job_card_content["teamTechnicalTags"]]
         tech_stacks = {
             "flag": 0,
             "id": int(json_of_job_card_content["companyId"]),
-            "techStack": list(
-                set(
-                    json_of_job_card_content["technicalTags"]
-                    + json_of_job_card_content["teamTechnicalTags"]
-                )
-            ),
+            "techStack": list(set(card_content_tech_stack)),
         }
         yield tech_stacks
 

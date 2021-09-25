@@ -40,7 +40,8 @@
         "Fluentd",
         "Jira",
         "Figma",
-        "Zendesk"   
+        "Zendesk",
+        "https://avatars.githubusercontent.com/u/71009899?s=200&v=4"
     ],
     "요기요": [
         "Javascript",
@@ -103,7 +104,8 @@
         "Salt Stack",
         "Docker",
         "Nginx",
-        "Terraform"
+        "Terraform",
+        "https://avatars.githubusercontent.com/u/1597275?s=200&v=4"
     ],
     "직방": [
         "Javascript",
@@ -138,7 +140,8 @@
         "Bitbucket",
         "ESLint",
         "GULP",
-        "Jira"
+        "Jira",
+        "https://avatars.githubusercontent.com/u/7043041?s=200&v=4"
     ],
     "마켓컬리": [
         "iOS", 
@@ -175,6 +178,7 @@
         "Grafana", 
         "Lambda", 
         "Terraform", 
-        "Consul"
+        "Consul",
+        "https://avatars.githubusercontent.com/u/25602543?s=200&v=4"
     ]
 }
