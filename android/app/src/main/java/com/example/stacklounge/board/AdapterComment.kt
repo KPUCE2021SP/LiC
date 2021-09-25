@@ -54,7 +54,6 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
             tvboardcomment?.text = BoardCommentData.boardCommment
             tvcommentTime?.text = BoardCommentData.commentTime
 
-            val user = Firebase.auth.currentUser
             val database =
                 FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
             val userIdRef = database.getReference()

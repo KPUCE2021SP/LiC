@@ -48,7 +48,7 @@ class AdapterCommunityBoard(val context: Context?, val BoardData: ArrayList<Boar
             tvboardTitle?.text = BoardData.title
             tvboardContent?.text = BoardData.contents
             tvboardTime?.text = BoardData.feedTime
-            tvuserID?.text = "|" + BoardData.userId
+            tvuserID?.text =  BoardData.userId
 
 
             itemView.setOnClickListener { itemClick(BoardData) } // 아이템(게시글)을 클릭했을 때

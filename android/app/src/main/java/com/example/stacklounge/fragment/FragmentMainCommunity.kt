@@ -53,8 +53,7 @@ class FragmentMainCommunity : Fragment() {
         view.srl_main.setOnRefreshListener {
             // 사용자가 아래로 드래그 했다가 놓았을 때 호출
             // 이때 새로고침 화살표가 계속 돌아감 게시판 새로고침
-            val ft = requireFragmentManager().beginTransaction()
-            ft.detach(this).attach(this).commit()
+            boardRefresh()
             rAdapter.notifyDataSetChanged()
             srl_main.isRefreshing = false
         }
@@ -111,15 +110,20 @@ class FragmentMainCommunity : Fragment() {
 
             R.id.menuBoardRefresh -> {
                 // navigate to settings screen
-                val lm = LinearLayoutManager(context)
-                view?.boardRecycleview?.layoutManager = lm
-                val ft = requireFragmentManager().beginTransaction()
-                ft.detach(this).attach(this).commit()
-                lm.stackFromEnd = false // recyclerview를 맨위로 올려준다.
+                boardRefresh()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun boardRefresh(){
+        val lm = LinearLayoutManager(context)
+        view?.boardRecycleview?.layoutManager = lm
+        val ft = requireFragmentManager().beginTransaction()
+        ft.detach(this).attach(this).commit()
+        lm.reverseLayout=true // recyclerview에 최신 글부터 보여준다.
+        lm.stackFromEnd = true // recyclerview를 맨위로 올려준다.
     }
 }

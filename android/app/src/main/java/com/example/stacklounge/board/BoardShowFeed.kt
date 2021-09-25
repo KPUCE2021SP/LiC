@@ -1,5 +1,6 @@
 package com.example.stacklounge.board
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -26,6 +28,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_board_show_comment.*
 import kotlinx.android.synthetic.main.activity_board_show_feed.*
+import kotlinx.android.synthetic.main.fragment_main_community.view.*
 import kotlinx.android.synthetic.main.fragment_main_favorite.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -72,6 +75,30 @@ class BoardShowFeed : AppCompatActivity() {
                 val avatarImage = it.value as String
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
             }
+
+        // 게시글 작성자가 아닐 시 메뉴바 숨김
+        userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(postSnapshot in snapshot.children){
+                    // DB에 있는 글 작성자와 현재 로그인한 user가 다를 때 메뉴바 숨김
+                    val bUserId = snapshot.child("board/$boardPath/userId").value.toString() // 글 작성자
+                    val currentUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 현재 로그인한 user
+                    if(!bUserId.equals(currentUserId)){
+                        var actionBar = supportActionBar
+                        actionBar?.hide()
+                    }
+
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //실패할 때
+                Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
 
         // 댓글 recyclerview commentData에 저장
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -183,19 +210,19 @@ class BoardShowFeed : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu) : Boolean {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
-        inflater.inflate(R.menu.company_search_menu_inflated, menu)
+        inflater.inflate(R.menu.boardshowfeed_menu, menu)
         return true
     }
 
     //appbar 메뉴 클릭 시
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.search_inflated -> {
+            R.id.menuBoardUpdate -> {
+                updateBoardDialog()
                 true
             }
-            R.id.backBton -> {
-                finish()
-                this.overridePendingTransition(R.anim.fling_right_to_left,R.anim.fling_left_to_right_out)
+            R.id.menuBoardDelete -> {
+                deleteBoardDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -208,10 +235,78 @@ class BoardShowFeed : AppCompatActivity() {
         val gfeedTime = intent.getStringExtra("feedTime").toString()
         val guserId = intent.getStringExtra("userId").toString()
 
-        BoardShowTitle.text = gtitle
+
+        val getboardTitle = gtitle.split("vs")
+
+        val boardTitle1 = getboardTitle[0].trim()
+        val boardTitle2 = getboardTitle[1].trim()
+
+        showet1.text = boardTitle1
+        showet2.text = boardTitle2
         BoardShowContent.text = gcontents
         WritingTime.text = gfeedTime
         BoardUserId.text = guserId
     }
+
+    fun updateBoardDialog(){
+        val dlg = AlertDialog.Builder(this)
+        dlg.setTitle("수정하시겠습니까?")
+        dlg.setPositiveButton("확인"){ dialog, which ->
+            val utitle = intent.getStringExtra("title").toString() // 글 제목
+            val ucontents = intent.getStringExtra("contents").toString() // 글 내용
+            val ufeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
+            val uuserId = intent.getStringExtra("userId").toString() // 글 작성자
+
+            val updateintent = Intent(this, BoardWriteFeed::class.java)
+
+            updateintent.putExtra("utitle",utitle)
+            updateintent.putExtra("ucontents",ucontents)
+            updateintent.putExtra("ufeedTime",ufeedTime)
+            updateintent.putExtra("uuserId",uuserId)
+            updateintent.putExtra("flag","1".toString())
+
+            //startActivity(updateintent)
+            startActivityForResult(updateintent,11)
+
+        }
+        dlg.setNegativeButton("취소", null)
+        dlg.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                11 -> {
+
+                    showet1.text = data?.getStringExtra("selectet11").toString()
+                    showet2.text = data?.getStringExtra("selectet22").toString()
+                    BoardShowContent.text = data?.getStringExtra("writingContent11").toString()
+
+                }
+            }
+        }
+    }
+
+
+    fun deleteBoardDialog(){
+        val dlg = AlertDialog.Builder(this)
+        dlg.setTitle("삭제하시겠습니까?")
+        dlg.setPositiveButton("확인"){ dialog, which ->
+            val gfeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
+            val guserId = intent.getStringExtra("userId").toString() // 글 작성자
+            val dboardPath = "$gfeedTime+$guserId"
+
+            val deletedatabase = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+            deletedatabase.child("board")
+                .child(dboardPath)
+                .setValue(null)
+
+            finish() // 삭제한 뒤에 community fragment로 이동
+        }
+        dlg.setNegativeButton("취소", null)
+        dlg.show()
+    }
+
 
 }
