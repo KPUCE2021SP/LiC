@@ -15,7 +15,7 @@ class KiwizzlebotSpider(Spider):
 
     name = "kiwizzlebot"
     allowed_domains = ["kiwizzle.com/search"]
-    start_urls = [f"https://kiwizzle.com/api/v1/job/{i}" for i in range(4799, 4800)]
+    # start_urls = [f"https://kiwizzle.com/api/v1/job/{i}" for i in range(10000, 19164)]
 
     custom_settings = {
         "ITEM_PIPELINES": {

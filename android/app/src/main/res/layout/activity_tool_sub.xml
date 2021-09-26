@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
     <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         app:cardCornerRadius="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="#2C2B3C"
         tools:context=".tool.ToolSubActivity">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,7 +57,12 @@
                 android:textColor="?android:attr/textColorSecondary"
                 />
 
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolDetailButton"
+                android:text="더 자세한 정보"/>
         </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-</LinearLayout>

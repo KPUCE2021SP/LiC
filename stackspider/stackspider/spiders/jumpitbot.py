@@ -66,7 +66,7 @@ class JumpitbotSpider(Spider):
 
         tech = []
         for i in range(len(json_response["techStacks"])):
-            tech.append(json_response["techStacks"][i]["stack"])
+            tech.append(json_response["techStacks"][i]["stack"].lower())
 
         tech_stacks = {
             "id": int(json_response["companyProfileId"]),

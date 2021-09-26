@@ -10,6 +10,9 @@
     </style>
 
     <style name="DialogNoTitle" parent="@style/Theme.MaterialComponents.Dialog">
-        <item name="android:windowNoTitle">true</item>
+        <item name="android:actionBarTheme">@style/Theme.MaterialComponents.NoActionBar</item>
+    </style>
+    <style name="Detail" parent="@style/Theme.MaterialComponents">
+
     </style>
 </resources>
