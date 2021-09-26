@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".company.CompanySearch"></activity>
-        <activity android:name=".board.BoardShowFeed" />
+        <activity android:name=".board.BoardShowFeed"
+            />
         <activity android:name=".board.BoardWriteFeed" />
         <activity android:name=".MainActivity">
             <intent-filter>
