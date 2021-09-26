@@ -44,20 +44,94 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-    <EditText
-        android:id="@+id/writingTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="제목"
-        android:textColor="@color/text"
-        android:padding="20dp"
-        android:background="@color/stcolor"
-        android:textStyle="bold"
         android:layout_margin="10dp"
-        android:outlineSpotShadowColor="@color/text"
-        android:textColorHint="@color/text"
-        android:text="" />
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/selectimg1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/stackloungeicon" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/selectet1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textColorHint="@color/eight"
+                android:backgroundTint="@color/text"
+                android:text=""
+                android:textSize="15sp"
+                android:hint="ex) MongoDB">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/text"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="vs" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/selectimg2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/stackloungeicon" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/selectet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:backgroundTint="@color/text"
+                android:textColorHint="@color/eight"
+                android:text=""
+                android:textSize="15sp"
+                android:hint="ex) MySQL">
+
+            </EditText>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/writingContent"

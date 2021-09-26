@@ -9,9 +9,9 @@
         app:showAsAction="ifRoom|withText"/>
 
     <item
+        android:id="@+id/menuBoardRefresh"
+        android:title="새로고침" />
+    <item
         android:id="@+id/menuBoardWrite"
         android:title="글 쓰기" />
-    <item
-        android:id="@+id/menuBoardAddStar"
-        android:title="즐겨찾기에 추가" />
 </menu>

@@ -45,12 +45,14 @@ class ToolListAdapter(
         holder.name?.text = recyclerData.name
         Glide.with(holder.itemView).load(recyclerData.imageUrl).into(holder.imageUrl)
         holder.cardView.setOnClickListener {
-            Log.d("CLCKED", "clicked")
             var intent = Intent(holder.activity, ToolSubActivity::class.java)
             intent.putExtra("imageUrl", recyclerData.imageUrl)
             intent.putExtra("name", recyclerData.name)
-            intent.putExtra("description", recyclerData.description)
+            intent.putExtra("desc", recyclerData.description)
             intent.putExtra("title", recyclerData.title)
+            intent.putExtra("oss", recyclerData.ossRepo)
+            intent.putExtra("web", recyclerData.websiteUrl)
+            intent.putExtra("canonical", recyclerData.canonicalUrl)
             holder.activity.startActivity(intent)
         }
 

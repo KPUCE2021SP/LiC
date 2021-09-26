@@ -13,16 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StackLounge">
-        <activity android:name=".tool.ToolSubActivity"
-            android:theme="@style/DialogNoTitle">
-        </activity>
+        <activity android:name=".tool.ToolDetail"></activity>
+        <activity
+            android:name=".company.CompanyDetail"
+            android:theme="@style/Theme.MaterialComponents"/>
+        <activity
+            android:name=".tool.ToolSubActivity"
+            android:theme="@style/DialogNoTitle" />
         <activity android:name=".tool.ToolInformation" />
         <activity android:name=".company.SearchResultCompany">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".company.CompanySearch"></activity>
+        <activity android:name=".company.CompanySearch" />
         <activity android:name=".board.BoardShowFeed" />
         <activity android:name=".board.BoardWriteFeed" />
         <activity android:name=".MainActivity">
