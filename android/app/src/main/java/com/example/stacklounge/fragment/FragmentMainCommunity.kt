@@ -1,30 +1,22 @@
 package com.example.stacklounge.fragment
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.stacklounge.R
 import com.example.stacklounge.board.AdapterCommunityBoard
 import com.example.stacklounge.board.BoardData
 import com.example.stacklounge.board.BoardShowFeed
 import com.example.stacklounge.board.BoardWriteFeed
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_main_community.*
 import kotlinx.android.synthetic.main.fragment_main_community.view.*
 
 
@@ -50,24 +42,20 @@ class FragmentMainCommunity : Fragment() {
 
             Log.d("index",boardList.indexOf(BoardData).toString())
 
-//            val user = Firebase.auth.currentUser
-
-//            val database1 = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
-//            database1.child("current-user")
-//                .child("${user?.uid}")
-//                .child("avatar_url")
-//                .get().addOnSuccessListener {
-//                    val avatarImage = it.value as String
-//                    Log.d("avatarImage",avatarImage)
-//                    commentintent.putExtra("userphoto1",avatarImage)
-//                }
-
-
             commentintent.putExtra("title",BoardData.title)
             commentintent.putExtra("contents",BoardData.contents)
             commentintent.putExtra("feedTime",BoardData.feedTime)
             commentintent.putExtra("userId",BoardData.userId)
             startActivity(commentintent)
+        }
+
+        //당겨서 새로고침
+        view.srl_main.setOnRefreshListener {
+            // 사용자가 아래로 드래그 했다가 놓았을 때 호출
+            // 이때 새로고침 화살표가 계속 돌아감 게시판 새로고침
+            boardRefresh()
+            rAdapter.notifyDataSetChanged()
+            srl_main.isRefreshing = false
         }
 
         // db에서 데이터를 가져와 community recycleview에 부착
@@ -101,6 +89,8 @@ class FragmentMainCommunity : Fragment() {
         view.boardRecycleview.layoutManager = lm
         view.boardRecycleview.setHasFixedSize(true)
         rAdapter.notifyDataSetChanged()
+        lm.reverseLayout=true // recyclerview에 최신 글부터 보여준다.
+        lm.stackFromEnd = true // recyclerview를 맨위로 올려준다.
 
         return view
     }
@@ -118,12 +108,22 @@ class FragmentMainCommunity : Fragment() {
                 true
             }
 
-            R.id.menuBoardAddStar -> {
+            R.id.menuBoardRefresh -> {
                 // navigate to settings screen
+                boardRefresh()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun boardRefresh(){
+        val lm = LinearLayoutManager(context)
+        view?.boardRecycleview?.layoutManager = lm
+        val ft = requireFragmentManager().beginTransaction()
+        ft.detach(this).attach(this).commit()
+        lm.reverseLayout=true // recyclerview에 최신 글부터 보여준다.
+        lm.stackFromEnd = true // recyclerview를 맨위로 올려준다.
     }
 }
