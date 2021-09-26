@@ -18,7 +18,6 @@ buildscript {
         //Add Apollographql SDK
         classpath 'com.apollographql.apollo:apollo-gradle-plugin:2.5.9'
 
-
     }
 }
 
