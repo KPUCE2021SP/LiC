@@ -13,7 +13,7 @@ crontab==0.23.0
 cryptography==3.4.7
 cssselect==1.1.0
 Django==3.2.7
-django-filter==2.4.0
+django-filter==21.1
 django-graphql-auth==0.3.16
 django-graphql-jwt==0.3.0
 django-prometheus==2.1.0
