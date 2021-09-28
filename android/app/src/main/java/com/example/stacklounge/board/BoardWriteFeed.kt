@@ -5,14 +5,23 @@ import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.apollographql.apollo.coroutines.await
+import com.apollographql.apollo.exception.ApolloException
+import com.bumptech.glide.Glide
+import com.example.stacklounge.GetToolByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.fragment.FragmentMainCommunity
+import com.example.stacklounge.query.apolloClient
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -47,7 +56,38 @@ class BoardWriteFeed : AppCompatActivity() {
         btnWriteComplete.setOnClickListener {
             writingText()
         }
-
+        selectet1.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                Log.d("CHAR", s.toString())
+                lifecycleScope.launchWhenResumed {
+                    val response = try {
+                        apolloClient.query(GetToolByNameQuery(name = s.toString())).await()
+                    } catch(e: ApolloException) {
+                        Log.d("ApolloQuery", "Failure", e)
+                        null
+                    }
+                    Glide.with(applicationContext).load(response?.data?.toolByName?.imageUrl).into(selectimg1)
+                }
+            }
+        })
+        selectet2.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                Log.d("CHAR", s.toString())
+                lifecycleScope.launchWhenResumed {
+                    val response = try {
+                        apolloClient.query(GetToolByNameQuery(name = s.toString())).await()
+                    } catch(e: ApolloException) {
+                        Log.d("ApolloQuery", "Failure", e)
+                        null
+                    }
+                    Glide.with(applicationContext).load(response?.data?.toolByName?.imageUrl).into(selectimg2)
+                }
+            }
+        })
         // 글 수정 (BoardShowFeed -> BoardWriteFeed)
         updateBoardText()
         // 글 db 수정 시간+id, feedtime
