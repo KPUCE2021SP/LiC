@@ -30,6 +30,7 @@ class CompanyDetail : AppCompatActivity() {
             Glide.with(this).load(companyLogo).into(companyLogoBlur)
         }
         companyNameSet.text = companyName
+        Log.d("TECH", companyTechList.toString())
         val toolList : MutableList<GetToolByNameQuery.Data?> = arrayListOf()
         if (companyTechList != null) {
             lifecycleScope.launchWhenResumed {
@@ -41,7 +42,7 @@ class CompanyDetail : AppCompatActivity() {
                         null
                     }
                     if(response?.data?.toolByName.toString() == "null") {
-                        Log.d("ERROR", response?.data.toString())
+                        Log.d("ERROR", response?.data?.toolByName?.name.toString())
                     } else {
                         toolList.add(response?.data)
                         val companyDetailAdapter = CompanyDetailAdapter(toolList)

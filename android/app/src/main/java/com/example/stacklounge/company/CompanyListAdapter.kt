@@ -43,12 +43,20 @@ class CompanyListAdapter(
         holder.companyTechStackView.text = "확인된 기술 도구: ${company?.node?.techStack?.size}개"
         val companyTechList = company?.node?.techStack as Collection<String>
         val cover = arrayListOf<String>()
+        var new_cover = arrayListOf<String>()
         cover.addAll(companyTechList)
-        Log.d("COVER", cover.toString())
+        for(c in cover){
+            if(new_cover.contains(c.lowercase())){
+                Log.d("Duplicate", "OVERLAPPED")
+            } else {
+                new_cover.add(c.lowercase())
+            }
+        }
+        Log.d("List", cover.toString())
         holder.cardView.setOnClickListener {
             val intent = Intent(holder.itemView.context, CompanyDetail::class.java).apply {
                 putExtra("CompanyName", company?.node?.companyName)
-                putExtra("CompanyTechList", cover)
+                putExtra("CompanyTechList", new_cover)
                 putExtra("CompanyImage", logo)
             }
             holder.itemView.context.startActivity(intent)

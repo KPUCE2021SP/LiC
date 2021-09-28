@@ -16,10 +16,15 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.apollographql.apollo.coroutines.await
+import com.apollographql.apollo.exception.ApolloException
 import com.bumptech.glide.Glide
+import com.example.stacklounge.GetToolByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.company.CompanySearch
+import com.example.stacklounge.query.apolloClient
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -240,12 +245,25 @@ class BoardShowFeed : AppCompatActivity() {
 
         val boardTitle1 = getboardTitle[0].trim()
         val boardTitle2 = getboardTitle[1].trim()
-
+        updateToolImage(boardTitle1, selectimg1)
+        updateToolImage(boardTitle2, selectimg2)
         showet1.text = boardTitle1
         showet2.text = boardTitle2
         BoardShowContent.text = gcontents
         WritingTime.text = gfeedTime
         BoardUserId.text = guserId
+    }
+
+    fun updateToolImage(imageUrl: String, view: ImageView) {
+        lifecycleScope.launchWhenResumed {
+            val response = try {
+                apolloClient.query(GetToolByNameQuery(name = imageUrl)).await()
+            } catch(e: ApolloException) {
+                Log.d("ApolloQuery", "Failure", e)
+                null
+            }
+            Glide.with(applicationContext).load(response?.data?.toolByName?.imageUrl).into(view)
+        }
     }
 
     fun updateBoardDialog(){
