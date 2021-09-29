@@ -81,30 +81,6 @@ class BoardShowFeed : AppCompatActivity() {
                 Glide.with(applicationContext).load(avatarImage).into(imgBoardUser)
             }
 
-        // 게시글 작성자가 아닐 시 메뉴바 숨김
-        userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for(postSnapshot in snapshot.children){
-                    // DB에 있는 글 작성자와 현재 로그인한 user가 다를 때 메뉴바 숨김
-                    val bUserId = snapshot.child("board/$boardPath/userId").value.toString() // 글 작성자
-                    val currentUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 현재 로그인한 user
-                    if(!bUserId.equals(currentUserId)){
-                        var actionBar = supportActionBar
-                        actionBar?.hide()
-                    }
-
-                }
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                //실패할 때
-                Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
-
         // 댓글 recyclerview commentData에 저장
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -216,6 +192,35 @@ class BoardShowFeed : AppCompatActivity() {
         super.onCreateOptionsMenu(menu)
         val inflater = menuInflater
         inflater.inflate(R.menu.boardshowfeed_menu, menu)
+        //db 찾기용 변수
+        val gfeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
+        val guserId = intent.getStringExtra("userId").toString() // 글 작성자
+
+        // firebase auth
+        val user = Firebase.auth.currentUser
+
+        val boardPath = "$gfeedTime+$guserId"
+        val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
+        val userIdRef = database.reference // userId 불러오는 경로
+        userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(postSnapshot in snapshot.children){
+                    // DB에 있는 글 작성자와 현재 로그인한 user가 다를 때 메뉴바 숨김
+                    val bUserId = snapshot.child("board/$boardPath/userId").value.toString() // 글 작성자
+                    val currentUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 현재 로그인한 user
+                    if(bUserId != currentUserId){
+                        menu.findItem(R.id.menuBoardUpdate).isVisible = false
+                        menu.findItem(R.id.menuBoardDelete).isVisible = false
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //실패할 때
+                Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
+            }
+
+        })
         return true
     }
 
@@ -233,13 +238,12 @@ class BoardShowFeed : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-    fun showBoard(){
+    private fun showBoard(){
         //게시글 정보 받아와서 적용
         val gtitle = intent.getStringExtra("title").toString()
         val gcontents = intent.getStringExtra("contents").toString()
         val gfeedTime = intent.getStringExtra("feedTime").toString()
         val guserId = intent.getStringExtra("userId").toString()
-
 
         val getboardTitle = gtitle.split("vs")
 
@@ -254,7 +258,7 @@ class BoardShowFeed : AppCompatActivity() {
         BoardUserId.text = guserId
     }
 
-    fun updateToolImage(imageUrl: String, view: ImageView) {
+    private fun updateToolImage(imageUrl: String, view: ImageView) {
         lifecycleScope.launchWhenResumed {
             val response = try {
                 apolloClient.query(GetToolByNameQuery(name = imageUrl)).await()
@@ -266,7 +270,7 @@ class BoardShowFeed : AppCompatActivity() {
         }
     }
 
-    fun updateBoardDialog(){
+    private fun updateBoardDialog(){
         val dlg = AlertDialog.Builder(this)
         dlg.setTitle("수정하시겠습니까?")
         dlg.setPositiveButton("확인"){ dialog, which ->
@@ -296,18 +300,18 @@ class BoardShowFeed : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 11 -> {
-
                     showet1.text = data?.getStringExtra("selectet11").toString()
                     showet2.text = data?.getStringExtra("selectet22").toString()
+                    updateToolImage(showet1.text.toString(), selectimg1)
+                    updateToolImage(showet2.text.toString(), selectimg2)
                     BoardShowContent.text = data?.getStringExtra("writingContent11").toString()
-
                 }
             }
         }
     }
 
 
-    fun deleteBoardDialog(){
+    private fun deleteBoardDialog(){
         val dlg = AlertDialog.Builder(this)
         dlg.setTitle("삭제하시겠습니까?")
         dlg.setPositiveButton("확인"){ dialog, which ->
