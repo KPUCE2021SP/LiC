@@ -64,7 +64,7 @@ class BoardShowFeed : AppCompatActivity() {
 
         // db
         val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/") // 프로젝트 주소
-        val userIdRef = database.getReference() // userId 불러오는 경로
+        val userIdRef = database.reference // userId 불러오는 경로
 
         // firebase auth
         val user = Firebase.auth.currentUser
@@ -85,64 +85,45 @@ class BoardShowFeed : AppCompatActivity() {
         userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(postSnapshot in snapshot.child("board/$boardPath/comment").children){
-                    //commentData.clear()
-                    val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
-
                     val key = postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로 + commentNumber
-
                     val get: BoardCommentData? = postSnapshot.getValue(BoardCommentData::class.java)
-
                     if(key.contains("+")){
                         val adduserphoto = get?.userphoto.toString()
                         val addcomment = get?.boardCommment.toString()
                         val adduserid  =  get?.userId.toString()
                         val addcommentTime = get?.commentTime.toString()
-                        Log.d("addcomment",addcomment)
-
                         commentData.add((BoardCommentData(adduserid,addcomment,addcommentTime,adduserphoto)))
-
                         mAdapter.notifyDataSetChanged()
                     }
                     else{
                         continue
                     }
-
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
                 //실패할 때
                 Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
             }
-
         })
 
         // 댓글 작성 버튼
         imgWriteComment.setOnClickListener{
             val createComment = edtCreateText.text.toString() // 댓글 내용
-
             if(createComment==""){
                 Toast.makeText(this,"댓글을 입력해주세요.",Toast.LENGTH_SHORT).show()
             }
             else{
-                ///db에 저장
-
                 val cwritingTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) //댓글 작성시간
-
                 userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         val commentpath = "$gfeedTime+$guserId"
-
+                        val cPath = database.getReference("board/$commentpath").child("comment")  // 저장경로
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
                         val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 댓글 작성자 프사
-
                         Glide.with(applicationContext)
                             .load(cUserphoto)
                             .into(imgCommentUser)
-
-                        val cPath = database.getReference("board/$commentpath").child("comment")  // 저장경로
-
                         // 댓글 작성자 db
                         val cUserInfo = hashMapOf(
                             "userId" to cUserId,
@@ -150,13 +131,10 @@ class BoardShowFeed : AppCompatActivity() {
                             "commentTime" to cwritingTime,
                             "userphoto" to cUserphoto
                         )
-
                         // db에 댓글 작성자 정보 저장
                         cPath.child("$cwritingTime+$cUserId").setValue(cUserInfo)
-
                         //db에 commentNumber 저장
                         if(snapshot.child("board").child(commentpath).child("comment").child("commentNumber").child("commentNumber").exists()){
-
                             //db에 commentNumber이 있을 때
                             var commentNumber = snapshot.child("board/$commentpath").child("comment").child("commentNumber").child("commentNumber").value.toString().toInt()
                             commentNumber++
@@ -166,26 +144,17 @@ class BoardShowFeed : AppCompatActivity() {
                             //db에 commentNumber이 없을 때
                             cPath.child("commentNumber").child("commentNumber").setValue("1")
                         }
-
                         edtCreateText.setText("")
-
                         commentData.add((BoardCommentData(cUserId,createComment,cwritingTime,cUserphoto)))
-
                         mAdapter.notifyDataSetChanged()
-
                     }
-
                     override fun onCancelled(error: DatabaseError) {
                         //실패할 때
                         Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
                     }
-
                 })
-
             }
-
         }
-
     }
     //appbar 메뉴
     override fun onCreateOptionsMenu(menu: Menu) : Boolean {
@@ -214,12 +183,10 @@ class BoardShowFeed : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 //실패할 때
                 Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
             }
-
         })
         return true
     }
@@ -244,9 +211,7 @@ class BoardShowFeed : AppCompatActivity() {
         val gcontents = intent.getStringExtra("contents").toString()
         val gfeedTime = intent.getStringExtra("feedTime").toString()
         val guserId = intent.getStringExtra("userId").toString()
-
         val getboardTitle = gtitle.split("vs")
-
         val boardTitle1 = getboardTitle[0].trim()
         val boardTitle2 = getboardTitle[1].trim()
         updateToolImage(boardTitle1, selectimg1)
@@ -278,18 +243,15 @@ class BoardShowFeed : AppCompatActivity() {
             val ucontents = intent.getStringExtra("contents").toString() // 글 내용
             val ufeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
             val uuserId = intent.getStringExtra("userId").toString() // 글 작성자
-
             val updateintent = Intent(this, BoardWriteFeed::class.java)
-
             updateintent.putExtra("utitle",utitle)
             updateintent.putExtra("ucontents",ucontents)
             updateintent.putExtra("ufeedTime",ufeedTime)
             updateintent.putExtra("uuserId",uuserId)
             updateintent.putExtra("flag","1".toString())
-
-            //startActivity(updateintent)
+            updateintent.putExtra("feedTime", intent.getStringExtra("feedTime").toString())
+            updateintent.putExtra("userId", intent.getStringExtra("userId").toString())
             startActivityForResult(updateintent,11)
-
         }
         dlg.setNegativeButton("취소", null)
         dlg.show()
@@ -310,7 +272,6 @@ class BoardShowFeed : AppCompatActivity() {
         }
     }
 
-
     private fun deleteBoardDialog(){
         val dlg = AlertDialog.Builder(this)
         dlg.setTitle("삭제하시겠습니까?")
@@ -318,17 +279,13 @@ class BoardShowFeed : AppCompatActivity() {
             val gfeedTime = intent.getStringExtra("feedTime").toString() // 글 작성 시간
             val guserId = intent.getStringExtra("userId").toString() // 글 작성자
             val dboardPath = "$gfeedTime+$guserId"
-
             val deletedatabase = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
             deletedatabase.child("board")
                 .child(dboardPath)
                 .setValue(null)
-
             finish() // 삭제한 뒤에 community fragment로 이동
         }
         dlg.setNegativeButton("취소", null)
         dlg.show()
     }
-
-
 }

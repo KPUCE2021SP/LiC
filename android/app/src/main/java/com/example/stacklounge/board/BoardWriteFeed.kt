@@ -177,10 +177,6 @@ class BoardWriteFeed : AppCompatActivity() {
                     "userphoto" to aUserphoto
                 )
 
-//                val aboardInfo = hashMapOf(
-//                    "boardNumber" to boardNumber.toString()
-//                )
-
                 if(selectet1.text.toString()=="" || selectet2.text.toString()==""){
                     Toast.makeText(applicationContext,"기술 스택을 입력해주세요.",Toast.LENGTH_SHORT).show()
                 }
@@ -202,20 +198,29 @@ class BoardWriteFeed : AppCompatActivity() {
         })
     }
 
-    fun updateBoardText(){
+    private fun updateBoardText(){
         val uflag = intent.getStringExtra("flag").toString()
         Log.d("uflag",uflag)
         if(uflag=="1"){
-            val utitleg = intent.getStringExtra("utitle").toString().split("vs")
-            val uboardTitle1 = utitleg[0].trim()
-            val uboardTitle2 = utitleg[1].trim()
+            val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            val userIdRef = database.reference // userId 불러오는 경로
+            val time = intent.getStringExtra("feedTime")
+            val uid = intent.getStringExtra("userId")
+            val commentpath = "$time+$uid"
+            database.getReference("board/$commentpath").addListenerForSingleValueEvent(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val content = snapshot.child("contents").value.toString()
+                    val title = snapshot.child("title").value.toString().split("vs")
 
-            val ucontentsg = intent.getStringExtra("ucontents").toString()
+                    selectet1.setText(title[0].trim())
+                    selectet2.setText(title[1].trim())
+                    writingContent.setText(content)
+                }
 
-            selectet1.setText(uboardTitle1)
-            selectet2.setText(uboardTitle2)
-            writingContent.setText(ucontentsg)
-
+                override fun onCancelled(p0: DatabaseError) {
+                    Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 
