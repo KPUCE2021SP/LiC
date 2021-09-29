@@ -40,7 +40,7 @@ class CompanyListAdapter(
                 .into(holder.companyTextImage)
         }
         holder.companyTextView.text = company?.node?.companyName ?: ""
-        holder.companyTechStackView.text = "확인된 기술 도구: ${company?.node?.techStack?.size}개"
+
         val companyTechList = company?.node?.techStack as Collection<String>
         val cover = arrayListOf<String>()
         var new_cover = arrayListOf<String>()
@@ -52,7 +52,7 @@ class CompanyListAdapter(
                 new_cover.add(c.lowercase())
             }
         }
-        Log.d("List", cover.toString())
+        holder.companyTechStackView.text = "확인된 기술 도구: ${new_cover.size}개"
         holder.cardView.setOnClickListener {
             val intent = Intent(holder.itemView.context, CompanyDetail::class.java).apply {
                 putExtra("CompanyName", company?.node?.companyName)

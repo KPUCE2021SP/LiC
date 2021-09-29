@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
@@ -76,18 +77,28 @@ class CompanySearch : AppCompatActivity() {
                                     Glide.with(context).load(logo).into(companyTextImage)
                                 }
                                 companyNameView.text = company.companyName
-                                techStackView.text = "확인된 기술 도구: ${company.techStack?.size}"
                                 cardView.setOnClickListener{
                                     val cover = arrayListOf<String>()
+                                    val new_cover = arrayListOf<String>()
                                     cover.addAll(company.techStack as Collection<String>)
+                                    for(c in cover){
+                                        if(new_cover.contains(c.lowercase())){
+                                            Log.d("Overlapped", "Duplicate")
+                                        } else {
+                                            new_cover.add(c.lowercase())
+                                        }
+                                    }
+                                    techStackView.text = "확인된 기술 도구: ${new_cover.size}"
                                     val intent = Intent(applicationContext, CompanyDetail::class.java).apply{
-                                        putExtra("CompanyTechList", cover)
+                                        putExtra("CompanyTechList", new_cover)
                                         putExtra("CompanyName", company.companyName)
                                         putExtra("CompanyImage", company.companyLogo)
                                     }
                                     startActivity(intent)
                                 }
                             })
+                        } else {
+                            Toast.makeText(applicationContext, "해당 기업을 찾을 수 없습니다.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     return true
