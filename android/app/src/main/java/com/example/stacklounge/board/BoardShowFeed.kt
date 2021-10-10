@@ -156,10 +156,6 @@ class BoardShowFeed : AppCompatActivity() {
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
                         val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 댓글 작성자 프사
 
-                        Glide.with(applicationContext)
-                            .load(cUserphoto)
-                            .into(imgCommentUser)
-
                         val cPath = database.getReference("board/$commentpath").child("comment")  // 저장경로
 
                         // 댓글 작성자 db
@@ -190,6 +186,15 @@ class BoardShowFeed : AppCompatActivity() {
 
                         commentData.add((BoardCommentData(cUserId,createComment,cwritingTime,cUserphoto)))
 
+                        // 댓글 작성자와 현재 로그인 한 user가 같으면 댓글삭제 이미지 보임
+                        val commentWriter = snapshot.child("board/$commentpath").child("comment").child("$cwritingTime+$cUserId").child("userId").value.toString()
+                        if(!commentWriter.equals(cUserId)){
+                            imgcommentdelete.visibility = View.INVISIBLE
+                        }
+                        else{ // 댓글 삭제
+                            imgcommentdelete.visibility = View.VISIBLE
+                        }
+
                         mAdapter.notifyDataSetChanged()
 
                     }
@@ -204,6 +209,47 @@ class BoardShowFeed : AppCompatActivity() {
             }
 
         }
+
+        // 댓글 삭제 이미지 클릭할 때
+//        imgcommentdelete.setOnClickListener{
+//
+//            userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
+//                override fun onDataChange(snapshot: DataSnapshot) {
+//                    for(postSnapshot in snapshot.child("board/$boardPath/comment").children){
+//                        val key = postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로 + commentNumber
+//
+//                        val get: BoardCommentData? = postSnapshot.getValue(BoardCommentData::class.java)
+//
+//                        if(key.contains("+")){
+//                            val duserphoto = get?.userphoto.toString()
+//                            val dcomment = get?.boardCommment.toString()
+//                            val duserid  =  get?.userId.toString()
+//                            val dcommentTime = get?.commentTime.toString()
+//
+//                            Log.d("dcommentTime",dcommentTime)
+//
+//                            mAdapter.notifyDataSetChanged()
+//                        }
+//                        else{
+//                            continue
+//                        }
+//
+//                    }
+//
+//
+//                }
+//
+//                override fun onCancelled(error: DatabaseError) {
+//                    //실패할 때
+//                    Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
+//                }
+//
+//            })
+//
+//        }
+        
+
+
 
     }
     //appbar 메뉴
@@ -307,6 +353,5 @@ class BoardShowFeed : AppCompatActivity() {
         dlg.setNegativeButton("취소", null)
         dlg.show()
     }
-
 
 }
