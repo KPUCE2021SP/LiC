@@ -4,5 +4,5 @@ import android.content.Context
 import com.apollographql.apollo.ApolloClient
 
 val apolloClient = ApolloClient.builder()
-    .serverUrl("http://3.35.118.152:8000/graphql")
+    .serverUrl("http://15.164.18.220:8000/graphql")
     .build()

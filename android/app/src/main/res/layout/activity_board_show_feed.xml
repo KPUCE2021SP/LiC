@@ -215,7 +215,9 @@
                     android:id="@+id/commentRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"></androidx.recyclerview.widget.RecyclerView>
+                    android:padding="5dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

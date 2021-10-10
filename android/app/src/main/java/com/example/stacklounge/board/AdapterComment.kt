@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_board_show_comment.*
 
 class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<BoardCommentData>) :
     RecyclerView.Adapter<AdapterComment.Holder>() {
@@ -44,6 +45,7 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
         val tvboardcomment = itemView?.findViewById<TextView>(R.id.tvboardcomment)
         val tvcommentTime = itemView?.findViewById<TextView>(R.id.tvcommentTime)
         val imgCommentUser = itemView?.findViewById<ImageView>(R.id.imgCommentUser)
+        val imgcommentdelete = itemView?.findViewById<ImageView>(R.id.imgcommentdelete)
 
         fun bind(BoardCommentData: BoardCommentData, context: Context?) {
 
@@ -103,6 +105,48 @@ class AdapterComment(val context: Context?, val BoardCommentData: ArrayList<Boar
                 }
 
             })
+
+            imgcommentdelete?.setOnClickListener {
+                Log.d("clickable","click!") // 클릭 됨
+                val commentpath = BoardCommentData.commentTime + "+" + BoardCommentData.userId // commentTime + userID
+                Log.d("commentpath",commentpath)
+                var boardpath = ""
+                userIdRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        for (postSnapshot in snapshot.child("board").children) {
+                            val key = postSnapshot.key.toString() // 게시글 들어갈때 댓글 경로
+                            Log.d("key22", key)
+                            if(key.contains(BoardCommentData.userId)){
+                                val get: BoardCommentData? = postSnapshot.child(key).child("commentTime").getValue(BoardCommentData::class.java)
+                                val dcommentTime = get?.commentTime.toString()
+
+                                Log.d("dcommentTime",dcommentTime)
+                                if(postSnapshot.child("commentTime").toString().equals(dcommentTime)){
+
+                                }
+                            }
+                            val get: BoardCommentData? =
+                                postSnapshot.getValue(BoardCommentData::class.java)
+
+                            if (key.contains("+")) {
+
+
+                            } else {
+                                continue
+                            }
+
+                        }
+
+
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+
+                })
+
+        }
 
 
         }

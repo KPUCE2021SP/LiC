@@ -121,9 +121,12 @@ class BoardShowFeed : AppCompatActivity() {
                         val cPath = database.getReference("board/$commentpath").child("comment")  // 저장경로
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
                         val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 댓글 작성자 프사
+
+
                         Glide.with(applicationContext)
                             .load(cUserphoto)
                             .into(imgCommentUser)
+
                         // 댓글 작성자 db
                         val cUserInfo = hashMapOf(
                             "userId" to cUserId,
@@ -146,6 +149,8 @@ class BoardShowFeed : AppCompatActivity() {
                         }
                         edtCreateText.setText("")
                         commentData.add((BoardCommentData(cUserId,createComment,cwritingTime,cUserphoto)))
+
+
                         mAdapter.notifyDataSetChanged()
                     }
                     override fun onCancelled(error: DatabaseError) {
@@ -155,6 +160,8 @@ class BoardShowFeed : AppCompatActivity() {
                 })
             }
         }
+
+
     }
     //appbar 메뉴
     override fun onCreateOptionsMenu(menu: Menu) : Boolean {
@@ -288,4 +295,5 @@ class BoardShowFeed : AppCompatActivity() {
         dlg.setNegativeButton("취소", null)
         dlg.show()
     }
+
 }
