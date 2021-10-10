@@ -35,7 +35,7 @@ class CompanySearchAdapter(
                 .into(holder.companyTextImage)
         }
         holder.companyTextView.text = company.toString() ?: ""
-        holder.companyTechStackView.text = techStack.toString() ?: ""
+        holder.companyTechStackView.text = "확인된 기술 도구: ${techStack?.size}개"?: ""
     }
 
     override fun getItemCount(): Int {

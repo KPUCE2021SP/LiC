@@ -5,14 +5,23 @@ import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.apollographql.apollo.coroutines.await
+import com.apollographql.apollo.exception.ApolloException
+import com.bumptech.glide.Glide
+import com.example.stacklounge.GetToolByNameQuery
 import com.example.stacklounge.R
 import com.example.stacklounge.fragment.FragmentMainCommunity
+import com.example.stacklounge.query.apolloClient
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -47,7 +56,38 @@ class BoardWriteFeed : AppCompatActivity() {
         btnWriteComplete.setOnClickListener {
             writingText()
         }
-
+        selectet1.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                Log.d("CHAR", s.toString())
+                lifecycleScope.launchWhenResumed {
+                    val response = try {
+                        apolloClient.query(GetToolByNameQuery(name = s.toString())).await()
+                    } catch(e: ApolloException) {
+                        Log.d("ApolloQuery", "Failure", e)
+                        null
+                    }
+                    Glide.with(applicationContext).load(response?.data?.toolByName?.imageUrl).into(selectimg1)
+                }
+            }
+        })
+        selectet2.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                Log.d("CHAR", s.toString())
+                lifecycleScope.launchWhenResumed {
+                    val response = try {
+                        apolloClient.query(GetToolByNameQuery(name = s.toString())).await()
+                    } catch(e: ApolloException) {
+                        Log.d("ApolloQuery", "Failure", e)
+                        null
+                    }
+                    Glide.with(applicationContext).load(response?.data?.toolByName?.imageUrl).into(selectimg2)
+                }
+            }
+        })
         // 글 수정 (BoardShowFeed -> BoardWriteFeed)
         updateBoardText()
         // 글 db 수정 시간+id, feedtime
@@ -137,10 +177,6 @@ class BoardWriteFeed : AppCompatActivity() {
                     "userphoto" to aUserphoto
                 )
 
-//                val aboardInfo = hashMapOf(
-//                    "boardNumber" to boardNumber.toString()
-//                )
-
                 if(selectet1.text.toString()=="" || selectet2.text.toString()==""){
                     Toast.makeText(applicationContext,"기술 스택을 입력해주세요.",Toast.LENGTH_SHORT).show()
                 }
@@ -162,20 +198,29 @@ class BoardWriteFeed : AppCompatActivity() {
         })
     }
 
-    fun updateBoardText(){
+    private fun updateBoardText(){
         val uflag = intent.getStringExtra("flag").toString()
         Log.d("uflag",uflag)
         if(uflag=="1"){
-            val utitleg = intent.getStringExtra("utitle").toString().split("vs")
-            val uboardTitle1 = utitleg[0].trim()
-            val uboardTitle2 = utitleg[1].trim()
+            val database = FirebaseDatabase.getInstance("https://stacklounge-62ffd-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            val userIdRef = database.reference // userId 불러오는 경로
+            val time = intent.getStringExtra("feedTime")
+            val uid = intent.getStringExtra("userId")
+            val commentpath = "$time+$uid"
+            database.getReference("board/$commentpath").addListenerForSingleValueEvent(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val content = snapshot.child("contents").value.toString()
+                    val title = snapshot.child("title").value.toString().split("vs")
 
-            val ucontentsg = intent.getStringExtra("ucontents").toString()
+                    selectet1.setText(title[0].trim())
+                    selectet2.setText(title[1].trim())
+                    writingContent.setText(content)
+                }
 
-            selectet1.setText(uboardTitle1)
-            selectet2.setText(uboardTitle2)
-            writingContent.setText(ucontentsg)
-
+                override fun onCancelled(p0: DatabaseError) {
+                    Toast.makeText(applicationContext,"DB 에러",Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 

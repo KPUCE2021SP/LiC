@@ -1,7 +1,11 @@
-import os
+from os import path
 import sys
 import urllib.request
 import json
+
+
+# LIC Project를 가리킨다.
+BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
 
 class Papago:
@@ -34,8 +38,13 @@ class Papago:
             json_data = json.load(f)
 
         stack_data = list(json_data)
-
-        for index, data in enumerate(stack_data):
+        
+        # for i, data in enumerate(stack_data):
+        #     if "Apache Hive" == data['name']:
+        #         print(i, data)
+        #         break
+            
+        for index, data in enumerate(stack_data[self.row:]):
             if len(data) == 1:
                 continue
             else:
@@ -96,8 +105,12 @@ class Papago:
 
 
 if __name__ == "__main__":
-    client_id = "client_id"  # 발급받은 아이디 입력
-    client_secret = "client_seret"  # 발급받은 secret입력
+
+    SECRET_PATH = path.join(BASE_DIR, 'papago/secret.json')
+    secrets = json.loads(open(SECRET_PATH).read())
+
+    client_id = secrets['SECRET_ID']  # 발급받은 아이디 입력
+    client_secret = secrets['SECRET_PW']  # 발급받은 secret입력
     file_name = "stack_fixture.json"
 
     row = open("./last_row.txt", "r")

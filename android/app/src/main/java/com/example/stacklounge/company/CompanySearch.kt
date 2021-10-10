@@ -2,6 +2,7 @@ package com.example.stacklounge.company
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -11,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
@@ -31,7 +33,7 @@ class CompanySearch : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_search)
         cardView.visibility = View.INVISIBLE
-        title = ""
+        title = "궁금한 기업을 검색해보세요"
         companyTextImage = findViewById(R.id.companyTextImage)
         companyNameView = findViewById(R.id.companyNameTextView)
         techStackView = findViewById(R.id.techStackTextView)
@@ -44,6 +46,7 @@ class CompanySearch : AppCompatActivity() {
         inflater.inflate(R.menu.company_search_menu_inflated, menu)
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         (menu.findItem(R.id.search_inflated).actionView as SearchView).apply {
+            this.isIconified = false
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
             setOnQueryTextListener(object : SearchView.OnQueryTextListener{
                 // SearchView 에서 텍스트 입력 시
@@ -71,12 +74,31 @@ class CompanySearch : AppCompatActivity() {
                                     companyTextImage.setImageResource(R.drawable.stackloungeicon)
                                 }
                                 else {
-                                    Glide.with(context).load(logo)
-                                        .into(companyTextImage)
+                                    Glide.with(context).load(logo).into(companyTextImage)
                                 }
                                 companyNameView.text = company.companyName
-                                techStackView.text = company.techStack.toString()
+                                cardView.setOnClickListener{
+                                    val cover = arrayListOf<String>()
+                                    val new_cover = arrayListOf<String>()
+                                    cover.addAll(company.techStack as Collection<String>)
+                                    for(c in cover){
+                                        if(new_cover.contains(c.lowercase())){
+                                            Log.d("Overlapped", "Duplicate")
+                                        } else {
+                                            new_cover.add(c.lowercase())
+                                        }
+                                    }
+                                    techStackView.text = "확인된 기술 도구: ${new_cover.size}"
+                                    val intent = Intent(applicationContext, CompanyDetail::class.java).apply{
+                                        putExtra("CompanyTechList", new_cover)
+                                        putExtra("CompanyName", company.companyName)
+                                        putExtra("CompanyImage", company.companyLogo)
+                                    }
+                                    startActivity(intent)
+                                }
                             })
+                        } else {
+                            Toast.makeText(applicationContext, "해당 기업을 찾을 수 없습니다.", Toast.LENGTH_SHORT).show()
                         }
                     }
                     return true

@@ -31,7 +31,7 @@ class ProgrammersPipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to programmers
+        self.collection = db[settings["MONGODB_COLLECTION"][0]]
 
     def close_spider(self, spider):
         for key in self.json_response:
@@ -84,7 +84,7 @@ class JumpitPipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to jumpit
+        self.collection = db[settings["MONGODB_COLLECTION"][0]]
 
     def close_spider(self, spider):
         for key in self.json_response:
@@ -135,7 +135,7 @@ class KiwizzlePipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to kiwizzle
+        self.collection = db[settings["MONGODB_COLLECTION"][2]] 
 
         self.json_content = defaultdict()
 
@@ -145,19 +145,19 @@ class KiwizzlePipeline:
                 set(self.json_content[key]["techStack"])
             )
             document = self.collection.find_one(
-                {"companyName": self.json_response[key]["companyName"]}
+                {"companyName": self.json_content[key]["companyName"]}
             )
             if not document == None:
                 if not len(document["techStack"]) == len(
-                    self.json_response[key]["techStack"]
+                    self.json_content[key]["techStack"]
                 ):
                     tech_stack = document["techStack"]
-                    tech_stack.extend(self.json_response[key]["techStack"])
-                    self.json_response[key]["techStack"] = list(set(tech_stack))
+                    tech_stack.extend(self.json_content[key]["techStack"])
+                    self.json_content[key]["techStack"] = list(set(tech_stack))
 
             self.collection.update_one(
-                {"companyName": self.json_response[key]["companyName"]},
-                {"$set": self.json_response[key]},
+                {"companyName": self.json_content[key]["companyName"]},
+                {"$set": self.json_content[key]},
                 upsert=True,
             )
 
@@ -177,9 +177,14 @@ class KiwizzlePipeline:
 
         for language_key in item["language"]:
             self.json_content[str(item["companyId"])]["techStack"].append(
-                self.key["language"][str(language_key)]
+                self.key["language"][str(language_key)].lower()
             )
 
+        self.json_content[str(item["companyId"])]["companyLogo"] = self.key["image"][
+            str(item["companyId"])
+        ]
+        logging.info(self.json_content[str(item["companyId"])])
+        logging.info(self.key["company"][str(item["companyId"])])
         return item
 
 
@@ -197,24 +202,26 @@ class RawPipeline:
             password=settings["PASSWORD"],
         )
         db = connection[settings["MONGODB_DB"]]
-        self.collection = db[settings["MONGODB_COLLECTION"][0]]  # set to kiwizzle
+        self.collection = db[settings["MONGODB_COLLECTION"][2]]
 
         self.json_content = json.load(fp=open("raw_data.json"))
 
     def close_spider(self, spider):
-        for key in self.json_content:
+        for c, key in enumerate(self.json_content):
             document = self.collection.find_one({"companyName": key})
+            lower_tech_stack = []
             if not document == None:
-                if not len(document["techStack"]) == len(self.json_content[key]):
+                if not len(document["techStack"]) == len(self.json_content[key][:-1]):
                     tech_stack = document["techStack"]
-                    tech_stack.extend(self.json_content[key])
-                    self.json_content[key] = list(set(tech_stack))
-
+                    tech_stack.extend([i.lower() for i in self.json_content[key][:-1]])
+                    lower_tech_stack = list(set(tech_stack))
+            else:
+                lower_tech_stack = self.json_content[key][:-1]
             self.collection.update_one(
                 {"companyName": key},
                 {"$set": {
-                    "techStack": self.json_content[key],
-                    "companyLogo": ""
+                    "techStack": lower_tech_stack,
+                    "companyLogo": self.json_content[key][-1]
                     }
                 },
                 upsert=True,
