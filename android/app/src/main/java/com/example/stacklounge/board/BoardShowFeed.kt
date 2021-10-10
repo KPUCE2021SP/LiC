@@ -122,11 +122,6 @@ class BoardShowFeed : AppCompatActivity() {
                         val cUserId = snapshot.child("current-user/${user?.uid}").child("login").value.toString() // 댓글 작성자
                         val cUserphoto = snapshot.child("current-user/${user?.uid}").child("avatar_url").value.toString() // 댓글 작성자 프사
 
-
-                        Glide.with(applicationContext)
-                            .load(cUserphoto)
-                            .into(imgCommentUser)
-
                         // 댓글 작성자 db
                         val cUserInfo = hashMapOf(
                             "userId" to cUserId,
