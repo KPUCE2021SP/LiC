@@ -212,7 +212,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 ## Team Members
 
 * [홍성민](https://github.com/KKodiac) - Scrapy, MongoDB, Django, Docker, Graphql, EC2, Client(UI, Home, Search)
-* [배준일](https://github.com/bjo6300) - Client(Community, Base UI), RealtimeDB
+* [배준일](https://github.com/bjo6300) - Client(Login&Logout(GithubAPI), Community, Base UI), RealtimeDB)
 * [한상우](https://github.com/sktkddn777) - Scrapy, Cloud Functions, GithubAPI, MongoDB, RealtimeDB, PapagoAPI
 
 
